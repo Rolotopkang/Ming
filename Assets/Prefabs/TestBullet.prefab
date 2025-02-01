@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3769986901525302700}
   - component: {fileID: 8930787439522684447}
   - component: {fileID: 750868217744683951}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ee7af2d0beb984eb0834df413a548e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathCount: 5000
+  lifetime: 5
+  OnHitEffectPrefab: {fileID: 607072170870981586, guid: 667fefb4ceed7f943bff334316f25d88, type: 3}
 --- !u!96 &750868217744683951
 TrailRenderer:
   serializedVersion: 3

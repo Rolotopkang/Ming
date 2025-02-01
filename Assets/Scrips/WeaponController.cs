@@ -25,10 +25,9 @@ public class WeaponController : MonoBehaviour
         if (isReturning)
         {
             GrabPoint.transform.position = Vector3.Lerp(GrabPoint.transform.position, restPosition.position, Time.deltaTime * returnSpeed);
-
             // 当距离足够小，停止回弹
-            if (Vector3.Distance(GrabPoint.transform.position, restPosition.position) < 0.01f)
-            {
+            if (Vector3.Distance(GrabPoint.transform.position, restPosition.position) < 0.01f) 
+            { 
                 GrabPoint.transform.position = restPosition.position;
             }
         }
@@ -42,7 +41,7 @@ public class WeaponController : MonoBehaviour
         BulletBase projectile = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         Vector3 launchVelocity = (restPosition.position - transform.position) *20f;
-        rb.linearVelocity = launchVelocity; // **关键：直接设置初速度**
+        rb.linearVelocity = launchVelocity;
     }
 
     private void OnGrab(Hand arg0, Grabbable grabbable)

@@ -36,7 +36,7 @@ public class SlingshotTrajectory : MonoBehaviour
         {
             float t = i * timeStep;
             Vector3 point = startPos + velocity * t + 0.5f * Physics.gravity * t * t;
-            points.Add(point);
+            points.Add(transform.InverseTransformPoint(point));
         }
 
         lineRenderer.positionCount = points.Count;
