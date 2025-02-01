@@ -33,6 +33,7 @@ public class WeaponController : MonoBehaviour
         }
     }
 
+
     private void OnRelease(Hand arg0, Grabbable grabbable)
     {
         isReturning = true;
