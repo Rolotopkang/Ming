@@ -1,9 +1,17 @@
 using System;
+using System.Collections;
 using Autohand;
+using TMPro.EditorUtilities;
+using Tools;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class WeaponController : Singleton<WeaponController>
 {
+    //备忘录
+    /// <summary>
+    /// TODO 距离太小是否要发射
+    /// </summary>
+    
     public Transform restPosition; // 弹弓的初始位置
     public float returnSpeed = 10f; // 回弹速度
     private bool isReturning = true;
@@ -11,8 +19,22 @@ public class WeaponController : MonoBehaviour
     public SlingshotTrajectory SlingshotTrajectory;
     public BulletBase BulletPrefab;
     
+    public float MaxDragDistance = 30;
+    public float DragPersentage = 0;
+    public float DragDistance;
+    public float forceMultiplier = 20f;
+
+    public float vibrationDuration;
+    public float vibrationstepSize;
+
+    public Vector3 lunchVector3 => (restPosition.position - GrabPoint.transform.position).normalized * DragDistance/100;
+
+    private float distance;
     private Rigidbody grabRig;
-    
+    private float lastVibrationDistance;
+    private Coroutine hapticCoroutine;
+    private bool isVibrating = false;
+
     void Start()
     {
         GrabPoint.onRelease.AddListener(OnRelease);
@@ -22,6 +44,7 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
+        UpdateDistance();
         if (isReturning)
         {
             GrabPoint.transform.position = Vector3.Lerp(GrabPoint.transform.position, restPosition.position, Time.deltaTime * returnSpeed);
@@ -31,17 +54,22 @@ public class WeaponController : MonoBehaviour
                 GrabPoint.transform.position = restPosition.position;
             }
         }
+        else
+        {
+            CheckVibration();
+        }
     }
 
 
     private void OnRelease(Hand arg0, Grabbable grabbable)
     {
+        StopVibration();
         isReturning = true;
         grabRig.isKinematic = true;
         SlingshotTrajectory.isopen = false;
-        BulletBase projectile = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        BulletBase projectile = Instantiate(BulletPrefab, GrabPoint.transform.position, Quaternion.identity);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        Vector3 launchVelocity = (restPosition.position - transform.position) *20f;
+        Vector3 launchVelocity = lunchVector3 * forceMultiplier;
         rb.linearVelocity = launchVelocity;
     }
 
@@ -50,5 +78,63 @@ public class WeaponController : MonoBehaviour
         isReturning = false;
         grabRig.isKinematic = false;
         SlingshotTrajectory.isopen = true;
+    }
+
+    private void UpdateDistance()
+    {
+       distance = Vector3.Distance(restPosition.position, GrabPoint.transform.position) * 100f;
+       DragPersentage = Mathf.Clamp01(distance / MaxDragDistance);
+       DragDistance = DragPersentage>=1 ? MaxDragDistance : distance;
+    }
+    
+    private void CheckVibration()
+    {
+        if (DragPersentage >= 1)
+        {
+            StartVibration(GrabPoint.GetHeldBy()[0],0.5f,0.5f);
+        }
+        else
+        {
+            StopVibration();
+            if (Mathf.Floor(distance / vibrationstepSize) > Mathf.Floor(lastVibrationDistance / vibrationstepSize))
+            {
+                TriggerVibration();
+                lastVibrationDistance = distance; // 更新上次震动位置
+            }
+            else if (Mathf.Floor(distance / vibrationstepSize) < Mathf.Floor(lastVibrationDistance / vibrationstepSize))
+            {
+                TriggerVibration();
+                lastVibrationDistance = distance;
+            }
+        }
+    }
+    
+    private void TriggerVibration()
+    {
+        if (GrabPoint.GetHeldBy() != null)
+        {
+            GrabPoint.GetHeldBy()[0].PlayHapticVibration(vibrationDuration,0.2f);
+        }
+    }
+    
+    public void StartVibration(Hand hand, float amplitude, float interval) {
+        if (isVibrating) return; // 避免重复启动
+        isVibrating = true;
+        hapticCoroutine = StartCoroutine(VibrationLoop(hand, amplitude, interval));
+    }
+
+    public void StopVibration() {
+        if (hapticCoroutine != null) {
+            StopCoroutine(hapticCoroutine);
+            hapticCoroutine = null;
+        }
+        isVibrating = false;
+    }
+
+    private IEnumerator VibrationLoop(Hand hand, float amplitude, float interval) {
+        while (isVibrating) {
+            hand.PlayHapticVibration(amplitude, interval * 0.2f);
+            yield return new WaitForSeconds(interval);
+        }
     }
 }
