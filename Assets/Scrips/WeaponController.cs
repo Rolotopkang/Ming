@@ -23,11 +23,18 @@ public class WeaponController : Singleton<WeaponController>
     public float DragPersentage = 0;
     public float DragDistance;
     public float forceMultiplier = 20f;
-
+    
     public float vibrationDuration;
     public float vibrationstepSize;
-
-    public Vector3 lunchVector3 => (restPosition.position - GrabPoint.transform.position).normalized * DragDistance/100;
+    
+    [Header("零时")]
+    public int bulletCount = 5;
+    public float spreadAngle;
+    
+    public Vector3 lunchVector3()
+    {
+        return (restPosition.position - GrabPoint.transform.position).normalized * DragDistance / 100;
+    }
 
     private float distance;
     private Rigidbody grabRig;
@@ -67,10 +74,18 @@ public class WeaponController : Singleton<WeaponController>
         isReturning = true;
         grabRig.isKinematic = true;
         SlingshotTrajectory.isopen = false;
-        BulletBase projectile = Instantiate(BulletPrefab, GrabPoint.transform.position, Quaternion.identity);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        Vector3 launchVelocity = lunchVector3 * forceMultiplier;
-        rb.linearVelocity = launchVelocity;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float angleOffset = (bulletCount == 1) ? 0f : Mathf.Lerp(-spreadAngle / 2, spreadAngle / 2, (float)i / (bulletCount - 1));
+            
+            Quaternion rotation = Quaternion.AngleAxis(angleOffset, SlingshotTrajectory.transform.up);
+            
+            BulletBase projectile = Instantiate(BulletPrefab, GrabPoint.transform.position, Quaternion.identity);
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            Vector3 launchVelocity = rotation * lunchVector3() * forceMultiplier;
+            rb.linearVelocity = launchVelocity;
+        }
     }
 
     private void OnGrab(Hand arg0, Grabbable grabbable)

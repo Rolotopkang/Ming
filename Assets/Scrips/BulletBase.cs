@@ -15,9 +15,16 @@ public class BulletBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            
             Destroy(gameObject);
         }
     }
