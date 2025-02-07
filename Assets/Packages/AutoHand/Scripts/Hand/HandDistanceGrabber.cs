@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -211,11 +212,11 @@ namespace Autohand {
                 if(line != null) {
                     if(didHit) {
                         line.positionCount = 2;
-                        line.SetPositions(new Vector3[] { forwardPointer.position, hit.point });
+                        line.SetPositions(new Vector3[] {line.transform.InverseTransformPoint(forwardPointer.position)  ,line.transform.InverseTransformPoint(hit.point )});
                     }
                     else {
                         line.positionCount = 2;
-                        line.SetPositions(new Vector3[] { forwardPointer.position, forwardPointer.position + currentSmoothForward * maxRange });
+                        line.SetPositions(new Vector3[] { line.transform.InverseTransformPoint(forwardPointer.position), line.transform.InverseTransformPoint(forwardPointer.position + currentSmoothForward * maxRange)  });
                     }
                 }
             }
@@ -245,7 +246,7 @@ namespace Autohand {
             pointing = false;
             if(line != null) {
                 line.positionCount = 0;
-                line.SetPositions(new Vector3[0]);
+                line.SetPositions(Array.Empty<Vector3>());
             }
             StopPoint?.Invoke(primaryHand);
             StopTargeting();

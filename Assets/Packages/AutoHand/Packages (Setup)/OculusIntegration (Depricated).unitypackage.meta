@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dca9b42544417324e975836f61856725
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165323
+  packageName: Auto Hand - VR Interaction
+  packageVersion: 4.0.0
+  assetPath: Assets/AutoHand/Packages (Setup)/OculusIntegration.unitypackage
+  uploadId: 672110
