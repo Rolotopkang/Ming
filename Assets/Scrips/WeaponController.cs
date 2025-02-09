@@ -27,10 +27,6 @@ public class WeaponController : Singleton<WeaponController>
     public float vibrationDuration;
     public float vibrationstepSize;
     
-    [Header("零时")]
-    public int bulletCount = 5;
-    public float spreadAngle;
-    
     public Vector3 lunchVector3()
     {
         return (restPosition.position - GrabPoint.transform.position).normalized * DragDistance / 100;
@@ -75,6 +71,13 @@ public class WeaponController : Singleton<WeaponController>
         grabRig.isKinematic = true;
         SlingshotTrajectory.isopen = false;
 
+        int bulletCount =Mathf.FloorToInt(PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount) >= 1
+            ? PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount)
+            : 1) ;
+        float spreadAngle = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletSpread) >= 0
+            ? PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletSpread)
+            : 0;
+        
         for (int i = 0; i < bulletCount; i++)
         {
             float angleOffset = (bulletCount == 1) ? 0f : Mathf.Lerp(-spreadAngle / 2, spreadAngle / 2, (float)i / (bulletCount - 1));
