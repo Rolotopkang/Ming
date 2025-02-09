@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Obstacle
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -12,12 +15,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbing
+  - Grabbable
+  - Hand
+  - HandPlayer
+  - Bullet
+  - IgnoreDistanceGrab
   - 
   - 
   - 
