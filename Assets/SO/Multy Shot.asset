@@ -10,14 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
-  m_Name: TestMultyShot
+  m_Name: Multy Shot
   m_EditorClassIdentifier: 
   itemName: Multy Shot
-  icon: {fileID: 0}
-  description: 
+  icon: {fileID: 37763770702065993, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  description: 'ADD SlingShot one shot''s Bullet Number
+
+
+    Current SlingShot Bullet
+    Multy Number is<color=#FF5733>{BulletCount}</color>'
   statModifiers:
+  - statType: 5
+    value: 1
   - statType: 0
-    value: 0
+    value: -1
   hasSpecialEffect: 0
   specialEffectNames:
   - 

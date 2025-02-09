@@ -14,6 +14,7 @@ using UnityEngine;
     {
         public string itemName;
         public Sprite icon;
+        [TextArea (3,20) ]
         public string description;
 
         public List<PlayerStatModifier> statModifiers = new List<PlayerStatModifier>();

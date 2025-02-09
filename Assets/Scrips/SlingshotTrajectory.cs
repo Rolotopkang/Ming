@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using DG.Tweening;
+using Tools;
 using UnityEngine;
 
 public class SlingshotTrajectory : MonoBehaviour
@@ -30,8 +31,9 @@ public class SlingshotTrajectory : MonoBehaviour
     
     void DrawTrajectory()
     {
-        int bulletCount = WeaponController.GetInstance().bulletCount;
-        float spreadAngle = WeaponController.GetInstance().spreadAngle;
+        int bulletCount =
+            Mathf.FloorToInt(PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount));
+        float spreadAngle = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletSpread);
         float forceMultiplier = WeaponController.GetInstance().forceMultiplier;
 
         Vector3 startPos = grabPoint.position;
