@@ -7,7 +7,9 @@ public class ItemDescriptionUI : MonoBehaviour
 {
     public TextMeshProUGUI ItemnName;
     public TextMeshProUGUI ItemDiscription;
+    public TextMeshProUGUI Level;
     public Image ItemImage;
+    
     
     public Transform target;
     public Transform player;
@@ -39,12 +41,17 @@ public class ItemDescriptionUI : MonoBehaviour
         UpdateUI();
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         ItemnName.text = _itemBase.ItemData.itemName;
+        ItemnName.color = _itemBase.GetItemColor();
         ItemImage.sprite = _itemBase.ItemData.icon;
         ItemDiscription.text = _itemBase.DiscriptionToString();
+        Level.text = _itemBase.ItemCount.ToString();
+        Level.color = _itemBase. GetItemColor();
     }
+
+
 
     void Update()
     {
