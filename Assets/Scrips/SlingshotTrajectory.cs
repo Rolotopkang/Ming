@@ -18,6 +18,7 @@ public class SlingshotTrajectory : MonoBehaviour
 
     void Update()
     {
+        
         if (isopen)
         {
             RendererRoot.SetActive(true);
