@@ -44,31 +44,14 @@ public class ItemDescriptionUI : MonoBehaviour
     public void UpdateUI()
     {
         ItemnName.text = _itemBase.ItemData.itemName;
-        ItemnName.color = GetItemColor();
+        ItemnName.color = _itemBase.GetItemColor();
         ItemImage.sprite = _itemBase.ItemData.icon;
         ItemDiscription.text = _itemBase.DiscriptionToString();
         Level.text = _itemBase.ItemCount.ToString();
-        Level.color = GetItemColor();
+        Level.color = _itemBase. GetItemColor();
     }
 
-    private Color GetItemColor()
-    {
-        if (_itemBase.ItemData.isEventItem)
-        {
-            return Color.green;
-        }
-        else
-        {
-            return _itemBase.ItemCount switch
-            {
-                1 => Color.white ,
-                2 => Color.blue ,
-                3 => Color.magenta ,
-                >=4 => Color.yellow,
-                _ => Color.white // default case
-            };
-        }
-    }
+
 
     void Update()
     {

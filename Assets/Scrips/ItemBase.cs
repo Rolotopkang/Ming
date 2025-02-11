@@ -43,6 +43,7 @@ public class ItemBase : MonoBehaviour
         }
         
         _discriptionUI.GetComponent<ItemDescriptionUI>().UpdateUI();
+        UpdateOutLineColor();
     }
 
     public String DiscriptionToString()
@@ -58,6 +59,11 @@ public class ItemBase : MonoBehaviour
                 _ => match.Value
             };
         });
+    }
+
+    private void UpdateOutLineColor()
+    {
+        _outline.OutlineColor = GetItemColor();
     }
 
     private void CheckShowDiscriptionUI()
@@ -83,6 +89,29 @@ public class ItemBase : MonoBehaviour
     public void DecreaseShowDiscriptionUI()
     {
         _showUICounter--;
+        if (_showUICounter < 0)
+        {
+            _showUICounter = 0;
+        }
         CheckShowDiscriptionUI();
+    }
+    
+    public Color GetItemColor()
+    {
+        if (ItemData.isEventItem)
+        {
+            return Color.green;
+        }
+        else
+        {
+            return ItemCount switch
+            {
+                1 => Color.white ,
+                2 => Color.blue ,
+                3 => Color.magenta ,
+                >=4 => Color.yellow,
+                _ => Color.white // default case
+            };
+        }
     }
 }
