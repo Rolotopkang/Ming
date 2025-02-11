@@ -3,11 +3,13 @@ using System.Text.RegularExpressions;
 using Tools;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
+
 
 public class ItemBase : MonoBehaviour
 {
     public ItemData ItemData;
-    
+    public int ItemCount = 1;
     private GameObject _discriptionUI;
     private Outline _outline;
     private int _showUICounter = 0;
@@ -20,6 +22,29 @@ public class ItemBase : MonoBehaviour
         _discriptionUI.GetComponent<ItemDescriptionUI>().ItemDescriptionUIRegister(this);
     }
 
+    public bool CheckCanUpgrade()
+    {
+        return ItemCount < ItemData.MaxLevel;
+    }
+
+    public void UpgradeItem(ItemBase CommingItemBase)
+    {
+        if (ItemData.isEventItem)
+            return;
+        if (ItemCount >= ItemData.MaxLevel)
+        {
+            return;
+        }
+        
+        ItemCount += CommingItemBase.ItemCount;
+        if (ItemCount>=ItemData.MaxLevel)
+        {
+            ItemCount = ItemData.MaxLevel;
+        }
+        
+        _discriptionUI.GetComponent<ItemDescriptionUI>().UpdateUI();
+    }
+
     public String DiscriptionToString()
     {
         return Regex.Replace(ItemData.description, @"{(\w+)}", match =>
@@ -27,13 +52,14 @@ public class ItemBase : MonoBehaviour
             string varName = match.Groups[1].Value;
             return varName switch
             {
-                "BulletCount" => PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount).ToString(),
+                "BulletCount" => PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount)
+                    .ToString(),
                 "1" => "TEST",
-                _ => match.Value // 未匹配到变量就保持原样
+                _ => match.Value
             };
         });
     }
-    
+
     private void CheckShowDiscriptionUI()
     {
         if (_showUICounter > 0)
@@ -53,7 +79,7 @@ public class ItemBase : MonoBehaviour
         _showUICounter++;
         CheckShowDiscriptionUI();
     }
-    
+
     public void DecreaseShowDiscriptionUI()
     {
         _showUICounter--;

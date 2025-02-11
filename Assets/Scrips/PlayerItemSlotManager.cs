@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
 {
-    public List<ItemData> ownedItems = new List<ItemData>();
+    public List<ItemBase> ownedItems = new List<ItemBase>();
     private PlayerStatsManager _playerStatsManager;
     // private List<IItemEffect> specialEffects = new List<IItemEffect>(); // 存储特殊功能
 
@@ -14,12 +14,19 @@ public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
     }
 
     // **拾取道具**
-    public void AddItem(ItemData newItem)
+    public void AddItem(ItemBase newItem)
     {
         ownedItems.Add(newItem);
-        foreach (PlayerStatModifier modifier in newItem.statModifiers)
+        foreach (PlayerStatModifier modifier in newItem.ItemData.statModifiers)
         {
-            _playerStatsManager.ApplyStatModifier(modifier.statType, modifier.value);
+            if (modifier.UseCurve)
+            {
+                _playerStatsManager.ApplyStatModifier(modifier.statType, modifier.IncrementCurve.Evaluate(newItem.ItemCount));
+            }
+            else
+            {
+                _playerStatsManager.ApplyStatModifier(modifier.statType, modifier.value * newItem.ItemCount);
+            }
         }
 
 
@@ -35,14 +42,21 @@ public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
     }
 
     // **丢弃道具**
-    public void RemoveItem(ItemData itemToRemove)
+    public void RemoveItem(ItemBase itemToRemove)
     {
         if (ownedItems.Contains(itemToRemove))
         {
             ownedItems.Remove(itemToRemove);
-            foreach (PlayerStatModifier modifier in itemToRemove.statModifiers)
+            foreach (PlayerStatModifier modifier in itemToRemove.ItemData.statModifiers)
             {
-                _playerStatsManager.RemoveStatModifier(modifier.statType, modifier.value);
+                if (modifier.UseCurve)
+                {
+                    _playerStatsManager.RemoveStatModifier(modifier.statType, modifier.IncrementCurve.Evaluate(itemToRemove.ItemCount));
+                }
+                else
+                {
+                    _playerStatsManager.RemoveStatModifier(modifier.statType, modifier.value * itemToRemove.ItemCount);
+                }
             }
             
 
