@@ -16,6 +16,7 @@ public class WeaponController : Singleton<WeaponController>
     public float returnSpeed = 10f; // 回弹速度
     private bool isReturning = true;
     public Grabbable GrabPoint;
+    public bool ShowSlingShotTrajectory = false;
     public SlingshotTrajectory SlingshotTrajectory;
     public BulletBase BulletPrefab;
     
@@ -95,7 +96,10 @@ public class WeaponController : Singleton<WeaponController>
     {
         isReturning = false;
         grabRig.isKinematic = false;
-        SlingshotTrajectory.isopen = true;
+        if (ShowSlingShotTrajectory)
+        {
+            SlingshotTrajectory.isopen = true;
+        }
     }
 
     private void UpdateDistance()

@@ -15,7 +15,7 @@ using UnityEngine;
     public class ItemData : ScriptableObject
     {
         public string itemName;
-        public bool isEventItem = false;
+        public bool isOnly = false;
         public int MaxLevel = 4;
         public Sprite icon;
         [TextArea (3,20) ]
@@ -24,5 +24,5 @@ using UnityEngine;
         public List<PlayerStatModifier> statModifiers = new List<PlayerStatModifier>();
 
         public bool hasSpecialEffect;  
-        public List<string> specialEffectNames = new List<string>();
+        public List<EnumTools.EffectName> specialEffectNames = new List<EnumTools.EffectName>();
     }

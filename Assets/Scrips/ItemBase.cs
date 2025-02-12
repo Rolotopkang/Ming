@@ -20,6 +20,7 @@ public class ItemBase : MonoBehaviour
         _outline = GetComponent<Outline>();
         _outline.enabled = false;
         _discriptionUI.GetComponent<ItemDescriptionUI>().ItemDescriptionUIRegister(this);
+        UpdateOutLineColor();
     }
 
     public bool CheckCanUpgrade()
@@ -29,7 +30,7 @@ public class ItemBase : MonoBehaviour
 
     public void UpgradeItem(ItemBase CommingItemBase)
     {
-        if (ItemData.isEventItem)
+        if (ItemData.isOnly)
             return;
         if (ItemCount >= ItemData.MaxLevel)
         {
@@ -98,7 +99,7 @@ public class ItemBase : MonoBehaviour
     
     public Color GetItemColor()
     {
-        if (ItemData.isEventItem)
+        if (ItemData.isOnly)
         {
             return Color.green;
         }
