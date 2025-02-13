@@ -86,6 +86,12 @@ public class WeaponController : Singleton<WeaponController>
             Quaternion rotation = Quaternion.AngleAxis(angleOffset, SlingshotTrajectory.transform.up);
             
             BulletBase projectile = Instantiate(BulletPrefab, GrabPoint.transform.position, Quaternion.identity);
+            
+            
+            //TODO lingshi
+            projectile.AttackDmg = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Attack);
+            
+            
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             Vector3 launchVelocity = rotation * lunchVector3() * forceMultiplier;
             rb.linearVelocity = launchVelocity;

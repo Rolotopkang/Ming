@@ -25,5 +25,16 @@ namespace Tools
             PlayerHit,
             EnemyKilled
         }
+        
+        public enum DamageKind
+        {
+            Normal,
+            Critical,
+            Fire,
+            Ice,
+            Poison,
+            Electrical,
+            None
+        }
     }
 }
