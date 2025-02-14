@@ -1,3 +1,4 @@
+using System;
 using Tools;
 using UnityEngine;
 
@@ -5,18 +6,14 @@ namespace Scrips.Effects
 {
     public class ExplosionBulletEffect : EffectBase
     {
-        public void ApplyEffect()
+        public override void ApplyEffect()
         {
-            
-            
             
             base.ApplyEffect();
         }
 
-        public void RemoveEffect()
+        public override void RemoveEffect()
         {
-            
-            
             
             base.RemoveEffect();
         }
