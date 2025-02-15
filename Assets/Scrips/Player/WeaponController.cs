@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Autohand;
 using TMPro.EditorUtilities;
 using Tools;
@@ -90,11 +91,17 @@ public class WeaponController : Singleton<WeaponController>
             
             //TODO lingshi
             projectile.AttackDmg = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Attack);
+            projectile.PenetrationNum = (int)PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletPenetrationCount);
             
             
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             Vector3 launchVelocity = rotation * lunchVector3() * forceMultiplier;
             rb.linearVelocity = launchVelocity;
+
+            EventCenter.Publish(EnumTools.GameEvent.BulletShot, new Dictionary<string, object>
+            {
+                { "BulletBase", projectile }
+            });
         }
     }
 

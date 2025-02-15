@@ -7,11 +7,14 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
     public Dictionary<EnumTools.PlayerStatType, float> baseStats = new Dictionary<EnumTools.PlayerStatType, float>
     {
         { EnumTools.PlayerStatType.Attack, 10f },
+        { EnumTools.PlayerStatType.AttackPercentage, 1f},
         { EnumTools.PlayerStatType.Speed, 5f },
-        { EnumTools.PlayerStatType.Critical ,0.05f},
+        { EnumTools.PlayerStatType.Critical ,0.5f},
+        { EnumTools.PlayerStatType.CriticalAmount, 2f},
         { EnumTools.PlayerStatType.Health, 100f },
         { EnumTools.PlayerStatType.Armor, 0f },
         { EnumTools.PlayerStatType.BulletCount, 1f },
+        { EnumTools.PlayerStatType.BulletPenetrationCount, 1f},
         { EnumTools.PlayerStatType.BulletSpread ,40 }
     };
 

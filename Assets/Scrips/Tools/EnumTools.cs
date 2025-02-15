@@ -5,11 +5,14 @@ namespace Tools
         public enum PlayerStatType
         {
             Attack,
+            AttackPercentage,
             Health,
             Critical,
+            CriticalAmount,
             Armor,
             Speed, 
             BulletCount,
+            BulletPenetrationCount,
             BulletSpread,
         }
         
@@ -17,11 +20,13 @@ namespace Tools
         {
             ShowTrajectoryLine,
             ExplosionBullet,
+            ChainLightningBullet,
         }
         
         public enum GameEvent
         {
             BulletHit,
+            BulletShot,
             PlayerHit,
             EnemyKilled
         }

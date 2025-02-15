@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Multy Shot
   m_EditorClassIdentifier: 
   itemName: Multy Shot
-  isEventItem: 0
+  isOnly: 0
+  MaxLevel: 4
   icon: {fileID: 37763770702065993, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
   description: 'ADD SlingShot one shot''s Bullet Number
 
@@ -21,7 +22,7 @@ MonoBehaviour:
     Current SlingShot Bullet
     Multy Number is<color=#FF5733>{BulletCount}</color>'
   statModifiers:
-  - statType: 5
+  - statType: 7
     value: 1
     UseCurve: 0
     IncrementCurve:
@@ -76,5 +77,4 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   hasSpecialEffect: 0
-  specialEffectNames:
-  - 
+  specialEffectNames: 00000000

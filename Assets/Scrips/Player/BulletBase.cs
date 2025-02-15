@@ -1,23 +1,39 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Scrips.Effects;
 using Tools;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BulletBase : MonoBehaviour
 {
     public float AttackDmg;
     public float lifetime = 5f;
     public GameObject OnHitEffectPrefab;
-
+    public EnumTools.DamageKind DamageKind = EnumTools.DamageKind.Normal;
+    private BulletEffectBase[] _bulletEffectBaseslist;
+    
+    public int PenetrationNum = 1;
+    private bool _isCritical = false;
+    private List<EnemyBase> hitEnemyList = new List<EnemyBase>();
+    
     void Start()
     {
         Destroy(gameObject, lifetime);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
+        //ADD FORCE
+        Rigidbody tmp_rb = other.GetComponent<Rigidbody>();
+        if (tmp_rb != null)
+        {
+            Vector3 vl = GetComponent<Rigidbody>().linearVelocity;
+            Vector3 forceToApply = vl * tmp_rb.mass;
+            tmp_rb.AddForce(forceToApply, ForceMode.Impulse);
+        }
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
@@ -28,11 +44,52 @@ public class BulletBase : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyBase enemyBase = other.transform.GetComponentInParent<EnemyBase>();
-            EventCenter.Publish(EnumTools.GameEvent.BulletHit,new Dictionary<string, object>(
-                
-                ));
-            enemyBase.TakeDamage(AttackDmg,other.GetContact(0).point);
-            Destroy(gameObject);
+            if (hitEnemyList.Contains(enemyBase))
+            {
+                return;
+            }
+            
+            hitEnemyList.Add(enemyBase);
+            PenetrationNum--;
+            
+            //EVENT
+            EventCenter.Publish(EnumTools.GameEvent.BulletHit,new Dictionary<string, object>
+            {
+                {"BulletBase",this},
+                {"EnemyBase",enemyBase}
+            });
+            
+            
+            if (CheckCritical())
+            {
+                _isCritical = true;
+                DamageKind = EnumTools.DamageKind.Critical;
+            }
+            
+            TriggerAllBulletEffect(enemyBase,other.transform.position);
+            enemyBase.TakeDamage(
+                _isCritical? AttackDmg*PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.CriticalAmount) : AttackDmg,
+                DamageKind,
+                transform.position);
+
+            if (PenetrationNum <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private bool CheckCritical()
+    {
+        return Random.value < PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Critical);
+    }
+
+    private void TriggerAllBulletEffect(EnemyBase enemyBase, Vector3 hitPoint)
+    {
+        _bulletEffectBaseslist = GetComponents<BulletEffectBase>();
+        foreach (BulletEffectBase bulletEffectBase in _bulletEffectBaseslist)
+        {
+            bulletEffectBase.TriggerEffect(this,enemyBase, hitPoint);
         }
     }
 }

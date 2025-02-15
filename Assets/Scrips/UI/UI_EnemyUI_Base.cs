@@ -14,7 +14,6 @@ public class UI_EnemyUI_Base : UI_Base
     public void EnemyUIRegister(EnemyBase enemyBase)
     {
         _enemyBase = enemyBase;
-        Debug.Log("registerEnemy");
     }
 
     public override void UpdateUI()

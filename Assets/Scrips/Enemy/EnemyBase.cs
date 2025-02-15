@@ -24,7 +24,7 @@ public class EnemyBase : MonoBehaviour
         CurrentHealth = EnemyData.MaxHealth;
     }
 
-    public void TakeDamage(float dmg , Vector3 position)
+    public void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
     {
         if (isDeath)
         {
@@ -34,7 +34,7 @@ public class EnemyBase : MonoBehaviour
         
         CurrentHealth -= dmg;
         _enemyUIBase.UpdateUI();
-        DamageNumberManager.GetInstance().GetDamageNumberThroughDMGKind(EnumTools.DamageKind.Normal)
+        DamageNumberManager.GetInstance().GetDamageNumberThroughDMGKind(damageKind)
             .Spawn(position, dmg, this.transform);
         CheckDeath();
     }
