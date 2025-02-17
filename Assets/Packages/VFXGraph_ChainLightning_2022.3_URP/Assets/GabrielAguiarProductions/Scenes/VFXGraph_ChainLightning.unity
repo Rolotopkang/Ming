@@ -289,6 +289,11 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: e0718498559cca440af0b8f22badae02, type: 2}
+--- !u!1 &129258660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 1219302893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156218446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,10 +389,30 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 857917671}
   m_SourcePrefab: {fileID: 100100000, guid: ae58a3eb84b37ad4685c80fde6f5c73b, type: 3}
+--- !u!1 &294618395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 3169168945203044002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &373674486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 299063541120424217, guid: ae58a3eb84b37ad4685c80fde6f5c73b, type: 3}
   m_PrefabInstance: {fileID: 156218446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &402633540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 524366637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &405595839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 909268267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &416883874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 681044622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &524366637
 PrefabInstance:
@@ -525,7 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refreshRate: 0.025
-  maximumEnemiesInChain: 6
+  maximumEnemiesInChain: 10
   delayBetweenEachChain: 0
   playerFirePoint: {fileID: 373674486}
   playerEnemyDetector: {fileID: 857917671}
@@ -551,7 +576,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 500
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &857917671
 MonoBehaviour:
@@ -565,6 +590,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a205d542f6d0cec4e951791dd818861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesInRange:
+  - {fileID: 294618395}
+  - {fileID: 1375099219}
+  - {fileID: 402633540}
+  - {fileID: 405595839}
+  - {fileID: 1224816393}
+  - {fileID: 1815433055}
+  - {fileID: 1376496372}
+  - {fileID: 416883874}
+  - {fileID: 129258660}
 --- !u!1001 &901896818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,6 +836,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+--- !u!1 &1224816393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 901896818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1375099219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 927206974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1376496372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 1432411560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1387148617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -958,6 +1008,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+--- !u!1 &1815433055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1471293809101729101, guid: 2e34ed46a3c775844896c4f4f4326d15, type: 3}
+  m_PrefabInstance: {fileID: 1387148617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856035899
 GameObject:
   m_ObjectHideFlags: 0

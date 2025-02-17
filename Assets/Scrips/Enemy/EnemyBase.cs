@@ -22,6 +22,12 @@ public class EnemyBase : MonoBehaviour
     private void OnEnable()
     {
         CurrentHealth = EnemyData.MaxHealth;
+        EnemyManager.GetInstance()?.RegisterEnemy(this);
+    }
+
+    private void OnDestroy()
+    {
+        EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
 
     public void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
