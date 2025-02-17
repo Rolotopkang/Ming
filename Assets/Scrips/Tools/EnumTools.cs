@@ -14,6 +14,9 @@ namespace Tools
             BulletCount,
             BulletPenetrationCount,
             BulletSpread,
+            ChainLightningDmgPercentage,
+            ChainLightningMaxCount,
+            ChainLightningRange
         }
         
         public enum EffectName

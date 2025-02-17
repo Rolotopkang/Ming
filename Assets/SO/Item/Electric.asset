@@ -17,6 +17,33 @@ MonoBehaviour:
   MaxLevel: 4
   icon: {fileID: 8158563787144471110, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
   description: Electric
-  statModifiers: []
+  statModifiers:
+  - statType: 10
+    value: 0.05
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - statType: 11
+    value: 1
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - statType: 12
+    value: 1
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
   hasSpecialEffect: 1
   specialEffectNames: 02000000

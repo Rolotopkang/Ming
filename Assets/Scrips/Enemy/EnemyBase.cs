@@ -7,6 +7,8 @@ public class EnemyBase : MonoBehaviour
 {
     public EnemyData EnemyData;
 
+
+    public Transform Center;
     public float CurrentHealth;
     public bool isDeath;
 
@@ -22,12 +24,12 @@ public class EnemyBase : MonoBehaviour
     private void OnEnable()
     {
         CurrentHealth = EnemyData.MaxHealth;
-        EnemyManager.GetInstance()?.RegisterEnemy(this);
+        EnemyManager.GetInstance().RegisterEnemy(this);
     }
 
     private void OnDestroy()
     {
-        EnemyManager.GetInstance()?.UnRegisterEnemy(this);
+        EnemyManager.GetInstance().UnRegisterEnemy(this);
     }
 
     public void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)

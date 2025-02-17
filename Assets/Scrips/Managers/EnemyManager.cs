@@ -26,18 +26,20 @@ public class EnemyManager : Singleton<EnemyManager>
     /// </summary>
     /// <param name="currentPos">基准位置</param>
     /// <param name="rangeLimit">范围</param>
+    /// <param name="enemyBlackList">排除list</param>
     /// <returns></returns>
-    public EnemyBase GetClosestEnemy(Transform currentPos, float rangeLimit)
+    public EnemyBase GetClosestEnemy(Transform currentPos, float rangeLimit, List<EnemyBase> enemyBlackList)
     {
         if (CurrentEnemyBaseList.Count>0)
         {
             EnemyBase bestTarget = null;
             float closestDistanceSqr = Mathf.Infinity;
-            foreach (EnemyBase enemyBase in CurrentEnemyBaseList)
+            List<EnemyBase> result = CurrentEnemyBaseList.Except(enemyBlackList).ToList();
+            Debug.Log(result);
+            foreach (EnemyBase enemyBase in result)
             {
                 Vector3 directionToTarget = enemyBase.transform.position - currentPos.position;
                 float dSToTarget = directionToTarget.magnitude;
-
                 if (dSToTarget < closestDistanceSqr)
                 {
                     closestDistanceSqr = dSToTarget;

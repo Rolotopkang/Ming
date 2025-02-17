@@ -15,7 +15,10 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Armor, 0f },
         { EnumTools.PlayerStatType.BulletCount, 1f },
         { EnumTools.PlayerStatType.BulletPenetrationCount, 1f},
-        { EnumTools.PlayerStatType.BulletSpread ,40 }
+        { EnumTools.PlayerStatType.BulletSpread ,40 },
+        { EnumTools.PlayerStatType.ChainLightningDmgPercentage, 0.2f},
+        { EnumTools.PlayerStatType.ChainLightningMaxCount, 1},
+        { EnumTools.PlayerStatType.ChainLightningRange, 5f},
     };
 
     private Dictionary<EnumTools.PlayerStatType, float> statModifiers = new Dictionary<EnumTools.PlayerStatType, float>();
