@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3565185281723819524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5652726725102849276}
+  - component: {fileID: 3436223209164116090}
+  m_Layer: 0
+  m_Name: ChainLightningGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5652726725102849276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565185281723819524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.650417, y: 0.4273853, z: -3.0023708}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3436223209164116090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3565185281723819524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c8641dfe0090341bae6325d98ebe5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refreshRate: 0.01
+  lineRendererPrefab: {fileID: 9043806293780992347, guid: 265561c75d339d14f97c994a63702ea5, type: 3}
+  impactPrefab: {fileID: 8509476954776975093, guid: 221dffab5b9bfa1408755b7669599072, type: 3}
+  activePrefab: {fileID: 8509476954776975093, guid: 78db6cc3b5659374ea09e11e75fab967, type: 3}
+  delayBetweenEachChain: 0.1
