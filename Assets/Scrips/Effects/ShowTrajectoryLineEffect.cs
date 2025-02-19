@@ -7,13 +7,15 @@ namespace Scrips.Effects
     {
         public override void ApplyEffect()
         {
-            WeaponController.GetInstance().ShowSlingShotTrajectory = true;
+            var instance = WeaponController.GetInstance();
+            if (instance != null) instance.ShowSlingShotTrajectory = true;
             base.ApplyEffect();
         }
 
         public override void RemoveEffect()
         {
-            WeaponController.GetInstance().ShowSlingShotTrajectory = false;
+            var instance = WeaponController.GetInstance();
+            if (instance != null) instance.ShowSlingShotTrajectory = false;
             base.RemoveEffect();
         }
         

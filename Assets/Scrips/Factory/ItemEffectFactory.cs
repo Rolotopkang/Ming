@@ -9,9 +9,10 @@ public static class ItemEffectFactory
     private static readonly Dictionary<EnumTools.EffectName, Type> effectRegistry = new Dictionary<EnumTools.EffectName, Type>
     {
         { EnumTools.EffectName.ShowTrajectoryLine, typeof(ShowTrajectoryLineEffect) },
-        
         { EnumTools.EffectName.ExplosionBullet, typeof(ExplosionBulletEffect) },
-        { EnumTools.EffectName.ChainLightningBullet, typeof(ChainLightningBulletEffect)}
+        { EnumTools.EffectName.ChainLightningBullet, typeof(ChainLightningBulletEffect)},
+        { EnumTools.EffectName.Fire, typeof(FireBulletEffect)},
+        { EnumTools.EffectName.Poison, typeof(PoisonBulletEffect)},
     };
     
     public static IItemEffect CreateEffect(EnumTools.EffectName effectName)

@@ -13,11 +13,11 @@ public class ItemSlot : MonoBehaviour
     
     public void OnPlaceEvent(PlacePoint point, Grabbable grabbable)
     {
-        PlayerItemSlotManager.GetInstance()!.AddItem(grabbable.GetComponent<ItemBase>()); 
+        PlayerItemSlotManager.GetInstance()?.AddItem(grabbable.GetComponent<ItemBase>()); 
     }
     
     public void OnRemoveEvent(PlacePoint point, Grabbable grabbable)
     {
-        PlayerItemSlotManager.GetInstance()!.RemoveItem(grabbable.GetComponent<ItemBase>()); 
+        PlayerItemSlotManager.GetInstance()?.RemoveItem(grabbable.GetComponent<ItemBase>()); 
     }
 }

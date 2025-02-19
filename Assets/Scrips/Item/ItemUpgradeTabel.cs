@@ -15,7 +15,7 @@ public class ItemUpgradeTabel : MonoBehaviour
             ItemBase u1 = child1.placedObject.GetComponent<ItemBase>();
             ItemBase u2 = child2.placedObject.GetComponent<ItemBase>();
 
-            if (u1.CheckCanUpgrade() && u2.CheckCanUpgrade())
+            if (u1.CheckCanUpgrade() && u2.CheckCanUpgrade() && u1.ItemData.itemName == u2.ItemData.itemName)
             {
                 u1.UpgradeItem(u2);
                 Grabbable tmp_g = child1.placedObject;
