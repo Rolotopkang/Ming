@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using Scrips.Effects;
 using Tools;
 using Unity.Mathematics;
@@ -12,6 +10,7 @@ public class BulletBase : MonoBehaviour
     public float AttackDmg;
     public float lifetime = 5f;
     public GameObject OnHitEffectPrefab;
+    public GameObject OnHitEnemyEffectPrefab;
     public EnumTools.DamageKind DamageKind = EnumTools.DamageKind.Normal;
     private BulletEffectBase[] _bulletEffectBaseslist;
     
@@ -51,7 +50,7 @@ public class BulletBase : MonoBehaviour
             
             hitEnemyList.Add(enemyBase);
             PenetrationNum--;
-            
+            Instantiate(OnHitEnemyEffectPrefab, transform.position, quaternion.identity);
             //EVENT
             EventCenter.Publish(EnumTools.GameEvent.BulletHit,new Dictionary<string, object>
             {

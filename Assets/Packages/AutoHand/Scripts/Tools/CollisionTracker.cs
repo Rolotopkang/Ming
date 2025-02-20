@@ -97,14 +97,26 @@ namespace Autohand {
                 collisions.Clear();
             }
 
-            if(!disableTriggersTracking) {
-                for(int i = 0; i < triggerObjects.Count; i++) {
-                    if(!triggerObjects[i].activeInHierarchy ||
-                        !nextTriggerObjects.Contains(triggerObjects[i])) {
-                        if(OnTriggerLastExit != null)
-                            OnTriggerLastExit.Invoke(triggerObjects[i]);
+            // if(!disableTriggersTracking) {
+            //     for(int i = 0; i < triggerObjects.Count; i++) {
+            //         if(!triggerObjects[i].activeInHierarchy ||
+            //             !nextTriggerObjects.Contains(triggerObjects[i])) {
+            //             if(OnTriggerLastExit != null)
+            //                 OnTriggerLastExit.Invoke(triggerObjects[i]);
+            //         }
+            //     }
+                
+                if(!disableTriggersTracking) {
+                    for(int i = 0; i < triggerObjects.Count; i++) {
+                        if (triggerObjects[i] == null || 
+                            !triggerObjects[i].gameObject ||  // 确保 GameObject 仍然存在
+                            !triggerObjects[i].activeInHierarchy || 
+                            !nextTriggerObjects.Contains(triggerObjects[i])) {
+    
+                            OnTriggerLastExit?.Invoke(triggerObjects[i]); // 使用 null 条件运算符，避免 NullReferenceException
+                        }
                     }
-                }
+            
 
                 for(int i = 0; i < nextTriggerObjects.Count; i++) {
                     if(nextTriggerObjects[i] == null ||
