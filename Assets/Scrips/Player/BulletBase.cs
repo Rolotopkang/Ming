@@ -10,6 +10,7 @@ public class BulletBase : MonoBehaviour
     public float AttackDmg;
     public float lifetime = 5f;
     public GameObject OnHitEffectPrefab;
+    public GameObject OnHitEnemyEffectPrefab;
     public EnumTools.DamageKind DamageKind = EnumTools.DamageKind.Normal;
     private BulletEffectBase[] _bulletEffectBaseslist;
     
@@ -35,7 +36,7 @@ public class BulletBase : MonoBehaviour
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
+            Instantiate(OnHitEnemyEffectPrefab, transform.position, quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -49,7 +50,7 @@ public class BulletBase : MonoBehaviour
             
             hitEnemyList.Add(enemyBase);
             PenetrationNum--;
-            
+            Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
             //EVENT
             EventCenter.Publish(EnumTools.GameEvent.BulletHit,new Dictionary<string, object>
             {
