@@ -21,8 +21,8 @@ public class ItemUpgradeTabel : MonoBehaviour
                 Grabbable tmp_g = child1.placedObject;
                 Grabbable tmp_D = child2.placedObject;
                 child1.Remove();
-                child2.Remove();
-                Destroy(tmp_D.gameObject);
+                child2.Remove(); 
+                tmp_D.DoDestroy();
                 tmp_g.transform.position = OutCome.transform.position;
             }
             else

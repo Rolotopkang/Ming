@@ -43,8 +43,8 @@ public class ItemBase : MonoBehaviour
             ItemCount = ItemData.MaxLevel;
         }
         
-        _discriptionUI.GetComponent<ItemDescriptionUI>().UpdateUI();
-        UpdateOutLineColor();
+        
+        UpdateColor();
     }
 
     public String DiscriptionToString()
@@ -62,6 +62,12 @@ public class ItemBase : MonoBehaviour
         });
     }
 
+    public void UpdateColor()
+    {
+        UpdateOutLineColor();
+        _discriptionUI.GetComponent<ItemDescriptionUI>().UpdateUI();
+    }
+
     private void UpdateOutLineColor()
     {
         _outline.OutlineColor = GetItemColor();
@@ -73,6 +79,7 @@ public class ItemBase : MonoBehaviour
         {
             _discriptionUI.SetActive(true);
             _outline.enabled = true;
+            UpdateColor();
         }
         else
         {
