@@ -36,7 +36,7 @@ public class BulletBase : MonoBehaviour
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Instantiate(OnHitEnemyEffectPrefab, transform.position, quaternion.identity);
+            Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -50,7 +50,7 @@ public class BulletBase : MonoBehaviour
             
             hitEnemyList.Add(enemyBase);
             PenetrationNum--;
-            Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
+            Instantiate(OnHitEnemyEffectPrefab, transform.position, quaternion.identity);
             //EVENT
             EventCenter.Publish(EnumTools.GameEvent.BulletHit,new Dictionary<string, object>
             {
