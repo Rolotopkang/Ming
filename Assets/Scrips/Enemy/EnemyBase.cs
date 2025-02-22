@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
 
     public Transform Center;
-    public float CurrentHealth;
+    public float CurrentHealth = 100;
     public bool isDeath;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
