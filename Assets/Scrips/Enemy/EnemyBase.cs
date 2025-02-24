@@ -4,29 +4,49 @@ using Scrips.Buffs;
 using Scrips.Factory;
 using Tools;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 {
     public EnemyData EnemyData;
 
-
+    
     public Transform Center;
     public float CurrentHealth = 100;
     public bool isDeath;
+    public UnityEvent OnDeath;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
     private UI_EnemyUI_Base _enemyUIBase;
+    
+    private Rigidbody[] ragdollRigidbodies;
+    private Joint[] joints;
+    private Animator animator;
+    private CapsuleCollider[] _colliders;
 
     private void Awake()
     {
         isDeath = false;
         _enemyUIBase = GetComponentInChildren<UI_EnemyUI_Base>();
         _enemyUIBase.EnemyUIRegister(this);
+        InitRagdoll();
+    }
+
+    private void InitRagdoll()
+    {
+        // 获取角色的 Animator
+        animator = GetComponent<Animator>();
+
+        // 获取所有子节点的 Rigidbody 和 Joint
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
+        joints = GetComponentsInChildren<Joint>();
+        _colliders = GetComponentsInChildren<CapsuleCollider>();
     }
 
     private void Start()
     {
+        SetRagdollActive(false);
         InvokeRepeating(nameof(UpdateSec), 0f,1f);
     }
 
@@ -105,6 +125,27 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         _enemyUIBase.UpdateBuffUI();
     }
     
+    private void SetRagdollActive(bool isActive)
+    {
+        animator.enabled = !isActive;
+        // 控制每个关节的 Rigidbody 是否由物理引擎控制
+        foreach (Rigidbody rb in ragdollRigidbodies)
+        {
+            rb.isKinematic = !isActive; // 活着时 isKinematic = true，死亡时 isKinematic = false
+        }
+
+        foreach (CapsuleCollider capsuleCollider in _colliders)
+        {
+            capsuleCollider.enabled = isActive;
+        }
+        
+        // 如果不想影响 Joint 位置，也可以禁用关节组件
+        foreach (Joint joint in joints)
+        {
+            joint.enableCollision = isActive; // 死亡时 Joint 生效
+        }
+    }
+    
     public void CheckDeath()
     {
         if (CurrentHealth <= 0)
@@ -116,6 +157,9 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     public void Death()
     {
         isDeath = true;
+        OnDeath?.Invoke();
+        SetRagdollActive(true);
+        EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
 
     public float GetHealthPercent()

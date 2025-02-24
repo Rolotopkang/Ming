@@ -18,7 +18,10 @@ public class EnemyManager : Singleton<EnemyManager>
 
     public void UnRegisterEnemy(EnemyBase enemyBase)
     {
-        CurrentEnemyBaseList?.Remove(enemyBase);
+        if (CurrentEnemyBaseList.Contains(enemyBase))
+        {
+            CurrentEnemyBaseList?.Remove(enemyBase);
+        }
     }
 
     /// <summary>
