@@ -30,7 +30,7 @@ public class UI_EnemyUI_Base : UI_Base
             return;
         }
         EnemyName.text = _enemyBase.EnemyData.EnemyName;
-        HealthCount.text = string.Concat(_enemyBase.CurrentHealth.ToString("F1"), "/", _enemyBase.EnemyData.MaxHealth.ToString("F1"));
+        HealthCount.text = string.Concat(_enemyBase.CurrentHealth.ToString("F1"), "/", _enemyBase.GetMaxHealth().ToString("F1"));
         HealthFill.fillAmount = _enemyBase.GetHealthPercent();
     }
 

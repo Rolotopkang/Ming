@@ -4,6 +4,9 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public string EnemyName;
-    public float MaxHealth;
+    public AnimationCurve MaxHPCurve;
+    public AnimationCurve SpeedCurve;
+    public AnimationCurve BaseAtkCurve;
     
+
 }

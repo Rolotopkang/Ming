@@ -27,7 +27,7 @@ public class ChainLightningGenerator : MonoBehaviour
         _chainMaxCount = ChainMaxCount;
         _maxChainDistance = MaxChainDistance;
         _hitEnemy = hitEnemy;
-        counter = _chainMaxCount - 1;
+        counter = _chainMaxCount;
         enemiesInChain.Add(_hitEnemy);
         CanStart = true;
     }

@@ -22,10 +22,10 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     
     private Rigidbody[] ragdollRigidbodies;
     private Joint[] joints;
-    private Animator animator;
+    protected Animator animator;
     private CapsuleCollider[] _colliders;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         isDeath = false;
         _enemyUIBase = GetComponentInChildren<UI_EnemyUI_Base>();
@@ -35,28 +35,25 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
     private void InitRagdoll()
     {
-        // 获取角色的 Animator
         animator = GetComponent<Animator>();
-
-        // 获取所有子节点的 Rigidbody 和 Joint
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
         joints = GetComponentsInChildren<Joint>();
         _colliders = GetComponentsInChildren<CapsuleCollider>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetRagdollActive(false);
         InvokeRepeating(nameof(UpdateSec), 0f,1f);
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
-        CurrentHealth = EnemyData.MaxHealth;
+        CurrentHealth = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
         EnemyManager.GetInstance()?.RegisterEnemy(this);
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
@@ -66,7 +63,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         TriggerBuffs();
     }
 
-    public void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
+    public virtual void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
     {
         if (isDeath)
         {
@@ -164,12 +161,12 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
     public float GetHealthPercent()
     {
-        return CurrentHealth / EnemyData.MaxHealth;
+        return CurrentHealth / EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
     }
 
     public float GetMaxHealth()
     {
-        return EnemyData.MaxHealth;
+        return EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
     }
 
     public Vector3 GetCenter()
@@ -181,4 +178,5 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     {
         return _buffBaseList;
     }
+
 }

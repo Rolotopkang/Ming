@@ -37,7 +37,7 @@ MonoBehaviour:
       m_PostInfinity: 0
       m_RotationOrder: 0
   - statType: 12
-    value: 1
+    value: 5
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
