@@ -1,8 +1,52 @@
+using System;
+using Scrips.Buffs;
 using Tools;
 using UnityEngine;
 
-public class Player : Singleton<Player>
+public class Player : Singleton<Player>,IHurtAble
 {
+    public float CurrentHP;
+    private void Start()
+    {
+        CurrentHP = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
+    }
+
+    public void TakeDamage(float dmg, EnumTools.DamageKind damageKind, Vector3 position)
+    {
+        CurrentHP -= dmg;
+        CheckDeath();
+    }
+
+    public void CheckDeath()
+    {
+        if (CurrentHP<=0)
+        {
+            Death();
+        }
+    }
+
+    public float GetHealthPercent()
+    {
+        return CurrentHP / GetMaxHealth();
+    }
+
+    public float GetMaxHealth()
+    {
+        return PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
+    }
+
+
+
+    public void Death()
+    {
+        Debug.Log("你寄了");
+    }
+
+    public Vector3 GetCenter()
+    {
+        return Vector3.zero;
+    }
+    
     public Transform GetRoot()
     {
         return transform.GetChild(0);

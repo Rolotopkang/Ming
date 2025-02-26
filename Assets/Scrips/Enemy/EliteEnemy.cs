@@ -4,9 +4,12 @@ using BehaviorDesigner.Runtime.Tasks.Movement;
 using Tools;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class EliteEnemy : EnemyBase
 {
+    public Vector3 AttackHitboxOffset = new Vector3(0, 1, 1); // 立方体相对怪物位置的偏移
+    public Vector3 AttackHitboxSize = new Vector3(2, 2, 2); // 立方体的尺寸
     private BehaviorTree _behaviorTree;
     private NavMeshAgent _agent;
 
@@ -20,7 +23,7 @@ public class EliteEnemy : EnemyBase
     protected override void Start()
     {
         base.Start();
-        // _behaviorTree.FindTask<Seek>().m_Target = Player.GetInstance().GetRoot().gameObject;
+        _behaviorTree.SetVariableValue("Player", Player.GetInstance().GetRoot().gameObject);
 
     }
 
@@ -40,5 +43,38 @@ public class EliteEnemy : EnemyBase
     {
         base.TakeDamage(dmg, damageKind, position);
         animator.SetTrigger("hit");
+    }
+    
+    public void CheckAttackHit()
+    {
+        Vector3 boxCenter = transform.position + transform.TransformDirection(AttackHitboxOffset);
+        
+        Collider[] hitColliders = Physics.OverlapBox(boxCenter, AttackHitboxSize * 0.5f, transform.rotation);
+
+        if (hitColliders.Length > 0)
+        {
+            foreach (Collider hit in hitColliders)
+            {
+                if (hit.transform.GetComponentInParent<Player>())
+                {
+                    Debug.Log("Hit player: ");
+                    Player.GetInstance().TakeDamage(EnemyData.BaseAtkCurve.Evaluate(RoguelikeManager.GetInstance().layer),EnumTools.DamageKind.None,Vector3.zero);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("No player detected in attack range.");
+        }
+    }
+
+    // 在Scene视图中显示检测范围
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 boxCenter = transform.position + transform.TransformDirection(AttackHitboxOffset);
+        Gizmos.color = Color.red;
+        Gizmos.matrix = Matrix4x4.TRS(boxCenter, transform.rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, AttackHitboxSize);
     }
 }
