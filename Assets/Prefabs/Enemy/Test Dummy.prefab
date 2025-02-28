@@ -977,6 +977,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 6574666763684349422}
+    - target: {fileID: 6264346376860894468, guid: 48ef9e7b2fb508743ac5a9a55229c1f8, type: 3}
+      propertyPath: maxScale
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264346376860894468, guid: 48ef9e7b2fb508743ac5a9a55229c1f8, type: 3}
+      propertyPath: minScale
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264346376860894468, guid: 48ef9e7b2fb508743ac5a9a55229c1f8, type: 3}
+      propertyPath: trueOffset.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6615954288167290787, guid: 48ef9e7b2fb508743ac5a9a55229c1f8, type: 3}
       propertyPath: m_Name
       value: EnemyUI

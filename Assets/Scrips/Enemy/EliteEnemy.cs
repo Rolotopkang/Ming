@@ -5,6 +5,7 @@ using Tools;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class EliteEnemy : EnemyBase
 {
@@ -24,7 +25,13 @@ public class EliteEnemy : EnemyBase
     {
         base.Start();
         _behaviorTree.SetVariableValue("Player", Player.GetInstance().GetRoot().gameObject);
+        GetComponent<NavMeshAgent>().avoidancePriority = Random.Range(30, 50);
+    }
 
+    public override void Death()
+    {
+        base.Death();
+        animator.SetTrigger("death");
     }
 
     private void Update()

@@ -36,6 +36,11 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
         return _itemDictionary[itemName];
     }
 
+    public Dictionary<String, GameObject> GetItemDictionary()
+    {
+        return _itemDictionary;
+    }
+
     public GameObject GetRandomItem()
     {
         return _itemDictionary.Values.ElementAt(Random.Range(0, _itemDictionary.Count));

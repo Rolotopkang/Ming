@@ -43,7 +43,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
     protected virtual void Start()
     {
-        SetRagdollActive(false);
+        // SetRagdollActive(false);
         InvokeRepeating(nameof(UpdateSec), 0f,1f);
     }
 
@@ -151,11 +151,11 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         }
     }
 
-    public void Death()
+    public virtual void Death()
     {
         isDeath = true;
         OnDeath?.Invoke();
-        SetRagdollActive(true);
+
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
 
