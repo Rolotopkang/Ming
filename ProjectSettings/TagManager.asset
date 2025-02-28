@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Item
   - CinemachineTarget
+  - SlingShot
   layers:
   - Default
   - TransparentFX

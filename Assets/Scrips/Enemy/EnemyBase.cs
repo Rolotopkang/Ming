@@ -4,39 +4,56 @@ using Scrips.Buffs;
 using Scrips.Factory;
 using Tools;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 {
     public EnemyData EnemyData;
 
-
+    
     public Transform Center;
-    public float CurrentHealth;
+    public float CurrentHealth = 100;
     public bool isDeath;
+    public UnityEvent OnDeath;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
     private UI_EnemyUI_Base _enemyUIBase;
+    
+    private Rigidbody[] ragdollRigidbodies;
+    private Joint[] joints;
+    protected Animator animator;
+    private CapsuleCollider[] _colliders;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         isDeath = false;
         _enemyUIBase = GetComponentInChildren<UI_EnemyUI_Base>();
         _enemyUIBase.EnemyUIRegister(this);
+        InitRagdoll();
     }
 
-    private void Start()
+    private void InitRagdoll()
     {
+        animator = GetComponent<Animator>();
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
+        joints = GetComponentsInChildren<Joint>();
+        _colliders = GetComponentsInChildren<CapsuleCollider>();
+    }
+
+    protected virtual void Start()
+    {
+        // SetRagdollActive(false);
         InvokeRepeating(nameof(UpdateSec), 0f,1f);
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
-        CurrentHealth = EnemyData.MaxHealth;
+        CurrentHealth = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
         EnemyManager.GetInstance()?.RegisterEnemy(this);
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
@@ -46,7 +63,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         TriggerBuffs();
     }
 
-    public void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
+    public virtual void TakeDamage(float dmg ,EnumTools.DamageKind damageKind ,Vector3 position)
     {
         if (isDeath)
         {
@@ -105,6 +122,27 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         _enemyUIBase.UpdateBuffUI();
     }
     
+    private void SetRagdollActive(bool isActive)
+    {
+        animator.enabled = !isActive;
+        // 控制每个关节的 Rigidbody 是否由物理引擎控制
+        foreach (Rigidbody rb in ragdollRigidbodies)
+        {
+            rb.isKinematic = !isActive; // 活着时 isKinematic = true，死亡时 isKinematic = false
+        }
+
+        foreach (CapsuleCollider capsuleCollider in _colliders)
+        {
+            capsuleCollider.enabled = isActive;
+        }
+        
+        // 如果不想影响 Joint 位置，也可以禁用关节组件
+        foreach (Joint joint in joints)
+        {
+            joint.enableCollision = isActive; // 死亡时 Joint 生效
+        }
+    }
+    
     public void CheckDeath()
     {
         if (CurrentHealth <= 0)
@@ -113,19 +151,22 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         }
     }
 
-    public void Death()
+    public virtual void Death()
     {
         isDeath = true;
+        OnDeath?.Invoke();
+
+        EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
 
     public float GetHealthPercent()
     {
-        return CurrentHealth / EnemyData.MaxHealth;
+        return CurrentHealth / EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
     }
 
     public float GetMaxHealth()
     {
-        return EnemyData.MaxHealth;
+        return EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer);
     }
 
     public Vector3 GetCenter()
@@ -137,4 +178,5 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     {
         return _buffBaseList;
     }
+
 }

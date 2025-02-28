@@ -18,7 +18,10 @@ public class EnemyManager : Singleton<EnemyManager>
 
     public void UnRegisterEnemy(EnemyBase enemyBase)
     {
-        CurrentEnemyBaseList?.Remove(enemyBase);
+        if (CurrentEnemyBaseList.Contains(enemyBase))
+        {
+            CurrentEnemyBaseList?.Remove(enemyBase);
+        }
     }
 
     /// <summary>
@@ -35,7 +38,6 @@ public class EnemyManager : Singleton<EnemyManager>
             EnemyBase bestTarget = null;
             float closestDistanceSqr = Mathf.Infinity;
             List<EnemyBase> result = CurrentEnemyBaseList.Except(enemyBlackList).ToList();
-            Debug.Log(result);
             foreach (EnemyBase enemyBase in result)
             {
                 Vector3 directionToTarget = enemyBase.transform.position - currentPos.position;
