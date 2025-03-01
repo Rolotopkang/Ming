@@ -50,6 +50,14 @@ namespace Tools
             ShieldArmed,
         }
         
+        public enum EnemyKind
+        {
+            Melee,
+            Range,
+            Elite,
+            Boss,
+        }
+        
         public enum GameEvent
         {
             BulletHit,

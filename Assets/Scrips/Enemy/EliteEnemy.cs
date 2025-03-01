@@ -21,6 +21,18 @@ public class EliteEnemy : EnemyBase
         _agent = GetComponent<NavMeshAgent>();
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        EnemySpawnManager.GetInstance()?.RegisterWaveEnemy(this);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        EnemySpawnManager.GetInstance()?.UnRegisterWaveEnemy(this);
+    }
+
     protected override void Start()
     {
         base.Start();

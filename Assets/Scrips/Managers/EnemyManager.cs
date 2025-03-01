@@ -7,6 +7,7 @@ public class EnemyManager : Singleton<EnemyManager>
 {
     public List<EnemyBase> CurrentEnemyBaseList;
 
+
     public void RegisterEnemy(EnemyBase enemyBase)
     {
         if (CurrentEnemyBaseList.Contains(enemyBase))
@@ -61,4 +62,5 @@ public class EnemyManager : Singleton<EnemyManager>
             return null;
         }
     }
+    
 }
