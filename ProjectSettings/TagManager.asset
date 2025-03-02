@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Enemy
   - Item
+  - CinemachineTarget
+  - SlingShot
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - HandPlayer
   - Bullet
   - IgnoreDistanceGrab
-  - 
+  - VFX
   - 
   - 
   - 

@@ -758,7 +758,7 @@ RectTransform:
   m_GameObject: {fileID: 5329433920374568280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0011106349, y: 0.001110635, z: 0.0011106349}
+  m_LocalScale: {x: 0.0039770724, y: 0.003977073, z: 0.0039770724}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 719552929592977417}
@@ -845,10 +845,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  trueOffset: {x: 0, y: 1.6, z: 0}
+  trueOffset: {x: 0, y: 0.9, z: 0}
   offset: {x: 0, y: 0.5, z: 0}
-  minScale: 0.001
-  maxScale: 0.002
+  minScale: 0.004
+  maxScale: 0.005
   minDistance: 1
   maxDistance: 5
   followSmoothTime: 0.2
@@ -1217,7 +1217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6266230899969125327}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1226,7 +1226,7 @@ Transform:
   - {fileID: 8787045998030830127}
   - {fileID: 1539568512683637687}
   m_Father: {fileID: 5890786952610315294}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &6376159610956524287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6651171568874641287}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.64, y: 0.007, z: -22.58}
   m_LocalScale: {x: 0.39896, y: 0.39896, z: 0.39896}
   m_ConstrainProportionsScale: 0
@@ -1446,10 +1446,10 @@ NavMeshAgent:
   m_GameObject: {fileID: 6651171568874641287}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1

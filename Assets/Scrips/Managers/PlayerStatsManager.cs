@@ -11,7 +11,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Speed, 5f },
         { EnumTools.PlayerStatType.Critical ,0.5f},
         { EnumTools.PlayerStatType.CriticalAmount, 2f},
-        { EnumTools.PlayerStatType.Health, 100f },
+        { EnumTools.PlayerStatType.Health, 200f },
         { EnumTools.PlayerStatType.Armor, 0f },
         { EnumTools.PlayerStatType.BulletCount, 1f },
         { EnumTools.PlayerStatType.BulletPenetrationCount, 1f},
