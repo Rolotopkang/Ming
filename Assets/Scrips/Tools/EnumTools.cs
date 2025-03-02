@@ -50,12 +50,36 @@ namespace Tools
             ShieldArmed,
         }
         
+        public enum EnemyKind
+        {
+            Melee,
+            Range,
+            Elite,
+            Boss,
+        }
+        
+        public enum RoomKind
+        {
+            Item,
+            Money,
+            Health,
+            Event,
+            Store,
+            Boss,
+            Test,
+            None,
+        }
+        
         public enum GameEvent
         {
             BulletHit,
             BulletShot,
             PlayerHit,
-            EnemyKilled
+            EnemyKilled,
+            LevelStart,
+            LevelEnd,
+            GameStart,
+            PlayerDeath,
         }
         
         public enum DamageKind

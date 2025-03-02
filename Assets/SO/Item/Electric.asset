@@ -19,7 +19,7 @@ MonoBehaviour:
   description: Electric
   statModifiers:
   - statType: 10
-    value: 0.05
+    value: 999
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

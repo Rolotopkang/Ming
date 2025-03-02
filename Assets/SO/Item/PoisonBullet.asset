@@ -19,7 +19,7 @@ MonoBehaviour:
   description: PoisonBullet
   statModifiers:
   - statType: 18
-    value: 0.01
+    value: 0.05
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
