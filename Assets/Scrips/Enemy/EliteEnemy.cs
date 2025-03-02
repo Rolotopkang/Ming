@@ -43,7 +43,9 @@ public class EliteEnemy : EnemyBase
     public override void Death()
     {
         base.Death();
+        EnemySpawnManager.GetInstance()?.UnRegisterWaveEnemy(this);
         animator.SetTrigger("death");
+        Destroy(gameObject,2f);
     }
 
     private void Update()

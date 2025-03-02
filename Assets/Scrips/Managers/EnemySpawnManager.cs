@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Scrips.Managers;
 using Tools;
@@ -18,11 +19,6 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
     [Header("NavMesh Settings")]
     public float checkRadius = 1f; // 碰撞检测半径
     public LayerMask obstacleLayer; // 障碍物检测层
-
-    [Header("Gizmo Settings")]
-    public Color spawnAreaColor = new Color(0f, 0f, 1f, 0.3f); // 正方形边框颜色
-    public Color validPointColor = Color.green; // 合法点颜色
-    public Color invalidPointColor = Color.red; // 非法点颜色
     
     [Header("Test Settings")]
     public int spawnCount = 5;
@@ -30,6 +26,8 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
     private Vector3[] testPoints; // 存储检测的点
     private bool[] validPoints; // 对应点是否合法
     public List<EnemyBase> CurrentWaveList;
+    private bool working = false;
+    private Vector3 spawnRoot;
 
     public void RegisterWaveEnemy(EnemyBase enemyBase)
     {
@@ -48,8 +46,10 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
         }
     }
     
-    public async void SpawnEnemy()
+    public async void SpawnEnemy(Vector2 _spawnAreaSize, Vector3 root)
     {
+        spawnAreaSize = _spawnAreaSize;
+        spawnRoot = root;
         List<BigWave> currentBigWaveList = RoguelikeManager.GetInstance().BigLayer switch
         {
             1 => Waves1,
@@ -63,8 +63,10 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             return;
         }
 
+        working = true;
         BigWave currentWave = currentBigWaveList[Random.Range(0, currentBigWaveList.Count)];
         int currentLayer = RoguelikeManager.GetInstance().layer;
+        
         foreach (Wave wave in currentWave.bigWaveList)
         {
             foreach (EnemySpawnInfo enemySpawnInfo in wave.enemySpawnInfos)
@@ -80,52 +82,25 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
                 await UniTask.WaitUntil(() => CurrentWaveList.Count <= 0);
             }
 
-            await UniTask.WaitForSeconds((int)currentWave.spawnInterval);
-        }  
-
-    }
-    private void OnDrawGizmos() {
-        // 绘制刷怪区域边框
-        Gizmos.color = spawnAreaColor;
-        Vector3 center = transform.position;
-        Vector3 size = new Vector3(spawnAreaSize.x, 0.1f, spawnAreaSize.y);
-        Gizmos.DrawWireCube(center, size);
-
-        // 可视化合法和非法刷怪点
-        if (testPoints != null) {
-            for (int i = 0; i < testPoints.Length; i++) {
-                Gizmos.color = validPoints[i] ? validPointColor : invalidPointColor;
-                Gizmos.DrawSphere(testPoints[i], checkRadius);
+            if (!wave.Equals(currentWave.bigWaveList.Last()))
+            {
+                await UniTask.WaitForSeconds((int)currentWave.spawnInterval);
             }
         }
+        working = false;
+
     }
 
-    public void TestSpawnPoints() {
-        testPoints = new Vector3[maxAttempts];
-        validPoints = new bool[maxAttempts];
-
-        for (int i = 0; i < maxAttempts; i++) {
-            float randomX = Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
-            float randomZ = Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
-            Vector3 randomPoint = transform.position + new Vector3(randomX, 0, randomZ);
-
-            if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, checkRadius, NavMesh.AllAreas)) {
-                if (!Physics.CheckSphere(hit.position, checkRadius, obstacleLayer)) {
-                    testPoints[i] = hit.position;
-                    validPoints[i] = true; // 合法点
-                    continue;
-                }
-            }
-            testPoints[i] = randomPoint; // 非法点
-            validPoints[i] = false;
-        }
+    public bool isWaveEnd()
+    {
+        return !working && CurrentWaveList.Count == 0;
     }
-
+    
     private Vector3 GetValidSpawnPoint() {
         for (int i = 0; i < maxAttempts; i++) {
             float randomX = Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
             float randomZ = Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
-            Vector3 randomPoint = transform.position + new Vector3(randomX, 0, randomZ);
+            Vector3 randomPoint = spawnRoot + new Vector3(randomX, 0, randomZ);
 
             if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, checkRadius, NavMesh.AllAreas)) {
                 // 检测是否与其他带有"Enemy"标签的物体重叠
