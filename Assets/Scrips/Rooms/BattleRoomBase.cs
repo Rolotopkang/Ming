@@ -7,6 +7,8 @@ namespace Scrips
 {
     public class BattleRoomBase : RoomBase
     {
+
+        public Transform currentRewardPickPos;
         public Vector2 spawnAreaSize = new Vector2(10f, 10f);
         [Header("Gizmo Settings")]
         public Color spawnAreaColor = new Color(0f, 0f, 1f, 0.3f); // 正方形边框颜色
@@ -33,6 +35,8 @@ namespace Scrips
         protected override void OnLevelEnd(Dictionary<string, object> args)
         {
             Debug.Log("战斗关卡结束");
+            ItemTable.GetInstance().updateNewPosition(currentItemTablePos);
+            RewardPickTable.GetInstance().updateNewPosition(currentRewardPickPos);
             RewardPickTable.GetInstance().ShowReward();
         }
     }

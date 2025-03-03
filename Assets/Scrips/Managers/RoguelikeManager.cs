@@ -19,6 +19,8 @@
         
         
         public List<RoomBase> RoomBaseList;
+
+        public Transform zanshicunfang;
         private RoomBase currentRoom;
         private Dictionary<EnumTools.RoomKind, AnimationCurve> roomCurves;
         protected override void Awake()
@@ -50,6 +52,11 @@
         private void OnLevelStart(Dictionary<String, object> args)
         {
             layer++;
+            TeleportDoorsController.GetInstance().HideDoors(zanshicunfang);
+            ItemUpgradeTabel.GetInstance().updateNewPosition(zanshicunfang);
+            ItemTable.GetInstance().updateNewPosition(zanshicunfang);
+            ItemForgingTable.GetInstance().updateNewPosition(zanshicunfang);
+            RewardPickTable.GetInstance().updateNewPosition(zanshicunfang);
         }
 
         private void OnLevelEnd(Dictionary<String,object> args)

@@ -15,4 +15,12 @@ public class TeleportDoorsController : Singleton<TeleportDoorsController>
             i++;
         }
     }
+
+    public void HideDoors(Transform _transform)
+    {
+        foreach (TeleportDoor teleportDoor in _teleportDoors)
+        {
+            teleportDoor.transform.position = _transform.position;
+        }
+    }
 }

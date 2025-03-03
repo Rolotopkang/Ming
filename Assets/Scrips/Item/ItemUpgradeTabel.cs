@@ -1,7 +1,8 @@
 using Autohand;
+using Tools;
 using UnityEngine;
 
-public class ItemUpgradeTabel : MonoBehaviour
+public class ItemUpgradeTabel : Singleton<ItemUpgradeTabel>
 {
     public PlacePoint child1;
     public PlacePoint child2;
@@ -41,5 +42,10 @@ public class ItemUpgradeTabel : MonoBehaviour
     public void ShowWrongHint()
     {
         Debug.Log("不能升级！");
+    }
+    
+    public void updateNewPosition(Transform _transform)
+    {
+        transform.position = _transform.position;
     }
 }
