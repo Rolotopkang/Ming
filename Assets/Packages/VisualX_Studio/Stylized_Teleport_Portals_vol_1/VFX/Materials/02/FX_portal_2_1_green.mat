@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1811136769505109604
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!114 &-1226869074190118741
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FX_portal_2_1_green
+  m_Shader: {fileID: -6465566751694194690, guid: aaf0bdb6bfcc4a843ab0a8434f592595, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ENABLE_FOG_ON_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses:
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Distortion_Texture:
+        m_Texture: {fileID: 2800000, guid: 64cd70ce7fad19347b3a2680d940f4c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6f63bdd7d38eef8408ce6d0eee7c8638, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex:
+        m_Texture: {fileID: 2800000, guid: 6f63bdd7d38eef8408ce6d0eee7c8638, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexDistort:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddPrecomputedVelocity: 0
+    - _AlphaClip: 0
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 10
+    - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
+    - _Blend: 0
+    - _BlendMode: 0
+    - _CastShadows: 0
+    - _Color_ColorizeSmooth: 0.01
+    - _Color_ColorizeThreshold: 0.519
+    - _Colorize2Color_Use: 0
+    - _ConservativeDepthOffsetEnable: 0
+    - _Cull: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _Cut: 0.292
+    - _CutOutline_Smooth: 0.14
+    - _CutOutline_Width: 0.56
+    - _Cut_Smooth: 0.43
+    - _Cutout_Treshold: 0
+    - _Decline01: 0.433
+    - _Decline02: 0.01
+    - _DeclineEffectAlpha: 0.519
+    - _DeclineU0: 0.411
+    - _DeclineU1: 0.218
+    - _DeclineV0: 0.66
+    - _DeclineV1: 0.339
+    - _Decline_Lin: 0.22
+    - _Decline_Opacity: 0
+    - _Decline_Ratio: -0.382
+    - _DepthOffsetEnable: 0
+    - _DirectionX: 0
+    - _DirectionY: 0.75
+    - _Distort_Ratio: 0
+    - _Distort_U: 0
+    - _Distort_Use: 0
+    - _Distort_V: 0
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 10
+    - _DstBlendFactor: 10
+    - _EnableBlendModePreserveSpecularLighting: 0
+    - _EnableFogOnTransparent: 1
+    - _End: 1
+    - _Falloff_End: 1
+    - _Falloff_Lin: 1
+    - _Falloff_Start: 0
+    - _Falloff_Use: 0
+    - _Hide: 0
+    - _Invert: 0
+    - _Linearity: 0.53
+    - _Linearity_Fresnel: 0.1
+    - _OpaqueCullMode: 2
+    - _Outline_Width: 0.31
+    - _ParticleCustomData_Use: 1
+    - _Position: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _RenderQueueType: 3
+    - _ScaleIndependentUV: 1
+    - _Smooth: 1
+    - _Smooth_Cutout: 1.14
+    - _Smooth_Outline: 0.01
+    - _SrcBlend: 1
+    - _SrcBlendFactor: 5
+    - _Start: 0
+    - _StencilRef: 0
+    - _StencilRefDepth: 0
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _Surface: 1
+    - _SurfaceType: 1
+    - _Tex_Color_Use: 0
+    - _Tex_Invert: 0
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _Treshold: 0.36
+    - _U: 0.04
+    - _U0: 0
+    - _U1: 0
+    - _UseShadowThreshold: 0
+    - _Use_Additional_color: 1
+    - _Use_Custom_data_particle_system: 0
+    - _Use_Distort_UV: 1
+    - _Use_Fresnel: 0
+    - _Use_RGBA_channels: 0
+    - _Use_Wave: 1
+    - _V: 0.157
+    - _V0: 0.096
+    - _V1: 1
+    - _VertexRGBAdditive_Use: 0
+    - _VertexRGBBase: 1
+    - _VertexRGBOutline: 0
+    - _Vertex_RGB_Additive: 0
+    - _Vertex_RGB_affects_Base_Color: 0
+    - _Vertex_RGB_affects_Outline: 0
+    - _WaveDecline01: 0.76
+    - _WaveDecline02: 0.76
+    - _WaveDirX: 0.31
+    - _WaveDirY: -0.21
+    - _WavePos: -0.44
+    - _WaveWidth: 0
+    - _Wave_Use: 1
+    - _Wave_Width: 0.71
+    - _ZTest: 4
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
+    m_Colors:
+    - _Color: {r: 0, g: 0.509434, b: 0.13270412, a: 1}
+    - _Color2: {r: 0, g: 0.014484053, b: 0.0048280177, a: 1}
+    - _Color_ColorizeCol01: {r: 0.7458918, g: 1, b: 0.2980392, a: 1}
+    - _Color_ColorizeCol02: {r: 1, g: 0.32787547, b: 0.17924517, a: 1}
+    - _CutOutline_Color: {r: 0.23468511, g: 0.7294118, b: 0.04313726, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Offset_Skew: {r: 1.58, g: 5.71, b: -0.19, a: -0.05}
+    - _Outline: {r: 0, g: 1.551396, b: 0.20490137, a: 1}
+    - _TexDistort_TilingScroll: {r: 1, g: 1, b: 0, a: 0}
+    - _Tex_OffsetSkew: {r: 0, g: 0.5, b: 0.22, a: -1.03}
+    - _Tex_TilingScroll: {r: 0.71, g: 1.28, b: 0.41, a: 0}
+    - _Tiling_Scroll: {r: 1.11, g: 0.88, b: 0, a: -0.23}
+    - _Tiling_Scroll_Distortion: {r: 1.99, g: 1.37, b: -0.28, a: -0.26}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &7359096911560407360
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 12
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 

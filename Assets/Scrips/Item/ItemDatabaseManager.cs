@@ -31,6 +31,7 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
         }
     }
 
+    
     public GameObject GetItemGOByName(string itemName)
     {
         return _itemDictionary[itemName];
@@ -54,5 +55,18 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
     public GameObject GetRandomIsOnlyItem()
     {
         return _isOnlyItemDictionary.Values.ElementAt(Random.Range(0, _isOnlyItemDictionary.Count));
+    }
+    
+    public List<GameObject> GetRandomNoneIsOnlyItems(int count)
+    {
+        List<GameObject> allItems = new List<GameObject>(_isNoneOnlyItemDictionary.Values);
+        if (count >= allItems.Count)
+            return allItems;
+        HashSet<GameObject> selectedItems = new HashSet<GameObject>();
+        while (selectedItems.Count < count)
+        {
+            selectedItems.Add(allItems[Random.Range(0, allItems.Count)]);
+        }
+        return new List<GameObject>(selectedItems);
     }
 }

@@ -56,6 +56,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     protected virtual void OnDestroy()
     {
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
+
     }
 
     private void UpdateSec()

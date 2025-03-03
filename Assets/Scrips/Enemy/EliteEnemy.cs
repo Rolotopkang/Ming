@@ -21,6 +21,18 @@ public class EliteEnemy : EnemyBase
         _agent = GetComponent<NavMeshAgent>();
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        EnemySpawnManager.GetInstance()?.RegisterWaveEnemy(this);
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        EnemySpawnManager.GetInstance()?.UnRegisterWaveEnemy(this);
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -31,7 +43,9 @@ public class EliteEnemy : EnemyBase
     public override void Death()
     {
         base.Death();
+        EnemySpawnManager.GetInstance()?.UnRegisterWaveEnemy(this);
         animator.SetTrigger("death");
+        Destroy(gameObject,2f);
     }
 
     private void Update()
