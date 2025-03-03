@@ -1,7 +1,8 @@
 using Autohand;
+using Tools;
 using UnityEngine;
 
-public class ItemForgingTable : MonoBehaviour
+public class ItemForgingTable : Singleton<ItemForgingTable>
 {
     public PlacePoint slot;
 
@@ -34,5 +35,10 @@ public class ItemForgingTable : MonoBehaviour
     public void ShowWrongHint()
     {
         Debug.Log("不能升级！");
+    }
+    
+    public void updateNewPosition(Transform _transform)
+    {
+        transform.position = _transform.position;
     }
 }

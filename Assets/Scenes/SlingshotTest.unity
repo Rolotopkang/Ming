@@ -1716,6 +1716,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27829393}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &44475463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44475464}
+  m_Layer: 0
+  m_Name: RewardPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44475464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44475463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.63, y: 0, z: 49.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 506285269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &45489125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,6 +4218,7 @@ MonoBehaviour:
   - {fileID: 439116293}
   - {fileID: 340086829}
   currentItemTablePos: {fileID: 646367873}
+  currentRewardPickPos: {fileID: 1182911707}
   spawnAreaSize: {x: 40, y: 40}
   spawnAreaColor: {r: 0, g: 0, b: 1, a: 0.3}
   validPointColor: {r: 0, g: 1, b: 0, a: 1}
@@ -8176,6 +8208,7 @@ Transform:
   - {fileID: 459430345}
   - {fileID: 709837570}
   - {fileID: 205450279}
+  - {fileID: 1003693010}
   - {fileID: 989248358}
   m_Father: {fileID: 1301839848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8203,12 +8236,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340086828}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.119999, y: 0, z: 53.64}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.489999, y: 0, z: 8.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 716812071}
+  m_Father: {fileID: 646367873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &342176159 stripped
 Transform:
@@ -10642,7 +10675,7 @@ Transform:
   m_GameObject: {fileID: 446996511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.813, y: 1.307, z: 49.892}
+  m_LocalPosition: {x: 1.227, y: 1.307, z: 52.972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11798,6 +11831,7 @@ Transform:
   - {fileID: 870702900}
   - {fileID: 1766593694}
   - {fileID: 1516300076}
+  - {fileID: 44475464}
   - {fileID: 914041875}
   m_Father: {fileID: 1800291328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14992,7 +15026,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1600065250}
   m_Father: {fileID: 1786562402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &580251820
@@ -15161,6 +15196,7 @@ MonoBehaviour:
   - {fileID: 893422485}
   - {fileID: 1058610206}
   - {fileID: 2061308812}
+  zanshicunfang: {fileID: 1600065250}
 --- !u!1 &583921222
 GameObject:
   m_ObjectHideFlags: 0
@@ -16899,7 +16935,8 @@ Transform:
   m_LocalPosition: {x: -1.63, y: 0, z: 45.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 340086829}
   m_Father: {fileID: 716812071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656725873
@@ -18976,8 +19013,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439116293}
-  - {fileID: 340086829}
   - {fileID: 646367873}
+  - {fileID: 1182911707}
   - {fileID: 2029591453}
   m_Father: {fileID: 169600461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21316,7 +21353,6 @@ GameObject:
   - component: {fileID: 844095428}
   - component: {fileID: 844095427}
   - component: {fileID: 844095426}
-  - component: {fileID: 844095425}
   m_Layer: 0
   m_Name: RewardPickTable (1)
   m_TagString: Obstacle
@@ -21339,19 +21375,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 561774006}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &844095425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844095423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6f1bf22ee0b67479309c3994cefc3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: {fileID: 0}
 --- !u!65 &844095426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26221,7 +26244,7 @@ Transform:
   m_GameObject: {fileID: 989248357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 0.1, z: 49.78}
+  m_LocalPosition: {x: 2.8, y: 0.225, z: 49.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27144,6 +27167,37 @@ MonoBehaviour:
   disableOnSceneLoad: 0
   editorLastFont: Mana3D
   position: {x: 0, y: 0, z: 0}
+--- !u!1 &1003693009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1003693010}
+  m_Layer: 0
+  m_Name: RewardPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1003693010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003693009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.53, y: 0, z: 50.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 339801171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007387706
 GameObject:
   m_ObjectHideFlags: 0
@@ -31120,7 +31174,6 @@ GameObject:
   - component: {fileID: 1174320207}
   - component: {fileID: 1174320206}
   - component: {fileID: 1174320205}
-  - component: {fileID: 1174320204}
   m_Layer: 0
   m_Name: RewardPickTable (2)
   m_TagString: Obstacle
@@ -31143,19 +31196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 561774006}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1174320204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174320202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6f1bf22ee0b67479309c3994cefc3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: {fileID: 0}
 --- !u!65 &1174320205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31355,6 +31395,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175489455}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1182911706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182911707}
+  m_Layer: 0
+  m_Name: RewardPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182911707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182911706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.67, y: 0, z: 49.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716812071}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1183297988
 GameObject:
   m_ObjectHideFlags: 0
@@ -33577,6 +33648,7 @@ MonoBehaviour:
   - {fileID: 459430345}
   - {fileID: 709837570}
   currentItemTablePos: {fileID: 205450279}
+  currentRewardPickPos: {fileID: 1003693010}
   spawnAreaSize: {x: 40, y: 40}
   spawnAreaColor: {r: 0, g: 0, b: 1, a: 0.3}
   validPointColor: {r: 0, g: 1, b: 0, a: 1}
@@ -37478,7 +37550,6 @@ GameObject:
   - component: {fileID: 1482279854}
   - component: {fileID: 1482279853}
   - component: {fileID: 1482279852}
-  - component: {fileID: 1482279851}
   m_Layer: 0
   m_Name: RewardPickTable (3)
   m_TagString: Obstacle
@@ -37501,19 +37572,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 561774006}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1482279851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482279849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6f1bf22ee0b67479309c3994cefc3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: {fileID: 0}
 --- !u!65 &1482279852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40788,6 +40846,37 @@ Transform:
   - {fileID: 1209851569}
   - {fileID: 610196444}
   m_Father: {fileID: 1301839848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1600065249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600065250}
+  m_Layer: 0
+  m_Name: zanshicunfang
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600065250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600065249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.3, y: 0, z: -93.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 580251819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1600987161
 PrefabInstance:
@@ -45570,6 +45659,7 @@ MonoBehaviour:
   - {fileID: 870702900}
   - {fileID: 1766593694}
   currentItemTablePos: {fileID: 1516300076}
+  currentRewardPickPos: {fileID: 44475464}
   spawnAreaSize: {x: 40, y: 40}
   spawnAreaColor: {r: 0, g: 0, b: 1, a: 0.3}
   validPointColor: {r: 0, g: 1, b: 0, a: 1}
@@ -46240,7 +46330,7 @@ Transform:
   m_GameObject: {fileID: 1814229400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13, y: 0.376, z: 49.9}
+  m_LocalPosition: {x: -2.124, y: 0.17, z: -1.733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59290,7 +59380,7 @@ Transform:
   m_GameObject: {fileID: 796332896809570902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.02478112, z: 0, w: 0.9996929}
-  m_LocalPosition: {x: 0.88, y: 0, z: 49.85}
+  m_LocalPosition: {x: 2.92, y: 0, z: 52.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

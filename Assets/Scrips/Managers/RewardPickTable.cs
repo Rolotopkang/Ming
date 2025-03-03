@@ -19,6 +19,11 @@ public class RewardPickTable : Singleton<RewardPickTable>
         rewardPoints = GetComponentsInChildren<PlacePoint>().ToList();
     }
 
+    public void updateNewPosition(Transform _transform)
+    {
+        transform.position = _transform.position;
+    }
+    
     public void ShowReward()
     {
         //Animation
