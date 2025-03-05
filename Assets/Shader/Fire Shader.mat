@@ -42,11 +42,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
+    - _Fresnelpower: 0.373
+    - _Metalic: 0.336
     - _QueueControl: 0
     - _QueueOffset: 0
+<<<<<<< Updated upstream
     - _power: 0
+=======
+    - _smoothness: -5.47
+>>>>>>> Stashed changes
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 0}
+    - _Color: {r: 3.9533496, g: 0.1678308, b: 0.1678308, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2734820898007544041
