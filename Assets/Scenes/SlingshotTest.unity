@@ -9448,6 +9448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '#Item AddHealthBottle'
       objectReference: {fileID: 0}
+    - target: {fileID: 4914325554918059198, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020063704253623421, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: ItemData
       value: 
