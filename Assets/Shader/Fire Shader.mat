@@ -48,7 +48,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - _power: 0
+=======
+    - _smoothness: -5.47
+>>>>>>> Stashed changes
 =======
     - _smoothness: -5.47
 >>>>>>> Stashed changes
