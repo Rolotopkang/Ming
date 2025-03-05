@@ -28,6 +28,15 @@ namespace Tools
             Buff_Ice_SlowPercentage,
             Buff_Ice_Duration,
             
+            
+            
+            
+            
+            
+            
+            
+            
+            ItemTable_SlotNum,
         }
         
         public enum EffectName

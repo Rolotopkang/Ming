@@ -29,6 +29,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Buff_Ice_MaxLayer, 0},
         { EnumTools.PlayerStatType.Buff_Ice_SlowPercentage, 0},
         { EnumTools.PlayerStatType.Buff_Ice_Duration, 0},
+        { EnumTools.PlayerStatType.ItemTable_SlotNum , 4}
     };
 
     private Dictionary<EnumTools.PlayerStatType, float> statModifiers = new Dictionary<EnumTools.PlayerStatType, float>();
