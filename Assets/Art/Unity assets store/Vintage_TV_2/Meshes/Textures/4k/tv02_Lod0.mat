@@ -124,7 +124,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 0
-    - _DetailMapImpact: 1
+    - _DetailMapImpact: 0.697
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
@@ -178,8 +178,8 @@ Material:
     - _UVSec: 0
     - _UnityShadowMode: 1
     - _UnityShadowOcclusion: 1
-    - _UnityShadowPower: 0.427
-    - _UnityShadowSharpness: 6.76
+    - _UnityShadowPower: 0.312
+    - _UnityShadowSharpness: 4.75
     - _VertexColorsEnabled: 0
     - _VertexExtrusionSmoothNormals: 0
     - _WorkflowMode: 1
@@ -192,7 +192,7 @@ Material:
     - _ColorDimExtra: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
-    - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailMapColor: {r: 0.4528302, g: 0.37379852, b: 0.37379852, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlatSpecularColor: {r: 1, g: 1, b: 1, a: 1}
