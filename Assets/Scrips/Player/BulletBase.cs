@@ -66,8 +66,16 @@ public class BulletBase : MonoBehaviour
             }
             
             TriggerAllBulletEffect(enemyBase,other.transform.position);
+            
+            float withoutCriticalDmg = 
+                AttackDmg + 
+                AttackDmg * PlayerStatsManager.GetInstance()
+                .GetStatValue(EnumTools.PlayerStatType.AttackPercentage);
+            
             enemyBase.TakeDamage(
-                _isCritical? AttackDmg*PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.CriticalAmount) : AttackDmg,
+                _isCritical? 
+                    withoutCriticalDmg*PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.CriticalAmount) : 
+                    withoutCriticalDmg,
                 DamageKind,
                 transform.position);
 

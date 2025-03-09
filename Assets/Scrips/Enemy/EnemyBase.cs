@@ -120,6 +120,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
         tmp_remove.OnBuffEnd();
         _buffBaseList.Remove(tmp_remove);
+        Destroy(tmp_remove);
         _enemyUIBase.UpdateBuffUI();
     }
     
@@ -150,6 +151,11 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         {
             Death();
         }
+    }
+
+    public virtual void Slow(float amount)
+    {
+        
     }
 
     public virtual void Death()

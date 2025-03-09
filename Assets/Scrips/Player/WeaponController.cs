@@ -49,6 +49,7 @@ public class WeaponController : Singleton<WeaponController>
 
     private void Update()
     {
+        forceMultiplier = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.ShotPower);
         UpdateDistance();
         if (isReturning)
         {

@@ -88,8 +88,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
   PoisonIcon: {fileID: 2800000, guid: 490272c7e5fa30f4a88f5f77ac90ca97, type: 3}
-  IceIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
-  FrozenIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
+  IceIcon: {fileID: 2800000, guid: 49d0c0f7b98799b458be793254f3c829, type: 3}
+  FrozenIcon: {fileID: 2800000, guid: f14259bfc27fefa46aa3b88c0ee97fd4, type: 3}
   EliteIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
   ShieldArmedIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
   BuffIcon: {fileID: 6436496918805609981}

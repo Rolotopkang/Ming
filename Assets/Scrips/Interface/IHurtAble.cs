@@ -15,6 +15,8 @@ namespace Scrips.Buffs
         public void Death();
         public float GetHealthPercent();
 
+        public void Slow(float amount);
+
         public float GetMaxHealth();
 
         public Vector3 GetCenter();

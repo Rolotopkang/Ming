@@ -12,6 +12,8 @@ namespace Scrips.Factory
         {
             { EnumTools.BuffName.Fire, typeof(Buff_Fire) },
             { EnumTools.BuffName.Poison, typeof(Buff_Poison) },
+            { EnumTools.BuffName.Ice , typeof(Buff_Ice)},
+            { EnumTools.BuffName.Frozen , typeof(Buff_Frozen)},
         };
 
         public static BuffBase CreateBuff(EnumTools.BuffName buffName, GameObject root)

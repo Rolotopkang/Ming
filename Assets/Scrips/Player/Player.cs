@@ -50,6 +50,10 @@ public class Player : Singleton<Player>,IHurtAble
         
     }
 
+    public void Slow(float amount)
+    {
+    }
+
     public void Death()
     {
         Debug.Log("你寄了");

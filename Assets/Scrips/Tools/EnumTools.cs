@@ -27,16 +27,10 @@ namespace Tools
             Buff_Ice_MaxLayer,
             Buff_Ice_SlowPercentage,
             Buff_Ice_Duration,
-            
-            
-            
-            
-            
-            
-            
-            
-            
             ItemTable_SlotNum,
+            ShotPower,
+            Buff_Ice_FrozenDuration,
+            Buff_Ice_DmgPercentage,
         }
         
         public enum EffectName
@@ -47,6 +41,8 @@ namespace Tools
             Fire,
             Poison,
             Ice,
+            TracingBullets,
+            
         }
 
         public enum BuffName

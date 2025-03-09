@@ -8,8 +8,9 @@ public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
     public List<ItemBase> ownedItems = new List<ItemBase>();
     private PlayerStatsManager _playerStatsManager;
     private List<IItemEffect> specialEffects = new List<IItemEffect>();
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
         _playerStatsManager = PlayerStatsManager.GetInstance();
     }
 
