@@ -1,0 +1,5 @@
+* text=crlf
+*.cs eol=crlf
+*.txt eol=crlf
+*.shader eol=crlf
+*.meta eol=crlf
