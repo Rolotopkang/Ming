@@ -36,11 +36,12 @@ Material:
   - _UNITYSHADOWMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords:
+  - _ALPHAMODULATE_ON
   - _CELPRIMARYMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 1979
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -124,7 +125,7 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _BaseMapPremultiply: 1
-    - _Blend: 0
+    - _Blend: 2
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _CameraDistanceImpact: 0
@@ -144,9 +145,9 @@ Material:
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.488
     - _FlatRimLightAlign: 0
-    - _FlatRimSize: 0.389
-    - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.547
+    - _FlatRimSize: 0
+    - _FlatSpecularEdgeSmoothness: 0.406
+    - _FlatSpecularSize: 1
     - _Flatness: 1
     - _FlatnessExtra: 1
     - _GlossMapScale: 0
@@ -156,12 +157,12 @@ Material:
     - _GradientCenterX: 0
     - _GradientCenterY: 0
     - _GradientEnabled: 0
-    - _GradientSize: 10
+    - _GradientSize: 15.92
     - _GradientSpace: 0
-    - _LightContribution: 0.556
+    - _LightContribution: 0
     - _LightFalloffSize: 1
-    - _LightmapDirectionPitch: 266.9
-    - _LightmapDirectionYaw: 56.4
+    - _LightmapDirectionPitch: 270
+    - _LightmapDirectionYaw: 214
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OutlineDepthOffset: 0
@@ -171,7 +172,7 @@ Material:
     - _OutlineWidth: 0.01
     - _OverrideLightmapDir: 0
     - _Parallax: 0.005
-    - _QueueOffset: 0
+    - _QueueOffset: -21
     - _ReceiveShadows: 1
     - _RimEnabled: 0
     - _SelfShadingSize: 0.955
@@ -206,8 +207,8 @@ Material:
     - _DetailMapColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FlatSpecularColor: {r: 2, g: 2, b: 2, a: 1}
-    - _LightmapDirection: {r: -0.8317024, g: -0.054078877, b: -0.5525818, a: 0}
+    - _FlatSpecularColor: {r: 2.670157, g: 2.670157, b: 2.670157, a: 1}
+    - _LightmapDirection: {r: 0.55919296, g: 0.000000011924881, b: 0.82903755, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UnityShadowColor: {r: 1, g: 1, b: 1, a: 0.74509805}

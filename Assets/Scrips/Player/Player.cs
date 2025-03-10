@@ -17,6 +17,15 @@ public class Player : Singleton<Player>,IHurtAble
         CheckDeath();
     }
 
+    public void Healing(float amount)
+    {
+        CurrentHP += amount;
+        if (CurrentHP> GetMaxHealth())
+        {
+            CurrentHP = GetMaxHealth();
+        }
+    }
+
     public void CheckDeath()
     {
         if (CurrentHP<=0)
@@ -35,7 +44,11 @@ public class Player : Singleton<Player>,IHurtAble
         return PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
     }
 
-
+    private void Update()
+    {
+        
+        
+    }
 
     public void Death()
     {
