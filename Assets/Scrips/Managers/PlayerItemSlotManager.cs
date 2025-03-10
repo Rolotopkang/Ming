@@ -14,6 +14,19 @@ public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
         _playerStatsManager = PlayerStatsManager.GetInstance();
     }
 
+    public bool CheckEffect(EnumTools.EffectName effectName)
+    {
+        foreach (IItemEffect effect in specialEffects)
+        {
+            if (effectName == effect.GetEffectName())
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
     // **拾取道具**
     public void AddItem(ItemBase newItem)
     {

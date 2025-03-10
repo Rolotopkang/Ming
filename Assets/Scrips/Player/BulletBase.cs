@@ -71,6 +71,15 @@ public class BulletBase : MonoBehaviour
                 AttackDmg + 
                 AttackDmg * PlayerStatsManager.GetInstance()
                 .GetStatValue(EnumTools.PlayerStatType.AttackPercentage);
+
+            //巨人杀手逻辑
+            if (enemyBase.GetHealthPercent() > 0.9f)
+            {
+                withoutCriticalDmg = PlayerItemSlotManager.GetInstance().CheckEffect(EnumTools.EffectName.GiantKiller)
+                    ? withoutCriticalDmg * (PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.GiantKillerPercentage)+1)
+                    : withoutCriticalDmg;
+            }
+            
             
             enemyBase.TakeDamage(
                 _isCritical? 

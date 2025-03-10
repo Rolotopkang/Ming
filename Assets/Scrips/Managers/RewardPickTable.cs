@@ -39,12 +39,56 @@ public class RewardPickTable : Singleton<RewardPickTable>
             clone.GetComponent<ItemBase>().ItemCount = SelectItemByDifficulty(RoguelikeManager.GetInstance().layer);
         }
         
+        AddDestroyListener();
+    }
+
+    private void AddDestroyListener()
+    {
         foreach (PlacePoint placePoint in rewardPoints)
         {
             placePoint.OnRemove.AddListener(DestroyRestReward);
         }
     }
+    
+    public void ShowHealthReward()
+    {
+        ClearTable();
+        Grabbable health1 = ItemDatabaseManager.GetInstance().GetItemGOByName("AddHealthBottle").GetComponent<Grabbable>();
+        Grabbable health2 = ItemDatabaseManager.GetInstance().GetItemGOByName("MaxHealth").GetComponent<Grabbable>();
+        rewardPoints[0].Place(health1);
+        rewardPoints[1].Place(health2);
+        AddDestroyListener();
+        rewardPoints[2].gameObject.SetActive(false);
+    }
 
+    public void ShowMoneyReward()
+    {
+        ClearTable();
+        Grabbable Money = ItemDatabaseManager.GetInstance().GetItemGOByName("Money").GetComponent<Grabbable>();
+        rewardPoints[1].Place(Money);
+        AddDestroyListener();
+        rewardPoints[0].gameObject.SetActive(false);
+        rewardPoints[2].gameObject.SetActive(false);
+    }
+
+    public void ShowEventReward()
+    {
+        //Animation
+        
+        
+        ClearTable();
+        int i = 0;
+        List<GameObject> resault = ItemDatabaseManager.GetInstance().GetRandomIsOnlyItem(RewardNum);
+        foreach (GameObject gameObject in resault)
+        {
+            Grabbable clone = Instantiate(gameObject, Vector3.zero, Quaternion.identity ,transform).GetComponent<Grabbable>();
+            rewardPoints[i++].Place(clone);
+            clone.GetComponent<ItemBase>().ItemCount = SelectItemByDifficulty(RoguelikeManager.GetInstance().layer);
+        }
+        
+        AddDestroyListener();
+    }
+    
     public void DestroyRestReward(PlacePoint pp, Grabbable grabbable)
     {
         foreach (PlacePoint placePoint in rewardPoints)
@@ -69,6 +113,7 @@ public class RewardPickTable : Singleton<RewardPickTable>
     {
         foreach (PlacePoint placePoint in rewardPoints)
         {
+            placePoint.gameObject.SetActive(true);
             if (placePoint.placedObject!= null)
             {
                 Grabbable tmp = placePoint.placedObject;

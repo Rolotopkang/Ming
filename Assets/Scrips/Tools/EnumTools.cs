@@ -31,6 +31,7 @@ namespace Tools
             ShotPower,
             Buff_Ice_FrozenDuration,
             Buff_Ice_DmgPercentage,
+            GiantKillerPercentage,
         }
         
         public enum EffectName
@@ -42,7 +43,7 @@ namespace Tools
             Poison,
             Ice,
             TracingBullets,
-            
+            GiantKiller,
         }
 
         public enum BuffName

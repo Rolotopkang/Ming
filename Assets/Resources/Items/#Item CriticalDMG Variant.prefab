@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '#Item CriticalDMG Variant'
       objectReference: {fileID: 0}
+    - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: instantPull
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020063704253623421, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: ItemData
       value: 

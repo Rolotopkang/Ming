@@ -1,19 +1,17 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Scrips
 {
-    public class ItemRoom : BattleRoomBase
+    public class EventRoom : RoomBase
     {
-        protected override void OnLevelStart(Dictionary<string, object> args)
-        {
-            base.OnLevelStart(args);
-        }
-
+        public Transform currentRewardPickPos;
         protected override void OnLevelEnd(Dictionary<string, object> args)
         {
             base.OnLevelEnd(args);
+            ItemTable.GetInstance().updateNewPosition(currentItemTablePos);
             RewardPickTable.GetInstance().updateNewPosition(currentRewardPickPos);
-            RewardPickTable.GetInstance().ShowReward();
+            RewardPickTable.GetInstance().ShowEventReward();
         }
     }
 }

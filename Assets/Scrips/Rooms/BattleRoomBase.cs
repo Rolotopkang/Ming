@@ -36,8 +36,6 @@ namespace Scrips
         {
             Debug.Log("战斗关卡结束");
             ItemTable.GetInstance().updateNewPosition(currentItemTablePos);
-            RewardPickTable.GetInstance().updateNewPosition(currentRewardPickPos);
-            RewardPickTable.GetInstance().ShowReward();
         }
     }
 }
