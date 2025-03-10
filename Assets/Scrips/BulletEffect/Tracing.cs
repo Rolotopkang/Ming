@@ -13,8 +13,8 @@ namespace Scrips.Effects
         private float minLength;
         private Coroutine homing;
         private float enhanceHoming;
-        private float homingStrength = 60f;
-        private float homingAngelStrength = 8f;
+        private float homingStrength = 100f;
+        private float homingAngelStrength = 10f;
 
 
         
@@ -52,7 +52,7 @@ namespace Scrips.Effects
                 Vector3 steeringForce = (desiredVelocity - currentVelocity).normalized;
 
                 // 应用方向调整力
-                rb.AddForce(steeringForce * homingStrength * rb.mass * currentV/20, ForceMode.Force);
+                rb.AddForce(steeringForce * homingStrength * rb.mass, ForceMode.Force);
 
                 // 限制最大速度
                 if (rb.linearVelocity.magnitude > currentV)

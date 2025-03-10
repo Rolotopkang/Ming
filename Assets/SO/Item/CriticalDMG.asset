@@ -18,8 +18,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: b8a79ae85bc86734baf3fe56a6384473, type: 3}
   description: CriticalDMG
   statModifiers:
-  - statType: 3
-    value: 10
+  - statType: 4
+    value: 1
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
