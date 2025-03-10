@@ -1062,6 +1062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee278be559aac9b459bcbb6ed2e0820f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSlotNum: 0
+  zhuozi: {fileID: 5876447298463526467}
 --- !u!1 &2256032582471376249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,7 +4106,7 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564049038129479794}
   serializedVersion: 3
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 6364418364247676102}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
