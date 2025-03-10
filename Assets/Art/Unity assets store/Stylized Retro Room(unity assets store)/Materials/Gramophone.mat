@@ -26,10 +26,11 @@ Material:
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   - SRPDEFAULTUNLIT
@@ -124,13 +125,13 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 0
-    - _DetailMapImpact: 0.628
+    - _DetailMapImpact: 0.63
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.165
-    - _FlatRimLightAlign: 0
+    - _FlatRimLightAlign: 0.38
     - _FlatRimSize: 0.183
     - _FlatSpecularEdgeSmoothness: 0.939
     - _FlatSpecularSize: 0.512
@@ -146,8 +147,8 @@ Material:
     - _GradientSize: 10
     - _GradientSpace: 0
     - _LightContribution: 0
-    - _LightFalloffSize: 0
-    - _LightmapDirectionPitch: 0
+    - _LightFalloffSize: 0.65
+    - _LightmapDirectionPitch: 22
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -161,7 +162,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimEnabled: 1
-    - _SelfShadingSize: 0.506
+    - _SelfShadingSize: 0.54
     - _SelfShadingSizeExtra: 0.415
     - _ShadowEdgeSize: 0
     - _ShadowEdgeSizeExtra: 0
@@ -176,8 +177,8 @@ Material:
     - _TextureImpact: 1
     - _UnityShadowMode: 1
     - _UnityShadowOcclusion: 1
-    - _UnityShadowPower: 0.629
-    - _UnityShadowSharpness: 1
+    - _UnityShadowPower: 0
+    - _UnityShadowSharpness: 5.5
     - _VertexColorsEnabled: 0
     - _VertexExtrusionSmoothNormals: 0
     - _WorkflowMode: 1
@@ -194,7 +195,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 1, g: 0.8014894, b: 0.6273585, a: 1}
     - _FlatSpecularColor: {r: 0.3962264, g: 0.19680025, b: 0.12896048, a: 1}
-    - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _LightmapDirection: {r: 0, g: 0.92718387, b: 0.37460658, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
