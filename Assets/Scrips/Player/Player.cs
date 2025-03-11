@@ -6,15 +6,30 @@ using UnityEngine;
 public class Player : Singleton<Player>,IHurtAble
 {
     public float CurrentHP;
+    public int CurrentHealthBottleCount;
+    [SerializeField] 
+    private float HealthBottelHealingCount = 50;
     private void Start()
     {
         CurrentHP = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
+        CurrentHealthBottleCount =(int)PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.HealthBottleNum);
     }
 
     public void TakeDamage(float dmg, EnumTools.DamageKind damageKind, Vector3 position)
     {
         CurrentHP -= dmg;
         CheckDeath();
+    }
+
+    public void UseHealthBottle()
+    {
+        if (CurrentHealthBottleCount > 0)
+        {
+            //TODO 音效、特效
+            
+            Healing(HealthBottelHealingCount);
+            CurrentHealthBottleCount--;
+        }
     }
 
     public void Healing(float amount)
