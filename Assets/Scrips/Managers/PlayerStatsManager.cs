@@ -9,7 +9,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Attack, 10f },
         { EnumTools.PlayerStatType.AttackPercentage, 1f},
         { EnumTools.PlayerStatType.Speed, 5f },
-        { EnumTools.PlayerStatType.Critical ,0.5f},
+        { EnumTools.PlayerStatType.Critical ,0.1f},
         { EnumTools.PlayerStatType.CriticalAmount, 2f},
         { EnumTools.PlayerStatType.Health, 200f },
         { EnumTools.PlayerStatType.Armor, 0f },
@@ -26,9 +26,14 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Buff_Fire_DmgPercentage, 0},
         { EnumTools.PlayerStatType.Buff_Poison_DmgPercentage, 0},
         { EnumTools.PlayerStatType.Buff_Poison_Duration, 0},
-        { EnumTools.PlayerStatType.Buff_Ice_MaxLayer, 0},
-        { EnumTools.PlayerStatType.Buff_Ice_SlowPercentage, 0},
-        { EnumTools.PlayerStatType.Buff_Ice_Duration, 0},
+        { EnumTools.PlayerStatType.Buff_Ice_MaxLayer, 3},
+        { EnumTools.PlayerStatType.Buff_Ice_SlowPercentage, 0.2f},
+        { EnumTools.PlayerStatType.Buff_Ice_Duration, 5},
+        { EnumTools.PlayerStatType.ItemTable_SlotNum , 4},
+        { EnumTools.PlayerStatType.ShotPower , 20},
+        { EnumTools.PlayerStatType.Buff_Ice_FrozenDuration, 2f},
+        { EnumTools.PlayerStatType.Buff_Ice_DmgPercentage ,2.0f},
+        { EnumTools.PlayerStatType.GiantKillerPercentage , 0},
     };
 
     private Dictionary<EnumTools.PlayerStatType, float> statModifiers = new Dictionary<EnumTools.PlayerStatType, float>();

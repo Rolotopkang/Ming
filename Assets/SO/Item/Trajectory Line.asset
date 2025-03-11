@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Trajectory Line
   isOnly: 1
+  isEvent: 1
   MaxLevel: 1
   icon: {fileID: 7674156195484195045, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
   description: ADD Trajectory Line to your SlingShot

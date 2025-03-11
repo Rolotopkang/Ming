@@ -16,6 +16,7 @@ using UnityEngine;
     {
         public string itemName;
         public bool isOnly = false;
+        public bool isEvent = false;
         public int MaxLevel = 4;
         public Sprite icon;
         [TextArea (3,20) ]

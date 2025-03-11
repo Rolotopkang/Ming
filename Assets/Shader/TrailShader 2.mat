@@ -46,9 +46,10 @@ Material:
     - _DissovleScale: 35
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _speed: 1
     m_Colors:
-    - _Color01: {r: 0.6156863, g: 0.11764706, b: 0.0627451, a: 1}
-    - _Color02: {r: 0.14901961, g: 0.023529412, b: 0.015686275, a: 1}
+    - _Color01: {r: 3.482202, g: 1.2297735, b: 0, a: 1}
+    - _Color02: {r: 3.482202, g: 0.13360447, b: 0, a: 1}
     - _DissovleSpeed: {r: -1, g: 0, b: 0, a: 0}
     - _Maintexspeed: {r: -0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

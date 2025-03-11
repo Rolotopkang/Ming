@@ -26,6 +26,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
+            m_NavMeshAgent.speed = m_Speed.Value;
             if (HasArrived()) {
                 return TaskStatus.Success;
             }

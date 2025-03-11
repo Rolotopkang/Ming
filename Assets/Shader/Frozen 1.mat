@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Frozen 1
-  m_Shader: {fileID: -6465566751694194690, guid: 515f7278c3d0c6c4489a6ec22837e6fd, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7c262e3d9e8e9aa4ca6e871768e8ec95, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -87,6 +87,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 0.243
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -101,19 +102,19 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FresnelPower: 2.36
+    - _FresnelPower: 0.61
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Matellic: 0
     - _Metallic: 0
-    - _Normal: 0.73
+    - _Normal: -0.56
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RefractionAmount: 0.937
+    - _RefractionAmount: 0.009
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _Smothness: 0.37
