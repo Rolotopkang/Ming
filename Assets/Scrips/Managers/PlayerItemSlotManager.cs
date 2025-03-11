@@ -8,11 +8,25 @@ public class PlayerItemSlotManager : Singleton<PlayerItemSlotManager>
     public List<ItemBase> ownedItems = new List<ItemBase>();
     private PlayerStatsManager _playerStatsManager;
     private List<IItemEffect> specialEffects = new List<IItemEffect>();
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
         _playerStatsManager = PlayerStatsManager.GetInstance();
     }
 
+    public bool CheckEffect(EnumTools.EffectName effectName)
+    {
+        foreach (IItemEffect effect in specialEffects)
+        {
+            if (effectName == effect.GetEffectName())
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
     // **拾取道具**
     public void AddItem(ItemBase newItem)
     {

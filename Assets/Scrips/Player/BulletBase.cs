@@ -66,8 +66,25 @@ public class BulletBase : MonoBehaviour
             }
             
             TriggerAllBulletEffect(enemyBase,other.transform.position);
+            
+            float withoutCriticalDmg = 
+                AttackDmg + 
+                AttackDmg * PlayerStatsManager.GetInstance()
+                .GetStatValue(EnumTools.PlayerStatType.AttackPercentage);
+
+            //巨人杀手逻辑
+            if (enemyBase.GetHealthPercent() > 0.9f)
+            {
+                withoutCriticalDmg = PlayerItemSlotManager.GetInstance().CheckEffect(EnumTools.EffectName.GiantKiller)
+                    ? withoutCriticalDmg * (PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.GiantKillerPercentage)+1)
+                    : withoutCriticalDmg;
+            }
+            
+            
             enemyBase.TakeDamage(
-                _isCritical? AttackDmg*PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.CriticalAmount) : AttackDmg,
+                _isCritical? 
+                    withoutCriticalDmg*PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.CriticalAmount) : 
+                    withoutCriticalDmg,
                 DamageKind,
                 transform.position);
 

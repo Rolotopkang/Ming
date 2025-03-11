@@ -83,7 +83,9 @@
             }
             
             currentRoom = roomBase;
+            Debug.Log(roomBase.currentBirthPoint.position+" --------------" + roomBase.name.ToString());
             player.transform.position = roomBase.currentBirthPoint.position;
+            
         }
 
         private RoomBase GetRoomBaseByType(EnumTools.RoomKind kind)

@@ -1,10 +1,12 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Tools;
 using UnityEngine;
 
 public class ItemTable : Singleton<ItemTable>
 {
     public int currentSlotNum = 0;
+    public Rigidbody zhuozi;
     private ItemSlot[] _itemSlots;
 
     protected override void Awake()
@@ -33,7 +35,7 @@ public class ItemTable : Singleton<ItemTable>
         _itemSlots[currentSlotNum++].gameObject.SetActive(true);
     }
 
-    public void updateNewPosition(Transform _transform)
+    public async void updateNewPosition(Transform _transform)
     {
         transform.position = _transform.position;
     }

@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
 {
     private Dictionary<String, GameObject> _itemDictionary = new Dictionary<string, GameObject>();
-    private Dictionary<String, GameObject> _isOnlyItemDictionary = new Dictionary<string, GameObject>();
+    private Dictionary<String, GameObject> _isEventItemDictionary = new Dictionary<string, GameObject>();
     private Dictionary<String, GameObject> _isNoneOnlyItemDictionary = new Dictionary<string, GameObject>();
     
     private void Awake()
@@ -20,11 +20,11 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
         {
             ItemBase tmp_itembase = go.GetComponent<ItemBase>();
             _itemDictionary.Add(tmp_itembase.ItemData.itemName,go);
-            if (tmp_itembase.ItemData.isOnly)
+            if (tmp_itembase.ItemData.isEvent)
             {
-                _isOnlyItemDictionary.Add(tmp_itembase.ItemData.itemName,go);
+                _isEventItemDictionary.Add(tmp_itembase.ItemData.itemName,go);
             }
-            else
+            else if (!tmp_itembase.ItemData.isOnly)
             {
                 _isNoneOnlyItemDictionary.Add(tmp_itembase.ItemData.itemName,go);
             }
@@ -54,12 +54,25 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
 
     public GameObject GetRandomIsOnlyItem()
     {
-        return _isOnlyItemDictionary.Values.ElementAt(Random.Range(0, _isOnlyItemDictionary.Count));
+        return _isEventItemDictionary.Values.ElementAt(Random.Range(0, _isEventItemDictionary.Count));
     }
     
     public List<GameObject> GetRandomNoneIsOnlyItems(int count)
     {
         List<GameObject> allItems = new List<GameObject>(_isNoneOnlyItemDictionary.Values);
+        if (count >= allItems.Count)
+            return allItems;
+        HashSet<GameObject> selectedItems = new HashSet<GameObject>();
+        while (selectedItems.Count < count)
+        {
+            selectedItems.Add(allItems[Random.Range(0, allItems.Count)]);
+        }
+        return new List<GameObject>(selectedItems);
+    }
+
+    public List<GameObject> GetRandomIsOnlyItem(int count)
+    {
+        List<GameObject> allItems = new List<GameObject>(_isEventItemDictionary.Values);
         if (count >= allItems.Count)
             return allItems;
         HashSet<GameObject> selectedItems = new HashSet<GameObject>();

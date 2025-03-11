@@ -178,7 +178,7 @@ Material:
     - _TextureImpact: 1
     - _UnityShadowMode: 1
     - _UnityShadowOcclusion: 1
-    - _UnityShadowPower: 0.248
+    - _UnityShadowPower: 0.609
     - _UnityShadowSharpness: 1
     - _VertexColorsEnabled: 0
     - _VertexExtrusionSmoothNormals: 0

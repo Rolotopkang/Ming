@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 88e2e1bfe11ec6c438b0ade27eaeded1
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165323
+  packageName: Auto Hand - VR Interaction
+  packageVersion: 4.0.0
+  assetPath: Assets/AutoHand/Examples/Mesh/OculusHand_R.fbx
+  uploadId: 672110
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -597,10 +604,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 165323
-  packageName: Auto Hand - VR Interaction
-  packageVersion: 4.0.0
-  assetPath: Assets/AutoHand/Examples/Mesh/OculusHand_R.fbx
-  uploadId: 672110
