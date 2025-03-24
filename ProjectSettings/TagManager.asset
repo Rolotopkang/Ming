@@ -10,6 +10,7 @@ TagManager:
   - Item
   - CinemachineTarget
   - SlingShot
+  - Candy
   layers:
   - Default
   - TransparentFX

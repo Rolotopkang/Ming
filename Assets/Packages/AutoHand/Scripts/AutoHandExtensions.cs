@@ -220,23 +220,27 @@ namespace Autohand
 #endif
         }
 
-        /// <summary>Autohand extension method, used so I can use TryGetComponent for newer versions and GetComponent for older versions</summary>
         public static bool CanGetComponent<T>(this GameObject componentClass, out T component) {
+            component = default;
+
+            if (componentClass == null) {
+                return false;
+            }
+
 #if UNITY_2019_1 || UNITY_2018 || UNITY_2017
-       var tempComponent = componentClass.GetComponent<T>();
-        if(tempComponent != null){
-            component = tempComponent;
-            return true;
-        }
-        else {
-            component = tempComponent;
-            return false;
-        }
+    var tempComponent = componentClass.GetComponent<T>();
+    if (tempComponent != null) {
+        component = tempComponent;
+        return true;
+    }
+    else {
+        return false;
+    }
 #else
-            var value = componentClass.TryGetComponent(out component);
-            return value;
+            return componentClass.TryGetComponent(out component);
 #endif
         }
+
 
         /// <summary>Autohand extension method, used so I can use TryGetComponent for newer versions and GetComponent for older versions</summary>
         public static T CanFindObjectOfType<T>(bool includeInactive = false) where T : Component {

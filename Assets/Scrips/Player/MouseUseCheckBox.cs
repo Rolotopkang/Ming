@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MouseUseCheckBox : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.TryGetComponent<AddHealthBottle>(out AddHealthBottle addHealthBottle))
-        {
-            Player.GetInstance().UseHealthBottle();
-            addHealthBottle.GetComponent<Grabbable>().heldBy[0].PlayHapticVibration(0.2f);
-        }
+        GetComponent<PlacePoint>().OnPlace.AddListener(OnPlace);
+    }
+
+    public void OnPlace(PlacePoint placePoint, Grabbable grabbable)
+    {
+        Player.GetInstance().UseHealthBottle();
+        grabbable.lastHeldBy.PlayHapticVibration(0.2f);
+        grabbable.DoDestroy();
     }
 }

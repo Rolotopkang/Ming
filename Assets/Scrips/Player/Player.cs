@@ -23,13 +23,7 @@ public class Player : Singleton<Player>,IHurtAble
 
     public void UseHealthBottle()
     {
-        if (CurrentHealthBottleCount > 0)
-        {
-            //TODO 音效、特效
-            
-            Healing(HealthBottelHealingCount);
-            CurrentHealthBottleCount--;
-        }
+        Healing(HealthBottelHealingCount);
     }
 
     public void Healing(float amount)

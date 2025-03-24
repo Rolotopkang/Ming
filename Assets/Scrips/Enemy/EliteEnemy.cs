@@ -66,23 +66,17 @@ public class EliteEnemy : EnemyBase
         if (amount == 0)
         {
             _behaviorTree.SetVariableValue("Speed",0f);
-            Debug.Log("冻结");
-            Debug.Log("dangqiansudu"+ _behaviorTree.GetVariable("Speed"));
             return;
         }
         
         if (amount<0)
         {
             _behaviorTree.SetVariableValue("Speed",EnemyData.SpeedCurve.Evaluate(RoguelikeManager.GetInstance().layer));
-            Debug.Log("回复");
         }
         else
         {
             _behaviorTree.SetVariableValue("Speed",EnemyData.SpeedCurve.Evaluate(RoguelikeManager.GetInstance().layer) * (1- amount));
-            Debug.Log("减速");
         }
-
-        Debug.Log("dangqiansudu"+ _behaviorTree.GetVariable("Speed"));
     }
 
     public override void TakeDamage(float dmg, EnumTools.DamageKind damageKind, Vector3 position)
