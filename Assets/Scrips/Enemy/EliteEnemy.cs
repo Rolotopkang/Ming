@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime;
 using System;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks.Movement;
@@ -7,18 +8,21 @@ using UnityEngine.AI;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class EliteEnemy : EnemyBase
+namespace Scrips.Enemy
 {
-    public Vector3 AttackHitboxOffset = new Vector3(0, 1, 1); // 立方体相对怪物位置的偏移
-    public Vector3 AttackHitboxSize = new Vector3(2, 2, 2); // 立方体的尺寸
+    public class EliteEnemy : EnemyBase
+    {
     private BehaviorTree _behaviorTree;
     private NavMeshAgent _agent;
+    private BoxCollider _boxCollider;
 
     protected override void Awake()
     {
         base.Awake();
         _behaviorTree = GetComponent<BehaviorTree>();
         _agent = GetComponent<NavMeshAgent>();
+        _boxCollider = GetComponent<BoxCollider>();
+        _boxCollider.enabled = false;
         _behaviorTree.SetVariableValue("Speed",EnemyData.SpeedCurve.Evaluate(RoguelikeManager.GetInstance().layer));
     }
 
@@ -84,37 +88,28 @@ public class EliteEnemy : EnemyBase
         base.TakeDamage(dmg, damageKind, position);
         animator.SetTrigger("hit");
     }
-    
-    public void CheckAttackHit()
-    {
-        Vector3 boxCenter = transform.position + transform.TransformDirection(AttackHitboxOffset);
-        
-        Collider[] hitColliders = Physics.OverlapBox(boxCenter, AttackHitboxSize * 0.5f, transform.rotation);
 
-        if (hitColliders.Length > 0)
-        {
-            foreach (Collider hit in hitColliders)
-            {
-                if (hit.transform.GetComponentInParent<Player>())
-                {
-                    Debug.Log("Hit player: ");
-                    Player.GetInstance().TakeDamage(EnemyData.BaseAtkCurve.Evaluate(RoguelikeManager.GetInstance().layer),EnumTools.DamageKind.None,Vector3.zero);
-                    return;
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No player detected in attack range.");
-        }
+    public void OpenHurtRange()
+    {
+        _boxCollider.enabled = true;
     }
 
-    // 在Scene视图中显示检测范围
-    private void OnDrawGizmosSelected()
+    public void CloseHurtRange()
     {
-        Vector3 boxCenter = transform.position + transform.TransformDirection(AttackHitboxOffset);
-        Gizmos.color = Color.red;
-        Gizmos.matrix = Matrix4x4.TRS(boxCenter, transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, AttackHitboxSize);
+        _boxCollider.enabled = false;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.transform.GetComponentInParent<Player>())
+            {
+                Debug.Log("Hit player: ");
+                Player.GetInstance().TakeDamage(EnemyData.BaseAtkCurve.Evaluate(RoguelikeManager.GetInstance().layer),EnumTools.DamageKind.None,Vector3.zero);
+                return;
+            }
+        }
+    }
     }
 }

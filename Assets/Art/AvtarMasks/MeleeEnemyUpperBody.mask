@@ -6,30 +6,36 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EliteEnemyLowerBody
+  m_Name: MeleeEnemyUpperBody
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
-  - m_Path: Body
+  - m_Path: Mesh1_Mesh1.095
     m_Weight: 0
   - m_Path: "\u9AA8\u67B6"
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: "\u9AA8\u67B6/\u53F3\u5927\u817F"
     m_Weight: 0
   - m_Path: "\u9AA8\u67B6/\u53F3\u5927\u817F/\u53F3\u5C0F\u817F"
     m_Weight: 1
-  - m_Path: "\u9AA8\u67B6/\u53F3\u5927\u817F/\u53F3\u5C0F\u817F/\u53F3\u5C0F\u817F_end"
+  - m_Path: "\u9AA8\u67B6/\u53F3\u5927\u817F/\u53F3\u5C0F\u817F/\u53F3\u811A"
+    m_Weight: 1
+  - m_Path: "\u9AA8\u67B6/\u53F3\u5927\u817F/\u53F3\u5C0F\u817F/\u53F3\u811A/\u53F3\u811A_end"
     m_Weight: 1
   - m_Path: "\u9AA8\u67B6/\u5DE6\u5927\u817F"
     m_Weight: 0
   - m_Path: "\u9AA8\u67B6/\u5DE6\u5927\u817F/\u5DE6\u5C0F\u817F"
     m_Weight: 1
-  - m_Path: "\u9AA8\u67B6/\u5DE6\u5927\u817F/\u5DE6\u5C0F\u817F/\u5DE6\u5C0F\u817F_end"
+  - m_Path: "\u9AA8\u67B6/\u5DE6\u5927\u817F/\u5DE6\u5C0F\u817F/\u5DE6\u811A"
+    m_Weight: 1
+  - m_Path: "\u9AA8\u67B6/\u5DE6\u5927\u817F/\u5DE6\u5C0F\u817F/\u5DE6\u811A/\u5DE6\u811A_end"
     m_Weight: 1
   - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72"
     m_Weight: 1
-  - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72/\u5934"
+  - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72/\u8116\u5B50"
     m_Weight: 1
-  - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72/\u5934/\u5934_end"
+  - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72/\u8116\u5B50/\u5934"
+    m_Weight: 1
+  - m_Path: "\u9AA8\u67B6/\u8EAF\u5E72/\u8116\u5B50/\u5934/\u5934_end"
     m_Weight: 1
