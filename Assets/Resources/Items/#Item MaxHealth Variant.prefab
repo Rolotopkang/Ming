@@ -108,9 +108,37 @@ PrefabInstance:
       propertyPath: onGrab.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1875928094711579964, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697282508568508603, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849400795952661949, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182018388529940502, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603081196514651336, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579593884909644838, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4914325554918059198, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: m_Name
       value: '#Item MaxHealth Variant'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914325554918059198, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: StopTargeting.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -127,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: StartTargeting.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddShowDiscriptionUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787264012039391751, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8020063704253623421, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: ItemData

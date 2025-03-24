@@ -23,6 +23,5 @@ public class SlingShotSlot : MonoBehaviour
         // 设置弹药袋的位置
         Vector3 waistPosition = playerCamera.position - new Vector3(0, waistHeight, 0);
         Slingshot.position = waistPosition + offset + relativePosition;
-        transform.rotation = Quaternion.LookRotation(playerCamera.position - transform.position);
     }
 }

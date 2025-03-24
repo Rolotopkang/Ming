@@ -32,6 +32,8 @@ namespace Tools
             Buff_Ice_FrozenDuration,
             Buff_Ice_DmgPercentage,
             GiantKillerPercentage,
+            HealthBottleNum,
+            
         }
         
         public enum EffectName
