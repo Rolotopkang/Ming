@@ -53,8 +53,8 @@ public class RewardPickTable : Singleton<RewardPickTable>
     public void ShowHealthReward()
     {
         ClearTable();
-        Grabbable health1 = ItemDatabaseManager.GetInstance().GetItemGOByName("#Item AddHealthBottle Variant").GetComponent<Grabbable>();
-        Grabbable health2 = ItemDatabaseManager.GetInstance().GetItemGOByName("#Item MaxHealth Variant").GetComponent<Grabbable>();
+        Grabbable health1 = ItemDatabaseManager.GetInstance().GetItemGOByName("AddHealthBottle").GetComponent<Grabbable>();
+        Grabbable health2 = ItemDatabaseManager.GetInstance().GetItemGOByName("MaxHealth").GetComponent<Grabbable>();
         rewardPoints[0].Place(health1);
         rewardPoints[1].Place(health2);
         AddDestroyListener();
