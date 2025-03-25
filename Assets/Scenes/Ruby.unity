@@ -122699,6 +122699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHP: 0
+  CurrentHealthBottleCount: 0
+  HealthBottelHealingCount: 50
 --- !u!4 &8685501860466570536
 Transform:
   m_ObjectHideFlags: 0
