@@ -20,7 +20,7 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
         {
             ItemBase tmp_itembase = go.GetComponent<ItemBase>();
             _itemDictionary.Add(tmp_itembase.ItemData.itemName,go);
-            Debug.Log("加载"+tmp_itembase.ItemData.itemName);
+            // Debug.Log("加载"+tmp_itembase.ItemData.itemName);
             if (tmp_itembase.ItemData.isEvent)
             {
                 _isEventItemDictionary.Add(tmp_itembase.ItemData.itemName,go);
@@ -32,7 +32,7 @@ public class ItemDatabaseManager : Singleton<ItemDatabaseManager>
         }
     }
 
-    
+        
     public GameObject GetItemGOByName(string itemName)
     {
         return _itemDictionary[itemName];
