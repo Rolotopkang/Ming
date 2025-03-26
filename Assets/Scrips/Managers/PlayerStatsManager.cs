@@ -35,6 +35,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Buff_Ice_DmgPercentage ,2.0f},
         { EnumTools.PlayerStatType.GiantKillerPercentage , 0},
         { EnumTools.PlayerStatType.HealthBottleNum ,3},
+        { EnumTools.PlayerStatType.Money , 0},
     };
 
     private Dictionary<EnumTools.PlayerStatType, float> statModifiers = new Dictionary<EnumTools.PlayerStatType, float>();

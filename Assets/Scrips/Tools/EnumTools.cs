@@ -33,6 +33,7 @@ namespace Tools
             Buff_Ice_DmgPercentage,
             GiantKillerPercentage,
             HealthBottleNum,
+            Money,
             
         }
         
