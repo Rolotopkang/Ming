@@ -17,4 +17,3 @@ MonoBehaviour:
   bigWaveList:
   - {fileID: 11400000, guid: 0f6305d1d6fedec4fadd6070c9a2ae39, type: 2}
   - {fileID: 11400000, guid: bb5a7d8521fa5ed41909578b1444b973, type: 2}
-  - {fileID: 11400000, guid: 1da56f2e4a4413745bc643a9a0289109, type: 2}
