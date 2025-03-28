@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Packages/AutoHand/Packages (Setup)/MetaXR.unitypackage.meta
+guid: e84256664e709be418f708fd5984fd9b
+========
 guid: 10977af3c7f899f41bef74f548180a65
 folderAsset: yes
+>>>>>>>> main:Assets/Art/Room1 Environment assets/Texture/Critical Chance.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -46601,6 +46601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee278be559aac9b459bcbb6ed2e0820f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSlotNum: 0
+  zhuozi: {fileID: 0}
 --- !u!1 &1815906326
 GameObject:
   m_ObjectHideFlags: 0
@@ -122697,6 +122699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHP: 0
+  CurrentHealthBottleCount: 0
+  HealthBottelHealingCount: 50
 --- !u!4 &8685501860466570536
 Transform:
   m_ObjectHideFlags: 0

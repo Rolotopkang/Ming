@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Packages/AutoHand/Packages (Setup)/FinalIK.unitypackage.meta
+guid: 282ad9fa038769b4e9e8bb1798e65cfb
+========
 guid: e78e4c8ea62b2ed46a8080dbd42d7dab
 folderAsset: yes
+>>>>>>>> main:Assets/Art/Room1 Environment assets/Texture/Clock.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

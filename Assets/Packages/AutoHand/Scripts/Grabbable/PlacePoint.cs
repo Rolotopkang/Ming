@@ -417,7 +417,7 @@ namespace Autohand {
             lastPlacedTime = Time.time;
 
             //Apply place point settings
-            if(destroyObjectOnPlace) {
+            if( destroyObjectOnPlace) {
                 Destroy(placeObj.gameObject);
                 return;
             }

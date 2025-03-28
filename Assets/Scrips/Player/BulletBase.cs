@@ -16,7 +16,7 @@ public class BulletBase : MonoBehaviour
     
     public int PenetrationNum = 1;
     private bool _isCritical = false;
-    private List<EnemyBase> hitEnemyList = new List<EnemyBase>();
+    public List<EnemyBase> hitEnemyList = new List<EnemyBase>();
     
     void Start()
     {

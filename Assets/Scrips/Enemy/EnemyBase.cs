@@ -18,7 +18,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     public UnityEvent OnDeath;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
-    private UI_EnemyUI_Base _enemyUIBase;
+    protected UI_EnemyUI_Base _enemyUIBase;
     
     private Rigidbody[] ragdollRigidbodies;
     private Joint[] joints;

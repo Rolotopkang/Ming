@@ -53,8 +53,11 @@ public class RewardPickTable : Singleton<RewardPickTable>
     public void ShowHealthReward()
     {
         ClearTable();
-        Grabbable health1 = ItemDatabaseManager.GetInstance().GetItemGOByName("AddHealthBottle").GetComponent<Grabbable>();
-        Grabbable health2 = ItemDatabaseManager.GetInstance().GetItemGOByName("MaxHealth").GetComponent<Grabbable>();
+        Grabbable health1 = Instantiate(
+            ItemDatabaseManager.GetInstance().GetItemGOByName("AddHealthBottle"), 
+            Vector3.zero, Quaternion.identity ,transform).GetComponent<Grabbable>();
+        Grabbable health2 = Instantiate( ItemDatabaseManager.GetInstance().GetItemGOByName("MaxHealth"),            
+            Vector3.zero, Quaternion.identity ,transform).GetComponent<Grabbable>();
         rewardPoints[0].Place(health1);
         rewardPoints[1].Place(health2);
         AddDestroyListener();
@@ -64,7 +67,9 @@ public class RewardPickTable : Singleton<RewardPickTable>
     public void ShowMoneyReward()
     {
         ClearTable();
-        Grabbable Money = ItemDatabaseManager.GetInstance().GetItemGOByName("Money").GetComponent<Grabbable>();
+        Grabbable Money = Instantiate(
+            ItemDatabaseManager.GetInstance().GetItemGOByName("Money"),
+            Vector3.zero, Quaternion.identity ,transform).GetComponent<Grabbable>();
         rewardPoints[1].Place(Money);
         AddDestroyListener();
         rewardPoints[0].gameObject.SetActive(false);
