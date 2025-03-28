@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
+  m_Texture: {fileID: 2800000, guid: 80941968acb55e645ba23ec00a02da5d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496ab90ea43146d5a2b556e1a87515f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
-  PoisonIcon: {fileID: 2800000, guid: 490272c7e5fa30f4a88f5f77ac90ca97, type: 3}
-  IceIcon: {fileID: 2800000, guid: 49d0c0f7b98799b458be793254f3c829, type: 3}
-  FrozenIcon: {fileID: 2800000, guid: f14259bfc27fefa46aa3b88c0ee97fd4, type: 3}
+  FireIcon: {fileID: 2800000, guid: 80941968acb55e645ba23ec00a02da5d, type: 3}
+  PoisonIcon: {fileID: 2800000, guid: f7ef2f9372e457d46b6dd69c91582acd, type: 3}
+  IceIcon: {fileID: 2800000, guid: 5cd6b3e723fa2ef4faa711b4b7a4feed, type: 3}
+  FrozenIcon: {fileID: 2800000, guid: ce6c886a642d86d49ba6830dc5d814db, type: 3}
   EliteIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
   ShieldArmedIcon: {fileID: 2800000, guid: 17d565bb4a7744b41b7e4dc7e3a09e35, type: 3}
   BuffIcon: {fileID: 6436496918805609981}
@@ -121,14 +121,14 @@ RectTransform:
   m_GameObject: {fileID: 6782515446010399402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3849303, y: 1.3849303, z: 1.3849303}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6027809430640109317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.6, y: -14.5}
+  m_AnchoredPosition: {x: 0, y: -47}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2931797981864018587
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
