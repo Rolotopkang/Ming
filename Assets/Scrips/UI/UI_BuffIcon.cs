@@ -31,7 +31,14 @@ namespace Scrips.UI
                 EnumTools.BuffName.ShieldArmed => ShieldArmedIcon,
                 _ => null
             };
-            Num.text = buffBase.currentLayer.ToString("D");
+            if (buffBase.currentLayer != 0)
+            {
+                Num.text = buffBase.currentLayer.ToString("D");
+            }
+            else
+            {
+                Num.text = "";
+            }
         }
     }
 }
