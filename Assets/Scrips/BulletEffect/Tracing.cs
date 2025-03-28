@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,12 +16,16 @@ namespace Scrips.Effects
         private float enhanceHoming;
         private float homingStrength = 100f;
         private float homingAngelStrength = 10f;
+        private BulletBase _bulletBase;
 
+        private void Start()
+        {
+            _bulletBase = GetComponent<BulletBase>();
+        }
 
-        
         private void FixedUpdate()
         {
-            target = EnemyManager.GetInstance().GetClosestEnemy(transform, homingRange);
+            target = EnemyManager.GetInstance().GetClosestEnemy(transform, homingRange,_bulletBase.hitEnemyList);
             if (target != null && !isHomingCoroutine)
             {
                 isHomingCoroutine = true;
@@ -33,6 +38,8 @@ namespace Scrips.Effects
                     return;
                 }
                 StopCoroutine(homing);
+                homing=StartCoroutine(HomingCoroutine(target));
+                oldTarget = target;
             }else if (target == null && isHomingCoroutine)
             {
                 StopCoroutine(homing);
