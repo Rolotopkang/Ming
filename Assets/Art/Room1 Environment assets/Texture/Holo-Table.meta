@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Packages/FlatKit/[Render Pipeline] Universal (URP).unitypackage.meta
+guid: 0a06dbf094fad5c42baf335e2f0ef542
+========
 guid: 9b1f4ca00d546d443bc8747bf85c3dce
 folderAsset: yes
+>>>>>>>> main:Assets/Art/Room1 Environment assets/Texture/Holo-Table.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

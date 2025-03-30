@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TriForge Assets/_URP Content - Fantasy Worlds - Old Forest DEMO.unitypackage.meta
+guid: 595204e873882d04baf0e71e329e127d
+========
 guid: 0c0ccb1db13136745a5ab35b996a2e2d
 folderAsset: yes
+>>>>>>>> main:Assets/Art/Room1 Environment assets/Texture/Lever.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
