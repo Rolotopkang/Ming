@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '#Item Money Variant'
       objectReference: {fileID: 0}
+    - target: {fileID: 5251073079223817475, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: StopTargeting.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

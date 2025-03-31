@@ -6,7 +6,6 @@ public class ItemUpgradeTabel : Singleton<ItemUpgradeTabel>
 {
     public PlacePoint child1;
     public PlacePoint child2;
-    public PlacePoint OutCome;
     public Transform OutComePos;
 
     public void Upgrade()
@@ -24,7 +23,7 @@ public class ItemUpgradeTabel : Singleton<ItemUpgradeTabel>
                 child1.Remove();
                 child2.Remove(); 
                 tmp_D.DoDestroy();
-                tmp_g.transform.position = OutCome.transform.position;
+                tmp_g.transform.position = OutComePos.transform.position;
             }
             else
             {

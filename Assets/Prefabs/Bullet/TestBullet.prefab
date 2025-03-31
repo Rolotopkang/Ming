@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.024610719, y: 0.024610719, z: 0.024610719}
+  m_LocalScale: {x: 0.054195266, y: 0.054195266, z: 0.054195266}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116695886955158973}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: e08d894d1a4dca746a9673007d5c706d, type: 3}
 --- !u!23 &7948099516516106872
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72cc42f87d5a1a84a98dfa8c0308f965, type: 2}
+  - {fileID: 2100000, guid: c3f81ca1d300246269aa73091d2103f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,7 +109,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3769986901525302700
 Rigidbody:
@@ -272,3 +272,4 @@ MonoBehaviour:
   OnHitEnemyEffectPrefab: {fileID: 5372019669113804592, guid: 3aca79f5eeaacbe46a7cae8e78e950d2, type: 3}
   DamageKind: 0
   PenetrationNum: 1
+  hitEnemyList: []
