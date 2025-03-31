@@ -5,6 +5,8 @@ using UnityEngine;
 public class ItemForgingTable : Singleton<ItemForgingTable>
 {
     public PlacePoint slot;
+    public GameObject OutComeBallPrefab;
+    public GameObject outcomePoint;
 
     public void Upgrade()
     {
@@ -19,7 +21,8 @@ public class ItemForgingTable : Singleton<ItemForgingTable>
                 grabbable.DoDestroy();
                 Grabbable tmp_go = Instantiate(ItemDatabaseManager.GetInstance().GetRandomNoneIsOnlyItem(), transform).GetComponent<Grabbable>();
                 tmp_go.transform.GetComponent<ItemBase>().ItemCount = tmp_count;
-                slot.Place(tmp_go);
+                OutComeBall tmp_pp = Instantiate(OutComeBallPrefab, outcomePoint.transform.position, Quaternion.identity).GetComponent<OutComeBall>();
+                tmp_pp.Init(tmp_go);
             }
             else
             {

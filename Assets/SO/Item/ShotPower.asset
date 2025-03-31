@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ShotPower
   isOnly: 0
+  isEvent: 0
   MaxLevel: 4
-  icon: {fileID: -1659708932042841261, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  icon: {fileID: 21300000, guid: e5efd84af5c60254d8188e3d8b179117, type: 3}
   description: ShotPower
   statModifiers:
   - statType: 24
-    value: 10
+    value: 15
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

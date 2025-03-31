@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Packages/AutoHand/Packages (Setup)/MetaXR.unitypackage.meta
+guid: 1c31809769bf7bf419f716f5c8da3e2d
+DefaultImporter:
+========
 guid: 029b0c456c650a34ca13b5446b58e614
 PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/Items/updatemachine 1.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

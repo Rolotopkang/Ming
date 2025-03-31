@@ -70,7 +70,11 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         {
             return;
         }
-        
+
+        if (damageKind == EnumTools.DamageKind.Poison && EnemyData.isBoss)
+        {
+            dmg = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer) * 0.002f;
+        }
         
         CurrentHealth -= dmg;
         _enemyUIBase.UpdateUI();
