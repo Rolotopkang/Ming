@@ -16,7 +16,7 @@ MonoBehaviour:
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
-  icon: {fileID: 37763770702065993, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  icon: {fileID: 21300000, guid: b17728475023abc4884a080d6da8ad7e, type: 3}
   description: 'ADD SlingShot one shot''s Bullet Number
 
 

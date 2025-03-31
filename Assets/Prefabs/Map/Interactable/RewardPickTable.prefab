@@ -26,15 +26,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722818331468113944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071008, y: 0.0029142052, z: 0.0029142052, w: 0.7071008}
-  m_LocalPosition: {x: 0.008, y: 0.574, z: 0.015}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.008, y: 0.5895, z: 0.015}
   m_LocalScale: {x: 0.030000001, y: 0.03, z: 0.029999996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5236008058558080650}
   - {fileID: 3711360470725278411}
   m_Father: {fileID: 5367208637499033784}
-  m_LocalEulerAnglesHint: {x: 51.158, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2553896664058340322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,20 +172,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.009832966
+      outSlope: -0.009832966
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 7.961609
+      value: 0.92171377
+      inSlope: -0.022431854
+      outSlope: -0.022431854
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 0.5
+      inSlope: -0.03503074
+      outSlope: -0.03503074
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -195,21 +204,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0.3
+      inSlope: 0.047016516
+      outSlope: 0.047016516
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 9.726978
+      value: 0.7573286
+      inSlope: 0.0236058
+      outSlope: 0.0236058
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.05112567
+    - serializedVersion: 3
+      time: 20
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.0236222
+      outSlope: 0.0236222
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -219,21 +237,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0.15
+      inSlope: 0.019177193
+      outSlope: 0.019177193
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 9.637291
+      value: 0.3348162
+      inSlope: 0.032033686
+      outSlope: 0.032033686
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 0.8
+      inSlope: 0.044890177
+      outSlope: 0.044890177
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -243,18 +270,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
+      value: 0.1
+      inSlope: 0.0063119303
+      outSlope: 0.0063119303
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
+      time: 13.002666
+      value: 0.18207192
+      inSlope: 0.01872819
+      outSlope: 0.01872819
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 0.4
+      inSlope: 0.031144448
+      outSlope: 0.031144448
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -288,13 +324,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2968283823713303992}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.18, y: -0.48, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1801386926415537805}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &3210247369520180013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,13 +889,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5096179984070717495}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.18, y: -0.48, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2562555620791718589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &9223293534779720538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,13 +1158,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216720694649022498}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.18, y: -0.48, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2385495449100346155}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &5886990999461266419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1539,15 +1575,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6878665640795054762}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071008, y: 0.0029142052, z: 0.0029142052, w: 0.7071008}
-  m_LocalPosition: {x: 0.008, y: 0.574, z: -1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.008, y: 0.5895, z: -1}
   m_LocalScale: {x: 0.030000001, y: 0.03, z: 0.029999996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8239223696891165547}
   - {fileID: 3005939487584455341}
   m_Father: {fileID: 5367208637499033784}
-  m_LocalEulerAnglesHint: {x: 51.158, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &9002027929117363953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1654,15 +1690,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8985184377253110570}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071008, y: 0.0029142052, z: 0.0029142052, w: 0.7071008}
-  m_LocalPosition: {x: 0.008, y: 0.574, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.008, y: 0.5895, z: 1}
   m_LocalScale: {x: 0.030000001, y: 0.03, z: 0.029999996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 142232842249542996}
   - {fileID: 1799946306191242383}
   m_Father: {fileID: 5367208637499033784}
-  m_LocalEulerAnglesHint: {x: 51.158, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &3053551332556018775
 MonoBehaviour:
   m_ObjectHideFlags: 0

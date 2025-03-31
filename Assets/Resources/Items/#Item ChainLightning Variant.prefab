@@ -121,8 +121,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: archMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: gravitationVelocity
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5787264012039391751, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: m_Layer

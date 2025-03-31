@@ -175,15 +175,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873842633439053948}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
-  m_LocalPosition: {x: 0.00245, y: 0.00079, z: 0.00489}
+  m_LocalRotation: {x: 0.00030345467, y: 0.9929759, z: 0.11828913, w: -0.0025475617}
+  m_LocalPosition: {x: 0.00245, y: 0.00078999664, z: 0.0048900465}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7384089524246696070}
   - {fileID: 8733208337416804379}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &51585935675311264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,8 +204,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -436,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035733224757299273}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: 0.00555, y: 0.00231, z: 0.00014}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -444,7 +444,7 @@ Transform:
   - {fileID: 5167692594523230948}
   - {fileID: 2493911036850757039}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &2443378956646976643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,8 +465,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -479,7 +479,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -992,13 +992,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497407982251057887}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1676062747008994942}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &7363014687606445720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2256032582471376249}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: 0.00484, y: 0.00304, z: -0.00215}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -1317,7 +1317,7 @@ Transform:
   - {fileID: 7697102826222541104}
   - {fileID: 3218874741240308268}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &6294329955326295609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,8 +1338,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -1461,7 +1461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2436798815135405682}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: 0.00234, y: 0.00381, z: -0.00453}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -1469,7 +1469,7 @@ Transform:
   - {fileID: 7487429447269249636}
   - {fileID: 927540518167584784}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &7405431265609278636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,8 +1490,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -1613,7 +1613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2447229261614860072}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.00473, y: 0.00305, z: -0.00213}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -1621,7 +1621,7 @@ Transform:
   - {fileID: 6400673370747839368}
   - {fileID: 7059460569096370377}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &3764483360687777667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,8 +1642,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -2060,13 +2060,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3399680031211932066}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9014243070491463036}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &7348876203185474492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,7 +2330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3471548008145874432}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.00005, y: 0.00397, z: -0.00503}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -2338,7 +2338,7 @@ Transform:
   - {fileID: 2655162247755986266}
   - {fileID: 6369144815209612953}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &2048034222868440613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,8 +2359,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -2482,7 +2482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4605111801806192369}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.00489, y: 0.0016, z: 0.00242}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -2490,7 +2490,7 @@ Transform:
   - {fileID: 3382051555890121564}
   - {fileID: 8247545151216234065}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &5810538407265254262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,8 +2511,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -2633,13 +2633,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4788985322478463145}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8414884297270197462}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &5518399724362454100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,7 +2903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4876770030480485265}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: 0.00488, y: 0.0016, z: 0.00237}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -2911,7 +2911,7 @@ Transform:
   - {fileID: 1046122229673251534}
   - {fileID: 145750601743158661}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &8021863885208145707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2932,8 +2932,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -2946,7 +2946,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -3203,7 +3203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5236106707813141408}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: 0.00006, y: 0.00064, z: 0.0054}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -3211,7 +3211,7 @@ Transform:
   - {fileID: 2478831517173272537}
   - {fileID: 4906881455620606691}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &6227158532001447383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,8 +3232,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -3246,7 +3246,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -3463,13 +3463,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5291656725214068623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7980642590701060747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1501505400083489446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3732,13 +3732,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5523212907358129561}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3949957910994029350}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &218328923253898947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4160,13 +4160,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5696941056134733867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7399256986837093131}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &3943351452059896068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4577,13 +4577,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5763993707732475370}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4828354518281234296}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &528240603161753930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5422,7 +5422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6702827827066023531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.00237, y: 0.00384, z: -0.00456}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -5430,7 +5430,7 @@ Transform:
   - {fileID: 7250548296130482273}
   - {fileID: 1262410866650625876}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &4679167687668595896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5451,8 +5451,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -5465,7 +5465,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -5574,7 +5574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7025751383232112994}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.0023, y: 0.00083, z: 0.00481}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -5582,7 +5582,7 @@ Transform:
   - {fileID: 6456786910633982951}
   - {fileID: 2289296493079811835}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &7977314878469365840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5603,8 +5603,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -5617,7 +5617,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1
@@ -5725,13 +5725,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072501663099001785}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7885835376878316175}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &26039976388455769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6142,13 +6142,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7423239606959310371}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7152377901085273248}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &7077042079643172029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6454,13 +6454,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8063027602715616330}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875570119686176672}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &5868193570562098790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6871,13 +6871,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8647278545626334952}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2705565371112422749}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &6135253297088974164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7320,13 +7320,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8810060305285882209}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3601043397353541231}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &6643999291390412393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7590,7 +7590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051667894723184384}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046317518, y: -0.80658686, z: 0.588384, w: -0.03281452}
+  m_LocalRotation: {x: 0.00030348316, y: 0.9929757, z: 0.118290916, w: -0.002547545}
   m_LocalPosition: {x: -0.00536, y: 0.00231, z: 0.00023}
   m_LocalScale: {x: 0.00022713575, y: 0.0002271358, z: 0.00022713571}
   m_ConstrainProportionsScale: 1
@@ -7598,7 +7598,7 @@ Transform:
   - {fileID: 5799576404271595847}
   - {fileID: 5721483988368735555}
   m_Father: {fileID: 6860285971632144275}
-  m_LocalEulerAnglesHint: {x: 72.214, y: 7.125, z: 6.788}
+  m_LocalEulerAnglesHint: {x: -13.587, y: 180.294, z: 0}
 --- !u!114 &5718145342520656008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7619,8 +7619,8 @@ MonoBehaviour:
   placeRadius: 4
   placeSize: {x: 0.1, y: 0.1, z: 0.1}
   shapeOffset: {x: 0, y: 0, z: 0}
-  grabbablePlacePoint: 0
-  forcePlace: 0
+  grabbablePlacePoint: 1
+  forcePlace: 1
   forceHandRelease: 1
   parentOnPlace: 1
   matchPosition: 1
@@ -7633,7 +7633,7 @@ MonoBehaviour:
   destroyObjectOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
+  jointBreakForce: Infinity
   showPlaceRequirements: 1
   heldPlaceOnly: 1
   nameCompareType: 1

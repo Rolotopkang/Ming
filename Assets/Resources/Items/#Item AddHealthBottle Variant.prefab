@@ -177,6 +177,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: archMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
+      propertyPath: gravitationVelocity
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443074750599576183, guid: fe3f2727ac14dab4182fd581bf8c1957, type: 3}
       propertyPath: StopTargeting.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5044426132508866332}

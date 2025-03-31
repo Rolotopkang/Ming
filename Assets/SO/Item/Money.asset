@@ -16,7 +16,7 @@ MonoBehaviour:
   isOnly: 1
   isEvent: 0
   MaxLevel: 4
-  icon: {fileID: 21300000, guid: 911a526ffb4252a4992c21d7c8fab782, type: 3}
+  icon: {fileID: 21300000, guid: da57b68c5b2e27044866e8eb588c5d81, type: 3}
   description: 
   statModifiers: []
   hasSpecialEffect: 0
