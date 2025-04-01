@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Fire
   isOnly: 0
+  isEvent: 0
   MaxLevel: 4
-  icon: {fileID: 8158563787144471110, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  icon: {fileID: 21300000, guid: 5dbeeebdf30c35a48b3f6e3b257f34b5, type: 3}
   description: Fire
   statModifiers:
   - statType: 15
@@ -55,7 +56,7 @@ MonoBehaviour:
       m_PostInfinity: 0
       m_RotationOrder: 0
   - statType: 17
-    value: 0.15
+    value: 0.3
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

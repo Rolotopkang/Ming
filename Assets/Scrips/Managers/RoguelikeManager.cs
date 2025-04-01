@@ -1,6 +1,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Autohand;
+    using Cysharp.Threading.Tasks;
     using Tools;
     using UnityEngine;
 
@@ -8,7 +10,7 @@
     {
         public int layer = 0;
         public int BigLayer = 1;
-        public GameObject player;
+        public GameObject playerroot;
 
         public AnimationCurve ItemCurve;
         public AnimationCurve MoneyCurve;
@@ -69,8 +71,9 @@
             NextLevel(EnumTools.RoomKind.Item);
         }
 
-        public void NextLevel(EnumTools.RoomKind roomKind)
+        public async void NextLevel(EnumTools.RoomKind roomKind)
         {
+            await UniTask.WaitForSeconds(0.1f);
             SetCurrentRoom(GetRoomBaseByType(roomKind));
             EventCenter.Publish(EnumTools.GameEvent.LevelStart,null);
         }
@@ -84,8 +87,7 @@
             
             currentRoom = roomBase;
             Debug.Log(roomBase.currentBirthPoint.position+" --------------" + roomBase.name.ToString());
-            player.transform.position = roomBase.currentBirthPoint.position;
-            
+            playerroot.GetComponent<AutoHandPlayer>().SetPosition(roomBase.currentBirthPoint.position);
         }
 
         private RoomBase GetRoomBaseByType(EnumTools.RoomKind kind)

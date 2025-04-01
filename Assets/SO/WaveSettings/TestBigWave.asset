@@ -16,4 +16,3 @@ MonoBehaviour:
   spawnInterval: 5
   bigWaveList:
   - {fileID: 11400000, guid: 0f6305d1d6fedec4fadd6070c9a2ae39, type: 2}
-  - {fileID: 11400000, guid: bb5a7d8521fa5ed41909578b1444b973, type: 2}

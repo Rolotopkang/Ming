@@ -21,6 +21,7 @@ namespace Scrips.Enemy
         base.Awake();
         _behaviorTree = GetComponent<BehaviorTree>();
         _agent = GetComponent<NavMeshAgent>();
+
         _boxCollider = GetComponent<BoxCollider>();
         _boxCollider.enabled = false;
         _behaviorTree.SetVariableValue("Speed",EnemyData.SpeedCurve.Evaluate(RoguelikeManager.GetInstance().layer));

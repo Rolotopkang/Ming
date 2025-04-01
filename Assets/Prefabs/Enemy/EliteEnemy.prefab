@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3724391530173611259}
   - component: {fileID: 1656379147295160814}
   - component: {fileID: 4446762391530302208}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5172703747158286906, guid: e04ae06043c64e946837b15c7d1cd27e, type: 3}
+  - {fileID: 2100000, guid: 727cfaf3482ac48ff97b662624abc435, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,7 +205,7 @@ MeshCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3063
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   logTaskChanges: 0
   group: 1
   resetValuesOnRestart: 0
-  externalBehavior: {fileID: 11400000, guid: 75c9bad28d4a10d4b863e2708221a10f, type: 2}
+  externalBehavior: {fileID: 11400000, guid: ce3bd20b338f8694c8d56331ec4e9b98, type: 2}
   mBehaviorSource:
     behaviorName: 
     behaviorDescription: 

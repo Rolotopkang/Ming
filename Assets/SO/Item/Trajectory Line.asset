@@ -16,7 +16,7 @@ MonoBehaviour:
   isOnly: 1
   isEvent: 1
   MaxLevel: 1
-  icon: {fileID: 7674156195484195045, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  icon: {fileID: 21300000, guid: c3a7df5237c51ae43981abb8ddd8039b, type: 3}
   description: ADD Trajectory Line to your SlingShot
   statModifiers: []
   hasSpecialEffect: 1
