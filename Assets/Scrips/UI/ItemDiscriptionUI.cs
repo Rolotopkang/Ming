@@ -7,6 +7,8 @@ public class ItemDescriptionUI : UI_Base
 {
     public TextMeshProUGUI ItemnName;
     public TextMeshProUGUI ItemDiscription;
+    public TextMeshProUGUI Xiaoguomiaoshu;
+    public TextMeshProUGUI Xiaogushi;
     public TextMeshProUGUI Level;
     public Image ItemImage;
 
@@ -28,6 +30,8 @@ public class ItemDescriptionUI : UI_Base
         ItemnName.color = _itemBase.GetItemColor();
         ItemImage.sprite = _itemBase.ItemData.icon;
         ItemDiscription.text = _itemBase.DiscriptionToString();
+        Xiaoguomiaoshu.text = _itemBase.XiaoguomiaoshuToString();
+        Xiaogushi.text = _itemBase.XiaogushiToString();
         Level.text = _itemBase.ItemCount.ToString();
         Level.color = _itemBase. GetItemColor();
     }

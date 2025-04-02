@@ -1238,6 +1238,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  SkinnedMeshRenderer: {fileID: 8006651184594740197}
+  DebuffShader:
+  - {fileID: 2100000, guid: 13eda5224f52e9544a81075abec89829, type: 2}
+  - {fileID: 2100000, guid: 33d2365d2debee147b32e5727840c000, type: 2}
+  - {fileID: 2100000, guid: c69081f9136ae7c41a65dec181d224a3, type: 2}
+  - {fileID: 2100000, guid: 4bd3ab4d4d6d9a04dae9016767a3d2bc, type: 2}
   AttackHitboxOffset: {x: 0, y: 0.53, z: 0.65}
   AttackHitboxSize: {x: 0.72, y: 0.69, z: 0.79}
 --- !u!95 &6599306867645633217

@@ -22,6 +22,7 @@ namespace Scrips.Buffs
                 return;
             }
             hurtAble.Slow(PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Buff_Ice_SlowPercentage)* currentLayer);
+            buffAble.AddBuffShader(EnumTools.BuffName.Ice,true);
         }
 
         public override void UpdateBuff()
@@ -34,10 +35,11 @@ namespace Scrips.Buffs
             }
         }
 
-        public override void OnBuffEnd()
+        public override void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
-            base.OnBuffEnd();
+            base.OnBuffEnd(hurtAble, buffAble);
             _hurtAble.Slow(-1);
+            buffAble.AddBuffShader(EnumTools.BuffName.Ice,false);
         }
     }
 }
