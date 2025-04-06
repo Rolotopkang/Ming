@@ -35,7 +35,7 @@ namespace Scrips.Buffs
         public override void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
             base.OnBuffEnd(hurtAble, buffAble);
-            buffAble.AddBuffShader(EnumTools.BuffName.Poison,true);
+            buffAble.AddBuffShader(EnumTools.BuffName.Poison,false);
         }
     }
 }

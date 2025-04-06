@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
   m_Name: CriticalDMG
   m_EditorClassIdentifier: 
-  itemName: CriticalDMG
+  itemName: Critical Damage
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: d75307b6f9897b648910e8320cee5df7, type: 3}
-  description: CriticalDMG
+  description: Your critical hit damage increases by <color=#FF5733>{CriticalAmount}</color>
+  xiaogushi: 
   statModifiers:
   - statType: 4
     value: 1

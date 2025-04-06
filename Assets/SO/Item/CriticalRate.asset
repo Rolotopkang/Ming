@@ -17,7 +17,8 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 7fecd416a0562c5458f6e1c7273891b5, type: 3}
-  description: CriticalRate
+  description: "Your critical hit chance increases by \u2018<color=#FF5733>{Critical}</color>"
+  xiaogushi: 
   statModifiers:
   - statType: 3
     value: 0.2

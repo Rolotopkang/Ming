@@ -17,7 +17,8 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 690fea260bd31314c92ceee162129226, type: 3}
-  description: 
+  description: Gives you two pills that can restore 50 HP
+  xiaogushi: 
   statModifiers: []
   hasSpecialEffect: 0
   specialEffectNames: 

@@ -12,12 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
   m_Name: Ice
   m_EditorClassIdentifier: 
-  itemName: Ice
+  itemName: IceBullet
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 31e3bbbdce9e9be4292f6cad547180d7, type: 3}
-  description: Ice
+  description: 'When a bullet hits an enemy, it will give the enemy a layer of slowdown
+    buff, which lasts for <color=#FF5733>{Buff_Ice_Duration}</color> seconds. Each
+    layer of slowdown will reduce the enemy''s speed by <color=#FF5733>{Buff_Ice_SlowPercentage}</color>.
+    Each layer of slowdown will stack up if it hits repeatedly. When the stacking
+    layer reaches <color=#FF5733>{Buff_Ice_MaxLayer}</color> layers, the enemy will
+    be frozen for <color=#FF5733>{Buff_Ice_FrozenDuration}</color> seconds.
+
+    When
+    freezing is triggered, an additional <color=#FF5733>{Buff_Ice_DmgPercentage}</color>
+    of the basic attack power will be caused as freezing damage.'
+  xiaogushi: 
   statModifiers:
   - statType: 21
     value: 0.05

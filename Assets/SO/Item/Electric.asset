@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
   m_Name: Electric
   m_EditorClassIdentifier: 
-  itemName: Electric
+  itemName: LightningBullet
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
