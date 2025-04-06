@@ -12,5 +12,7 @@ namespace Scrips.Buffs
         public void RemoveBuff(EnumTools.BuffName buffName);
 
         public List<BuffBase> GetBuffList();
+
+        public void AddBuffShader(EnumTools.BuffName buffName, bool isAdd);
     }
 }

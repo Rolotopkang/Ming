@@ -21,6 +21,7 @@ namespace Scrips.Buffs
                 PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Attack),
                 EnumTools.DamageKind.Ice,
                 _hurtAble.GetCenter());
+            buffAble.AddBuffShader(EnumTools.BuffName.Frozen,true);
         }
         
         public override void UpdateBuff()
@@ -33,11 +34,12 @@ namespace Scrips.Buffs
             }
         }
         
-        public override void OnBuffEnd()
+        public override void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
-            base.OnBuffEnd();
+            base.OnBuffEnd(hurtAble, buffAble);
             _hurtAble.Slow(-1);
             Debug.Log("remove");
+            buffAble.AddBuffShader(EnumTools.BuffName.Frozen,false);
         }
     }
 }

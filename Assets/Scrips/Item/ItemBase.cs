@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Text.RegularExpressions;
 using Tools;
 using UnityEngine;
@@ -47,18 +48,45 @@ public class ItemBase : MonoBehaviour
         UpdateColor();
     }
 
+    public String XiaoguomiaoshuToString()
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (PlayerStatModifier modifier in ItemData.statModifiers)
+        {
+            sb.AppendLine(modifier.statType +"  +" + (modifier.UseCurve
+                ? modifier.IncrementCurve.Evaluate(ItemCount).ToString()
+                : (modifier.value * ItemCount).ToString()) );   
+        }
+ 
+        return sb.ToString();
+    }
+
+    public String XiaogushiToString()
+    {
+        return ItemData.xiaogushi;
+    }
+
     public String DiscriptionToString()
     {
         return Regex.Replace(ItemData.description, @"{(\w+)}", match =>
         {
+            // string varName = match.Groups[1].Value;
+            // return varName switch
+            // {
+            //     "BulletCount" => PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount)
+            //         .ToString(),
+            //     "1" => "TEST",
+            //     _ => match.Value
+            // };
+            
             string varName = match.Groups[1].Value;
-            return varName switch
+
+            if (Enum.TryParse<EnumTools.PlayerStatType>(varName, out var statType))
             {
-                "BulletCount" => PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.BulletCount)
-                    .ToString(),
-                "1" => "TEST",
-                _ => match.Value
-            };
+                return PlayerStatsManager.GetInstance().GetStatValue(statType).ToString();
+            }
+
+            return match.Value;
         });
     }
 

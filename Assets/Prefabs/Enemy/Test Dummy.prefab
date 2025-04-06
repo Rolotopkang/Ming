@@ -215,6 +215,12 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  SkinnedMeshRenderer: {fileID: 7576291855371004627}
+  DebuffShader:
+  - {fileID: 2100000, guid: 13eda5224f52e9544a81075abec89829, type: 2}
+  - {fileID: 2100000, guid: 33d2365d2debee147b32e5727840c000, type: 2}
+  - {fileID: 2100000, guid: c69081f9136ae7c41a65dec181d224a3, type: 2}
+  - {fileID: 2100000, guid: 4bd3ab4d4d6d9a04dae9016767a3d2bc, type: 2}
 --- !u!1 &4735041794132761708
 GameObject:
   m_ObjectHideFlags: 0

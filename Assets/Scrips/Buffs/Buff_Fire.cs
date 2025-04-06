@@ -18,6 +18,7 @@ namespace Scrips.Buffs
             {
                 currentLayer = maxLayer;
             }
+            buffAble.AddBuffShader(EnumTools.BuffName.Fire,true);
         }
 
         public override void UpdateBuff()
@@ -34,9 +35,9 @@ namespace Scrips.Buffs
             }
         }
 
-        public override void OnBuffEnd()
+        public override void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
-
+            buffAble.AddBuffShader(EnumTools.BuffName.Fire,false);
         }
     }
 }

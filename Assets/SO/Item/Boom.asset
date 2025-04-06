@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
   m_Name: Boom
   m_EditorClassIdentifier: 
-  itemName: BOOM
+  itemName: Explosive Bullet
   isOnly: 0
+  isEvent: 0
   MaxLevel: 4
   icon: {fileID: -1999946806344817058, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  description: BOOOOOOOM
+  description: When the projectile hits an obstacle or enemy, it will cause an explosion,
+    causing 10 points of damage to enemies within the range.
+  xiaogushi: 
   statModifiers: []
   hasSpecialEffect: 1
   specialEffectNames: 01000000

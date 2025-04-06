@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985894154a75432eb5545e00e40e06fe, type: 3}
   m_Name: Electric
   m_EditorClassIdentifier: 
-  itemName: Electric
+  itemName: LightningBullet
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 6e37a8cbb46e6d94aad1a76ddfa48e18, type: 3}
-  description: Electric
+  description: "When the bullet hits, it will release a lightning chain to the surrounding
+    <color=#FF5733>{ChainLightningMaxCount}</color> enemies, causing damage equal
+    to the basic attack power <color=#FF5733>{ChainLightningDmgPercentage}</color>.
+    \nThe maximum trigger range is <color=#FF5733>{ChainLightningRange}</color>."
+  xiaogushi: It seems that bullets can move Thor's hammer
   statModifiers:
   - statType: 10
     value: 0.3

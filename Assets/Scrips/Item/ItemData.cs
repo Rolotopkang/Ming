@@ -21,6 +21,8 @@ using UnityEngine;
         public Sprite icon;
         [TextArea (3,20) ]
         public string description;
+        [TextArea (3,20) ]
+        public string xiaogushi;
 
         public List<PlayerStatModifier> statModifiers = new List<PlayerStatModifier>();
 

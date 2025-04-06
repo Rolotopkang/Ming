@@ -19,7 +19,7 @@ namespace Scrips.Buffs
             
         }
 
-        public virtual void OnBuffEnd()
+        public virtual void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
             
         }

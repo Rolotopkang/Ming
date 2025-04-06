@@ -15,6 +15,7 @@ namespace Scrips.Buffs
             _buffAble = buffAble;
             currentDuration = (int) PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Buff_Poison_Duration);
             currentLayer = 1;
+            buffAble.AddBuffShader(EnumTools.BuffName.Poison,true);
         }
 
         public override void UpdateBuff()
@@ -31,9 +32,10 @@ namespace Scrips.Buffs
             }
         }
 
-        public override void OnBuffEnd()
+        public override void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble)
         {
-            
+            base.OnBuffEnd(hurtAble, buffAble);
+            buffAble.AddBuffShader(EnumTools.BuffName.Poison,false);
         }
     }
 }
