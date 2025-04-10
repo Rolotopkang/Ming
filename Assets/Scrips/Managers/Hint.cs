@@ -11,6 +11,10 @@ public class Hint : MonoBehaviour
     private void Start()
     {
         if (Camera.main != null) player = Camera.main.transform;
+        Vector3 forward = transform.position - player.position;
+        forward.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(forward, Vector3.up);
+        transform.rotation = targetRotation;
     }
 
     private void Update()
