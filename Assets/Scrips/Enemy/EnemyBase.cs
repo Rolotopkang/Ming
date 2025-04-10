@@ -19,6 +19,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     public UnityEvent OnDeath;
     public Renderer SkinnedMeshRenderer;
     public List<Material> DebuffShader;
+    public UnityEvent OnHit;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
     protected UI_EnemyUI_Base _enemyUIBase;
@@ -79,6 +80,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
             dmg = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer) * 0.002f;
         }
         
+        OnHit.Invoke();
         CurrentHealth -= dmg;
         _enemyUIBase.UpdateUI();
         DamageNumberManager.GetInstance().GetDamageNumberThroughDMGKind(damageKind)

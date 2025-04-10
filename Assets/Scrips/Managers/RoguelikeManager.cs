@@ -75,7 +75,11 @@
         {
             await UniTask.WaitForSeconds(0.1f);
             SetCurrentRoom(GetRoomBaseByType(roomKind));
-            EventCenter.Publish(EnumTools.GameEvent.LevelStart,null);
+            EventCenter.Publish(EnumTools.GameEvent.LevelStart, new Dictionary<string, object>
+            {
+                { "CurrentLayer", layer},
+                { "RoomKind", roomKind }
+            });
         }
 
         private void SetCurrentRoom(RoomBase roomBase)
