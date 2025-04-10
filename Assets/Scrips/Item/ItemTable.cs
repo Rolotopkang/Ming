@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Tools;
 using UnityEngine;
@@ -6,8 +7,12 @@ using UnityEngine;
 public class ItemTable : Singleton<ItemTable>
 {
     public int currentSlotNum = 0;
-    public Rigidbody zhuozi;
+    public GameObject BuyButton;
+    public Transform HintPoint;
     private ItemSlot[] _itemSlots;
+    
+    
+    
 
     protected override void Awake()
     {
@@ -15,6 +20,16 @@ public class ItemTable : Singleton<ItemTable>
         _itemSlots = GetComponentsInChildren<ItemSlot>();
 
     }
+
+    private void OnEnable()
+    {
+        EventCenter.Subscribe(EnumTools.GameEvent.LevelStart,OnLevelStart);
+    }
+    private void OnDisable()
+    {
+        EventCenter.Unsubscribe(EnumTools.GameEvent.LevelStart,OnLevelStart);
+    }
+    
 
     private void Start()
     {
@@ -25,16 +40,66 @@ public class ItemTable : Singleton<ItemTable>
         }
     }
 
-    public void BuySlot()
+    private void OnLevelStart(Dictionary<String, object> args)
     {
-        if (currentSlotNum>=12)
+        if (args.ContainsKey("RoomKind"))
         {
-            Debug.Log("不能再买了");
-            return;
+            if ((EnumTools.RoomKind)args["RoomKind"] == EnumTools.RoomKind.Store)
+            {
+                BuyButton.SetActive(true);
+            }
+            else
+            {
+                BuyButton.SetActive(false);
+            }
         }
-        _itemSlots[currentSlotNum++].gameObject.SetActive(true);
     }
 
+    public void BTN_BuySlot()
+    {
+        BuySlot(ShowHint);
+    }
+
+    public void ShowHint(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                HintManager.GetInstance().ShowHint("The slot is already maxed out！", 4, HintPoint);
+                break;
+            case 1:
+                HintManager.GetInstance().ShowHint("Upgrade Successfully！", 4, HintPoint);
+                break;
+            case 2:
+                HintManager.GetInstance().ShowHint("Need enough gold coins to upgrade! (15)", 4, HintPoint);
+                break;
+        }
+        
+        
+    }
+
+    /// <summary>
+    /// 买槽位
+    /// </summary>
+    /// <param name="callback">0不能再买了、1成功、2没钱买了</param>
+    private void BuySlot(Action<int> callback)
+    {
+        
+        if (currentSlotNum>=12)
+        {
+            callback.Invoke(0);
+            return;
+        }
+
+        if (Player.GetInstance().TryBuy(15f))
+        {
+            _itemSlots[currentSlotNum++].gameObject.SetActive(true);
+            callback.Invoke(1);
+            return;
+        }
+        callback.Invoke(2);
+    }
+    
     public async void updateNewPosition(Transform _transform)
     {
         transform.position = _transform.position;

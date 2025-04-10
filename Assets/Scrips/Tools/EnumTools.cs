@@ -84,6 +84,7 @@ namespace Tools
             BulletHit,
             BulletShot,
             PlayerHit,
+            PlayerHealth,
             EnemyKilled,
             LevelStart,
             LevelEnd,
