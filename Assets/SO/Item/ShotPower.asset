@@ -17,7 +17,8 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: e5efd84af5c60254d8188e3d8b179117, type: 3}
-  description: ShotPower
+  description: Increase slingshot range by <color=#FF5733>{ShotPower}</color>meters
+  xiaogushi: 
   statModifiers:
   - statType: 24
     value: 15

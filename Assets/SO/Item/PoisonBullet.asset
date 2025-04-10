@@ -17,7 +17,12 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 5f88014a1c689bb4ea0cf6ca1fec19d1, type: 3}
-  description: PoisonBullet
+  description: When your bullets hit an enemy, they will inflict poison debuffs.
+    The poison debuffs last for <color=#FF5733>{Buff_Poison_Duration}</color> seconds
+    but cannot be stacked. They will inflict <color=#FF5733>{Buff_Poison_DmgPercentage}</color>
+    of the monster's maximum health as damage per second (if it is a boss, there
+    is a maximum damage cap).
+  xiaogushi: 
   statModifiers:
   - statType: 18
     value: 0.04

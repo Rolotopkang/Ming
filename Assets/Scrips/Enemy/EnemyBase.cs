@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Scrips.Buffs;
 using Scrips.Factory;
 using Tools;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -16,6 +17,9 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
     public float CurrentHealth = 100;
     public bool isDeath;
     public UnityEvent OnDeath;
+    public Renderer SkinnedMeshRenderer;
+    public List<Material> DebuffShader;
+    public UnityEvent OnHit;
 
     private List<BuffBase> _buffBaseList = new List<BuffBase>();
     protected UI_EnemyUI_Base _enemyUIBase;
@@ -76,6 +80,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
             dmg = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer) * 0.002f;
         }
         
+        OnHit.Invoke();
         CurrentHealth -= dmg;
         _enemyUIBase.UpdateUI();
         DamageNumberManager.GetInstance().GetDamageNumberThroughDMGKind(damageKind)
@@ -122,7 +127,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         if(tmp_remove== null)
             return;
 
-        tmp_remove.OnBuffEnd();
+        tmp_remove.OnBuffEnd(this,this);
         _buffBaseList.Remove(tmp_remove);
         Destroy(tmp_remove);
         _enemyUIBase.UpdateBuffUI();
@@ -168,6 +173,74 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         OnDeath?.Invoke();
 
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
+    }
+
+    // public void AddBuffShader(EnumTools.BuffName buffName,bool isAdd)
+    // {
+    //     Material tmp_m = GetDebuffMaterial(buffName);
+    //     if (tmp_m == null)
+    //     {
+    //         return;
+    //     }
+    //     
+    //     List<Material> mats = new List<Material>(SkinnedMeshRenderer.materials);
+    //     if (isAdd)
+    //     {
+    //         if (!mats.Contains(tmp_m))
+    //         {
+    //             mats.Add(tmp_m);
+    //             SkinnedMeshRenderer.materials = mats.ToArray();
+    //         }
+    //     }
+    //     else
+    //     {
+    //         if (mats.Contains(tmp_m))
+    //         {
+    //             mats.Remove(tmp_m);
+    //             SkinnedMeshRenderer.materials = mats.ToArray();
+    //         }
+    //     }
+    //
+    // }
+    
+    public void AddBuffShader(EnumTools.BuffName buffName, bool isAdd)
+    {
+        Material tmp_m = GetDebuffMaterial(buffName);
+        if (tmp_m == null) return;
+
+        // 使用 sharedMaterials，避免 Unity 复制 materials
+        List<Material> mats = new List<Material>(SkinnedMeshRenderer.sharedMaterials);
+
+        if (isAdd)
+        {
+            if (!mats.Contains(tmp_m))
+            {
+                mats.Add(tmp_m);
+                SkinnedMeshRenderer.sharedMaterials = mats.ToArray(); // 直接修改 sharedMaterials
+            }
+        }
+        else
+        {
+            if (mats.Contains(tmp_m))
+            {
+                mats.Remove(tmp_m);
+                SkinnedMeshRenderer.sharedMaterials = mats.ToArray(); // 直接修改 sharedMaterials
+            }
+        }
+    }
+
+
+    
+    private Material GetDebuffMaterial(EnumTools.BuffName buffName)
+    {
+        switch (buffName)
+        {
+            case EnumTools.BuffName.Fire: return DebuffShader[0];
+            case EnumTools.BuffName.Poison: return DebuffShader[1];
+            case EnumTools.BuffName.Ice: return DebuffShader[2];
+            case EnumTools.BuffName.Frozen: return DebuffShader[3];
+            default: return null;
+        }
     }
 
     public float GetHealthPercent()

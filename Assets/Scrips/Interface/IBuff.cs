@@ -6,7 +6,7 @@ namespace Scrips.Buffs
     {
         void OnBuffApplied(IHurtAble hurtAble, IBuffAble buffAble);
         void UpdateBuff();
-        void OnBuffEnd();
+        void OnBuffEnd(IHurtAble hurtAble, IBuffAble buffAble);
         EnumTools.BuffName  GetBuffName(); // 获取Buff名称
     }
 }

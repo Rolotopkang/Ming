@@ -480,6 +480,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  SkinnedMeshRenderer: {fileID: 1656379147295160814}
+  DebuffShader:
+  - {fileID: 2100000, guid: 13eda5224f52e9544a81075abec89829, type: 2}
+  - {fileID: 2100000, guid: 33d2365d2debee147b32e5727840c000, type: 2}
+  - {fileID: 2100000, guid: f00e5fd9a203d9e488d716f8a60f733a, type: 2}
+  - {fileID: 2100000, guid: 3465d0d1c16040a44a63646523720ad3, type: 2}
 --- !u!95 &6097998090889474961
 Animator:
   serializedVersion: 7

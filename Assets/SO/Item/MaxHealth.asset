@@ -17,7 +17,8 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 8325c897707a02f4ba9ff973c1d851f9, type: 3}
-  description: 
+  description: Increases your maximum health by 50
+  xiaogushi: 
   statModifiers: []
   hasSpecialEffect: 0
   specialEffectNames: 
