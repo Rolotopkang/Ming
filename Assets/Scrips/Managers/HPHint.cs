@@ -63,7 +63,7 @@ public class HPHint : MonoBehaviour
     {
         if (vignette != null)
         {
-            vignette.color = new ColorParameter(Color.green, true);
+            vignette.color.Override(Color.green);
             vignette.intensity.value = 0.5f;
         }
     }
@@ -72,7 +72,7 @@ public class HPHint : MonoBehaviour
     {
         if (vignette != null)
         {
-            vignette.color = new ColorParameter(Color.red, true);
+            vignette.color.Override(Color.red);
             vignette.intensity.value = 0.5f;
         }
     }
