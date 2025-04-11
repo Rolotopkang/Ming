@@ -7,7 +7,7 @@ public class AudioManager : Singleton<AudioManager>
 {
     public GameObject audioSourcePrefab;
 
-    /*public void PlaySound(AudioClip clip, Vector3 position, bool loop, float MaxDistance, UnityAction endAction, float volume)
+    public void PlaySound(AudioClip clip, Vector3 position, bool loop, float MaxDistance, UnityAction endAction)
     {
         if (clip == null || audioSourcePrefab == null)
         {
@@ -16,10 +16,10 @@ public class AudioManager : Singleton<AudioManager>
         }
 
         AudioInstance audioObject = Instantiate(audioSourcePrefab, position, Quaternion.identity).GetComponent<AudioInstance>();
-        audioObject.Init(clip, loop, MaxDistance, endAction, volume);
-    }*/
+        audioObject.Init(clip, loop, MaxDistance, endAction);
+    }
 
-    public void PlaySound(AudioClip clip, Vector3 position, bool loop, float MaxDistance, float volume)
+    public void PlaySound(AudioClip clip, Vector3 position, bool loop, float MaxDistance)
     {
         if (clip == null || audioSourcePrefab == null)
         {
@@ -28,7 +28,7 @@ public class AudioManager : Singleton<AudioManager>
         }
 
         AudioInstance audioObject = Instantiate(audioSourcePrefab, position, Quaternion.identity).GetComponent<AudioInstance>();
-        audioObject.Init(clip, loop, MaxDistance, volume);
+        audioObject.Init(clip, loop, MaxDistance);
     }
 
     public void PlayBGSound(AudioClip clip)
