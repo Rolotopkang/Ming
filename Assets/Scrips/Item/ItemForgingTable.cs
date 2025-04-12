@@ -7,6 +7,7 @@ public class ItemForgingTable : Singleton<ItemForgingTable>
     public PlacePoint slot;
     public GameObject OutComeBallPrefab;
     public GameObject outcomePoint;
+    public Transform HintPoint;
 
     public void Upgrade()
     {
@@ -15,29 +16,48 @@ public class ItemForgingTable : Singleton<ItemForgingTable>
             ItemBase itemBase = slot.placedObject.GetComponent<ItemBase>();
             if (!itemBase.ItemData.isOnly)
             {
-                int tmp_count = itemBase.ItemCount;
-                slot.Remove();
-                Grabbable grabbable = itemBase.transform.GetComponent<Grabbable>();
-                grabbable.DoDestroy();
-                Grabbable tmp_go = Instantiate(ItemDatabaseManager.GetInstance().GetRandomNoneIsOnlyItem(), transform).GetComponent<Grabbable>();
-                tmp_go.transform.GetComponent<ItemBase>().ItemCount = tmp_count;
-                OutComeBall tmp_pp = Instantiate(OutComeBallPrefab, outcomePoint.transform.position, Quaternion.identity).GetComponent<OutComeBall>();
-                tmp_pp.Init(tmp_go);
+                if (Player.GetInstance().TryBuy(5f))
+                {
+                    int tmp_count = itemBase.ItemCount;
+                    slot.Remove();
+                    Grabbable grabbable = itemBase.transform.GetComponent<Grabbable>();
+                    grabbable.DoDestroy();
+                    Grabbable tmp_go = Instantiate(ItemDatabaseManager.GetInstance().GetRandomNoneIsOnlyItem(), transform).GetComponent<Grabbable>();
+                    tmp_go.transform.GetComponent<ItemBase>().ItemCount = tmp_count;
+                    OutComeBall tmp_pp = Instantiate(OutComeBallPrefab, outcomePoint.transform.position, Quaternion.identity).GetComponent<OutComeBall>();
+                    tmp_pp.Init(tmp_go);
+                }
+                else
+                {
+                    ShowWrongHint(0);
+                }
+                
             }
             else
             {
-                ShowWrongHint();
+                ShowWrongHint(1);
             }
         }
         else
         {
-            ShowWrongHint();
+            ShowWrongHint(2);
         }
     }
     
-    public void ShowWrongHint()
+    public void ShowWrongHint(int index)
     {
-        Debug.Log("不能升级！");
+        switch (index)
+        {
+            case 0:
+                HintManager.GetInstance().ShowHint("Need enough gold coins to upgrade! (5)", 4, HintPoint);
+                break;
+            case 1:
+                HintManager.GetInstance().ShowHint("Please do not put in green quality items", 4, HintPoint);
+                break;
+            case 2:
+                HintManager.GetInstance().ShowHint("Please put in the items that need to be recast", 4, HintPoint);
+                break;
+        }
     }
     
     public void updateNewPosition(Transform _transform)
