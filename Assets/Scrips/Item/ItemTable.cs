@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Autohand;
 using Cysharp.Threading.Tasks;
 using Tools;
 using UnityEngine;
@@ -98,6 +99,25 @@ public class ItemTable : Singleton<ItemTable>
             return;
         }
         callback.Invoke(2);
+    }
+
+    public void ResetPlayer()
+    {
+        foreach (ItemSlot _itemSlot in _itemSlots)
+        {
+            Grabbable grabbable = _itemSlot._placePoint.placedObject;
+            _itemSlot._placePoint.Remove();
+            if (grabbable!=null)
+            {
+                grabbable.DoDestroy();
+            }
+            _itemSlot.gameObject.SetActive(false);
+        }
+        
+        _itemSlots[0].gameObject.SetActive(true);
+        _itemSlots[1].gameObject.SetActive(true);
+        _itemSlots[2].gameObject.SetActive(true);
+        _itemSlots[3].gameObject.SetActive(true);
     }
     
     public async void updateNewPosition(Transform _transform)

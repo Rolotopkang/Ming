@@ -1,4 +1,5 @@
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using Autohand;
@@ -23,8 +24,11 @@
         public List<RoomBase> RoomBaseList;
 
         public Transform zanshicunfang;
+        public GameObject BirthRoom;
+        public Transform BirthPoint;
         private RoomBase currentRoom;
         private Dictionary<EnumTools.RoomKind, AnimationCurve> roomCurves;
+        private bool isjumping;
         protected override void Awake()
         {
             base.Awake();
@@ -43,12 +47,14 @@
         {
             EventCenter.Subscribe(EnumTools.GameEvent.LevelStart,OnLevelStart);
             EventCenter.Subscribe(EnumTools.GameEvent.LevelEnd,OnLevelEnd);
+            EventCenter.Subscribe(EnumTools.GameEvent.PlayerDeath,PlayerDeath);
         }
 
         private void OnDisable()
         {
             EventCenter.Unsubscribe(EnumTools.GameEvent.LevelStart,OnLevelStart);
             EventCenter.Unsubscribe(EnumTools.GameEvent.LevelEnd,OnLevelEnd);
+            EventCenter.Unsubscribe(EnumTools.GameEvent.PlayerDeath,PlayerDeath);
         }
 
         private void OnLevelStart(Dictionary<String, object> args)
@@ -59,8 +65,18 @@
             ItemTable.GetInstance().updateNewPosition(zanshicunfang);
             ItemForgingTable.GetInstance().updateNewPosition(zanshicunfang);
             RewardPickTable.GetInstance().updateNewPosition(zanshicunfang);
+            isjumping = false;
+            StartCoroutine(DelayedTeleport(currentRoom.currentBirthPoint.position));
+            // AutoHandPlayer.Instance.SetPosition(currentRoom.currentBirthPoint.position);
+            Debug.Log(currentRoom.currentBirthPoint.position+" --------------" + currentRoom.name.ToString());
         }
 
+        private IEnumerator DelayedTeleport(Vector3 pos) {
+            yield return null;  // 延迟到下一帧，等XR系统更新headCamera位置
+
+            AutoHandPlayer.Instance.SetPosition(pos);
+        }
+        
         private void OnLevelEnd(Dictionary<String,object> args)
         {
             TeleportDoorsController.GetInstance().SetNextLevelDoor(GetTwoRandomRooms().ToList(),currentRoom.currentDoorPos.ToList());
@@ -71,8 +87,25 @@
             NextLevel(EnumTools.RoomKind.Item);
         }
 
+        public void PlayerDeath(Dictionary<string, object> arg)
+        {
+            layer = 0;
+            BigLayer = 1;
+            BirthRoom.SetActive(true);
+            EnemySpawnManager.GetInstance().RemoveAllEnemy();
+            ItemTable.GetInstance().ResetPlayer();
+            PlayerStatsManager.GetInstance().ResetPlayer();
+            Player.GetInstance().ResetPlayer();
+            AutoHandPlayer.Instance.SetPosition(BirthPoint.position);
+        }
+
         public async void NextLevel(EnumTools.RoomKind roomKind)
         {
+            if (isjumping)
+            { 
+                return;   
+            }
+            isjumping = true;
             await UniTask.WaitForSeconds(0.1f);
             SetCurrentRoom(GetRoomBaseByType(roomKind));
             EventCenter.Publish(EnumTools.GameEvent.LevelStart, new Dictionary<string, object>
@@ -90,8 +123,8 @@
             }
             
             currentRoom = roomBase;
-            Debug.Log(roomBase.currentBirthPoint.position+" --------------" + roomBase.name.ToString());
-            playerroot.GetComponent<AutoHandPlayer>().SetPosition(roomBase.currentBirthPoint.position);
+
+
         }
 
         private RoomBase GetRoomBaseByType(EnumTools.RoomKind kind)

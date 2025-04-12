@@ -10,35 +10,53 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 518e92a230254af48a50137f20ed5330, type: 3}
-  m_Name: MeleeEnemy
+  m_Name: BigMeleeEnemy
   m_EditorClassIdentifier: 
-  EnemyName: MeleeEnemy
+  EnemyName: BigMeleeEnemy
   isBoss: 0
   MaxHPCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 15
+      value: 100
       inSlope: 0
-      outSlope: 4.582873
+      outSlope: 6.2324176
       tangentMode: 65
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 16.25891
-      value: 89.51251
-      inSlope: 4.582873
-      outSlope: 29.533495
+      time: 7.9161634
+      value: 149.33684
+      inSlope: 6.2324176
+      outSlope: 14.352943
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 20
-      value: 200
-      inSlope: 29.533495
+      time: 13.240595
+      value: 225.7581
+      inSlope: 14.352943
+      outSlope: 31.737215
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 16.575594
+      value: 331.60168
+      inSlope: 31.737215
+      outSlope: 49.953445
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 19.9467
+      value: 500
+      inSlope: 49.953445
       outSlope: 2
       tangentMode: 5
       weightedMode: 0
@@ -52,18 +70,18 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.5
-      inSlope: 0.025
-      outSlope: 0.025
+      value: 0.6
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
-      value: 2
-      inSlope: 0.025
-      outSlope: 0.025
+      value: 0.8
+      inSlope: 0.01
+      outSlope: 0.01
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

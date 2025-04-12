@@ -27,7 +27,7 @@ public class RoomBase : MonoBehaviour
     protected virtual async void OnLevelStart(Dictionary<String, object> args)
     {
         Debug.Log("关卡开始");
-        await UniTask.WaitForSeconds(0.1f);
+        await UniTask.WaitForSeconds(0.5f);
         EventCenter.Publish(EnumTools.GameEvent.LevelEnd,null);
     }
 

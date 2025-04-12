@@ -10,6 +10,7 @@ public class TeleportTriggerBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             RoguelikeManager.GetInstance().NextLevel(RoomKind);
+            TeleportDoorsController.GetInstance().ClearDoor();
         }
     }
 }
