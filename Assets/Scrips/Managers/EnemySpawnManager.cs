@@ -45,6 +45,16 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             CurrentWaveList?.Remove(enemyBase);
         }
     }
+
+    public void RemoveAllEnemy()
+    {
+        for (int i = CurrentWaveList.Count - 1; i >= 0; i--)
+        {
+            CurrentWaveList[i].Death();
+        }
+
+        working = false;
+    }
     
     public async void SpawnEnemy(Vector2 _spawnAreaSize, Vector3 root)
     {
@@ -63,15 +73,21 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             return;
         }
 
+        Debug.Log("刷怪起开始工作");
         working = true;
         BigWave currentWave = currentBigWaveList[Random.Range(0, currentBigWaveList.Count)];
         int currentLayer = RoguelikeManager.GetInstance().layer;
         
         foreach (Wave wave in currentWave.bigWaveList)
         {
+            if (!working)
+            {
+                return;
+            }
+            
             foreach (EnemySpawnInfo enemySpawnInfo in wave.enemySpawnInfos)
             {
-                for (int i = 0; i < enemySpawnInfo.countCurve.Evaluate(currentLayer); i++)
+                for (int i = 0; i < (int)enemySpawnInfo.countCurve.Evaluate(currentLayer); i++)
                 {
                     Vector3 spawnPoint = GetValidSpawnPoint();
                     Instantiate(enemySpawnInfo.enemyPrefab, spawnPoint, Quaternion.identity,SpawnRoot);
@@ -79,21 +95,26 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             }
             if (currentWave.waitDeath)
             {
+                Debug.Log("开始等待杀光");
                 await UniTask.WaitUntil(() => CurrentWaveList.Count <= 0);
+                Debug.Log("杀光结束");
             }
 
             if (!wave.Equals(currentWave.bigWaveList.Last()))
             {
+                Debug.Log("等待回合结束");
                 await UniTask.WaitForSeconds((int)currentWave.spawnInterval);
+                Debug.Log("结束");
+                
             }
         }
         working = false;
-
+        Debug.Log("结束工作");
     }
 
     public bool isWaveEnd()
     {
-        return !working && CurrentWaveList.Count == 0;
+        return !working && CurrentWaveList.Count <= 0;
     }
     
     private Vector3 GetValidSpawnPoint() {
