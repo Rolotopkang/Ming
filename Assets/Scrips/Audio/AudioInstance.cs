@@ -20,24 +20,22 @@ public class AudioInstance : MonoBehaviour
         isStart = true;
     }
 
-    public void Init(AudioClip clip, bool isLoop, float maxDistance, float volume = 1f)
+    public void Init(AudioClip clip, bool isLoop, float maxDistance)
     {
         _source = GetComponent<AudioSource>();
         _source.clip = clip;
         _source.loop = isLoop;
         _source.maxDistance = maxDistance;
-        _source.volume = volume;
         _source.Play();
         isStart = true;
     }
 
-    public void Init(AudioClip clip, bool isLoop, float maxDistance, UnityAction OnPlayEndTrigger, float volume = 1f)
+    public void Init(AudioClip clip, bool isLoop, float maxDistance, UnityAction OnPlayEndTrigger)
     {
         _source = GetComponent<AudioSource>();
         _source.clip = clip;
         _source.loop = isLoop;
         _source.maxDistance = maxDistance;
-        _source.volume = volume;
         if (!isLoop)
         {
             PlayEnd = OnPlayEndTrigger;

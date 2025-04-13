@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Tools;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,7 +44,7 @@ public class AudioManager : Singleton<AudioManager>
         audioObject.Init(clip);
     }
 
-    public GameObject PlayBGSoundAndReturn(AudioClip clip)
+    public GameObject PlaySoundReturn(AudioClip clip, Vector3 position, bool loop, float MaxDistance)
     {
         if (clip == null || audioSourcePrefab == null)
         {
@@ -51,9 +52,23 @@ public class AudioManager : Singleton<AudioManager>
             return null;
         }
 
-        GameObject audioGO = Instantiate(audioSourcePrefab, Vector3.zero, Quaternion.identity);
-        AudioInstance audioObject = audioGO.GetComponent<AudioInstance>();
-        audioObject.Init(clip); // 你原有的 Init(clip) 方法播放 BGM
-        return audioGO;
+        GameObject obj = Instantiate(audioSourcePrefab, position, Quaternion.identity);
+        AudioInstance audioObject = obj.GetComponent<AudioInstance>();
+        audioObject.Init(clip, loop, MaxDistance);
+        return obj;
+    }
+
+    public GameObject PlayBGSoundReturn(AudioClip clip)
+    {
+        if (clip == null || audioSourcePrefab == null)
+        {
+            Debug.LogError("缺少音效剪辑或 AudioSourcePrefab！");
+            return null;
+        }
+
+        GameObject obj = Instantiate(audioSourcePrefab, Vector3.zero, Quaternion.identity);
+        AudioInstance audioObject = obj.GetComponent<AudioInstance>();
+        audioObject.Init(clip);
+        return obj;
     }
 }
