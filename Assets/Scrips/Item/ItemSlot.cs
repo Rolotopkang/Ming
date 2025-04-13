@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSlot : MonoBehaviour
 {
-    private PlacePoint _placePoint;
+    public PlacePoint _placePoint;
 
     private void Awake()
     {

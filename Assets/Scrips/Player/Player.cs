@@ -8,9 +8,15 @@ public class Player : Singleton<Player>,IHurtAble
 {
     public float CurrentHP;
     public int CurrentHealthBottleCount;
-    [SerializeField] 
+    [SerializeField]
     private float HealthBottelHealingCount = 50;
     private void Start()
+    {
+        CurrentHP = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
+        CurrentHealthBottleCount =(int)PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.HealthBottleNum);
+    }
+
+    public void ResetPlayer()
     {
         CurrentHP = PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.Health);
         CurrentHealthBottleCount =(int)PlayerStatsManager.GetInstance().GetStatValue(EnumTools.PlayerStatType.HealthBottleNum);
@@ -91,6 +97,7 @@ public class Player : Singleton<Player>,IHurtAble
     public void Death()
     {
         Debug.Log("你寄了");
+        EventCenter.Publish(EnumTools.GameEvent.PlayerDeath,null);
     }
 
     public Vector3 GetCenter()

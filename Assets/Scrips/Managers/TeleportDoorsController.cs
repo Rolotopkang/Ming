@@ -23,4 +23,12 @@ public class TeleportDoorsController : Singleton<TeleportDoorsController>
             teleportDoor.transform.position = _transform.position;
         }
     }
+
+    public void ClearDoor()
+    {
+        foreach (TeleportDoor teleportDoor in _teleportDoors)
+        {
+            teleportDoor.Clear();
+        }
+    }
 }

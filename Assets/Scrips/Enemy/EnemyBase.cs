@@ -57,10 +57,14 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         EnemyManager.GetInstance()?.RegisterEnemy(this);
     }
 
-    protected virtual void OnDestroy()
+    private void OnDisable()
     {
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
+    }
 
+    protected virtual void OnDestroy()
+    {
+        
     }
 
     private void UpdateSec()
