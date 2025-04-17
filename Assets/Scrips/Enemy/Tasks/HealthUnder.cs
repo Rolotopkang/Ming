@@ -12,6 +12,7 @@ namespace Scrips.Enemy.Tasks
         public EnemyBase EnemyBase;
         private int currentConditionIndex = 0; // 当前已经触发的血量条件索引
         private bool hasTriggered = false; // 确保每个条件只触发一次
+        public SharedBool trigger;
 
         public override void OnStart()
         {
@@ -37,11 +38,20 @@ namespace Scrips.Enemy.Tasks
                 // 一旦触发，更新索引，确保下一个条件触发
                 currentConditionIndex++;
                 hasTriggered = true; // 标记已经触发过
+                trigger.Value = true;
                 return TaskStatus.Success;
             }
 
             // 如果条件没有满足，返回失败，不影响整个 Sequence
-            return TaskStatus.Failure;
+            if (trigger.Value)
+            {
+                return TaskStatus.Success;
+            }
+            else
+            {
+                return TaskStatus.Failure;
+            }
+
         }
     }
 }

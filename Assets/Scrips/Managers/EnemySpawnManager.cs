@@ -12,6 +12,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
     public List<BigWave> Waves1;
     public List<BigWave> Waves2;
     public List<BigWave> Waves3;
+    public BigWave bossWave;
     public Transform SpawnRoot;
     public Vector2 spawnAreaSize = new Vector2(10f, 10f);
     public float minDistanceBetweenEnemies = 1.5f; // 怪物之间的最小距离
@@ -51,6 +52,35 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
         for (int i = CurrentWaveList.Count - 1; i >= 0; i--)
         {
             CurrentWaveList[i].Death();
+        }
+
+        working = false;
+    }
+
+    public void SpawnBossEnemy(Vector2 _spawnAreaSize, Vector3 root)
+    {
+        spawnAreaSize = _spawnAreaSize;
+        spawnRoot = root;
+        working = true;
+
+        Debug.Log("boss召唤开始");
+        foreach (Wave wave in bossWave.bigWaveList)
+        {
+            if (!working)
+            {
+                return;
+            }
+
+            foreach (EnemySpawnInfo enemySpawnInfo in wave.enemySpawnInfos)
+            {
+                Debug.Log("轮次");
+                for (int i = 0; i < (int)enemySpawnInfo.countCurve.Evaluate(1); i++)
+                {
+                    Vector3 spawnPoint = GetValidSpawnPoint();
+                    Instantiate(enemySpawnInfo.enemyPrefab, spawnPoint, Quaternion.identity, SpawnRoot);
+                    Debug.Log("生成"+spawnPoint);
+                }
+            }
         }
 
         working = false;
