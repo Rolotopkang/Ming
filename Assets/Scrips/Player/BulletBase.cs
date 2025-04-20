@@ -39,8 +39,9 @@ public class BulletBase : MonoBehaviour
             Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
             Destroy(gameObject);
         }
+        
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("WeakPoint"))
         {
             EnemyBase enemyBase = other.transform.GetComponentInParent<EnemyBase>();
             if (hitEnemyList.Contains(enemyBase))
@@ -59,7 +60,7 @@ public class BulletBase : MonoBehaviour
             });
             
             
-            if (CheckCritical())
+            if (CheckCritical() || other.gameObject.CompareTag("WeakPoint"))
             {
                 _isCritical = true;
                 DamageKind = EnumTools.DamageKind.Critical;

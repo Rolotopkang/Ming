@@ -11,6 +11,7 @@ TagManager:
   - CinemachineTarget
   - SlingShot
   - Candy
+  - WeakPoint
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - VFX
   - Enemy
   - IgnorePlayerCoIgnoreIgnorIgnoIgnIgI
-  - 
+  - IgnoreBullet
   - 
   - 
   - 
