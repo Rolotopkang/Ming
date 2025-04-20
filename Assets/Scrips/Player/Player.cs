@@ -94,6 +94,8 @@ public class Player : Singleton<Player>,IHurtAble
         return false;
     }
 
+
+
     public void Death()
     {
         Debug.Log("你寄了");
