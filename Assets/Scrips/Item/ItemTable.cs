@@ -123,6 +123,7 @@ public class ItemTable : Singleton<ItemTable>
     public async void updateNewPosition(Transform _transform)
     {
         transform.position = _transform.position;
+        transform.rotation = _transform.rotation;
     }
     
     

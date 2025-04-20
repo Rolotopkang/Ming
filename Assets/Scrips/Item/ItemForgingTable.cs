@@ -63,5 +63,6 @@ public class ItemForgingTable : Singleton<ItemForgingTable>
     public void updateNewPosition(Transform _transform)
     {
         transform.position = _transform.position;
+        transform.rotation = _transform.rotation;
     }
 }

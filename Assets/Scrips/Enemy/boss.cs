@@ -13,6 +13,12 @@ public class boss : EnemyBase
     public float Height = 5;
     public Vector2 spawnAreaSize = new Vector2(10f, 10f);
     public Transform SpwanPoint;
+
+    [Header("TriggerBoxs")] 
+    public GameObject Salp;
+    public GameObject Smash;
+    public GameObject AroundAttack;
+    
     [Header("Gizmo Settings")]
     public Color spawnAreaColor = new Color(0f, 0f, 1f, 0.3f); // 正方形边框颜色
     public Color validPointColor = Color.green; // 合法点颜色
@@ -50,7 +56,44 @@ public class boss : EnemyBase
         }
 
     }
-    
+
+    public void OpenSlap()
+    {
+        Salp.gameObject.SetActive(true);
+    }
+
+    public void CloseSlap()
+    {
+        Salp.gameObject.SetActive(false);
+    }
+
+    public void OpenSmash()
+    {
+        Smash.gameObject.SetActive(true);
+    }
+
+    public void CloseSmash()
+    {
+        Smash.gameObject.SetActive(false);
+    }
+
+    public void OpenAround()
+    {
+        AroundAttack.gameObject.SetActive(true);
+    }
+
+    public void CloseAround()
+    {
+        AroundAttack.gameObject.SetActive(false);
+    }
+
+    public override void Death()
+    {
+        base.Death();
+        animator.SetTrigger("Dead");
+        
+    }
+
     public void SpawnEnemy()
     {
         EnemySpawnManager.GetInstance().SpawnBossEnemy(spawnAreaSize,SpwanPoint.position);
