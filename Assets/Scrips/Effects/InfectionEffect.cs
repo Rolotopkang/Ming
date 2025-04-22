@@ -31,7 +31,9 @@ namespace Scrips.Effects
                 EnemyBase target = EnemyManager.GetInstance().GetClosestEnemy(deathEnemy.transform, 9999, tmplist);
                 List<BuffBase> tmp_bufflist = deathEnemy.GetBuffList();
 
-                foreach (BuffBase buffBase in tmp_bufflist)
+                // 创建列表副本，避免在原列表上进行操作
+                List<BuffBase> buffListCopy = new List<BuffBase>(tmp_bufflist);
+                foreach (BuffBase buffBase in buffListCopy)
                 {
                     target.AddNewBuff(buffBase.BuffName);
                 }
