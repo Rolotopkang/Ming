@@ -27,7 +27,8 @@ MonoBehaviour:
     When
     freezing is triggered, an additional <color=#FF5733>{Buff_Ice_DmgPercentage}</color>
     of the basic attack power will be caused as freezing damage.'
-  xiaogushi: 
+  xiaogushi: "A fluffy giant introvert \u2014 freezes enemies solid with just one
+    anxious cuddle."
   statModifiers:
   - statType: 21
     value: 0.05
@@ -94,6 +95,15 @@ MonoBehaviour:
       m_RotationOrder: 0
   - statType: 26
     value: 0.5
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - statType: 26
+    value: 0.01
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

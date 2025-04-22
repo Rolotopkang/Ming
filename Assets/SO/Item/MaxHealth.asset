@@ -18,7 +18,8 @@ MonoBehaviour:
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 8325c897707a02f4ba9ff973c1d851f9, type: 3}
   description: Increases your maximum health by 50
-  xiaogushi: 
+  xiaogushi: "Feels like wrapping yourself in an electric blanket \u2014 warms you
+    up from ice-cold to cozy."
   statModifiers: []
   hasSpecialEffect: 0
   specialEffectNames: 

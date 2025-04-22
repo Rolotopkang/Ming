@@ -12,34 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e92a230254af48a50137f20ed5330, type: 3}
   m_Name: EliteEnemy
   m_EditorClassIdentifier: 
-  EnemyName: EliteEnemy
+  EnemyName: Anxiety
   isBoss: 0
   MaxHPCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 20
+      time: 1
+      value: 74
       inSlope: 0
-      outSlope: 3.8625019
+      outSlope: 11.222222
       tangentMode: 65
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 16.019014
-      value: 81.873474
-      inSlope: 3.8625019
-      outSlope: 9.621181
+      time: 10
+      value: 175
+      inSlope: 11.222222
+      outSlope: 19.2
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 15
+      value: 271
+      inSlope: 19.2
+      outSlope: 27.8
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 20
-      value: 120.175255
-      inSlope: 9.621181
-      outSlope: 2
+      value: 410
+      inSlope: 27.8
+      outSlope: 0
       tangentMode: 69
       weightedMode: 0
       inWeight: 0

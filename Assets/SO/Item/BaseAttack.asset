@@ -18,11 +18,12 @@ MonoBehaviour:
   MaxLevel: 4
   icon: {fileID: 21300000, guid: cc4b8fc3cf134c340a880e13a7fcb256, type: 3}
   description: Increase <color=#FF5733>{Attack}</color> basic attack power
-  xiaogushi: 
+  xiaogushi: Looks like a gentle tap, but hits like your mom asking why you're kneeling
+    while gaming.
   statModifiers:
   - statType: 0
-    value: 0
-    UseCurve: 1
+    value: 10
+    UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
       m_Curve:

@@ -16,10 +16,48 @@ MonoBehaviour:
   isOnly: 0
   isEvent: 0
   MaxLevel: 4
-  icon: {fileID: -1999946806344817058, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  description: When the projectile hits an obstacle or enemy, it will cause an explosion,
-    causing 10 points of damage to enemies within the range.
-  xiaogushi: 
-  statModifiers: []
+  icon: {fileID: 37763770702065993, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+  description: 'When the projectile hits an enemy, it will cause an explosion, causing
+    <color=#FF5733>{ExplosionDmgPercentage}</color> points of damage to enemies within
+    the range of <color=#FF5733>{ExplosionRange}</color> '
+  xiaogushi: "Loud enough, flashy enough \u2014 a nightmare for both enemies and
+    graphics cards."
+  statModifiers:
+  - statType: 13
+    value: 2
+    UseCurve: 1
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5
+        inSlope: 0.375
+        outSlope: 0.375
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4
+        value: 2
+        inSlope: 0.375
+        outSlope: 0.375
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - statType: 14
+    value: 0.1
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
   hasSpecialEffect: 1
   specialEffectNames: 01000000

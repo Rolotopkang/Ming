@@ -21,7 +21,8 @@ MonoBehaviour:
 
     Current SlingShot Bullet
     Multy Number is<color=#FF5733>{BulletCount}</color>'
-  xiaogushi: 
+  xiaogushi: "Hit one, it becomes two\u2026 then four. Even enemies are begging,
+    \u201CPlease stop duplicating!\u201D"
   statModifiers:
   - statType: 7
     value: 1

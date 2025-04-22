@@ -16,6 +16,7 @@ public static class ItemEffectFactory
         { EnumTools.EffectName.TracingBullets , typeof(TracingBulletEffect)},
         { EnumTools.EffectName.Ice , typeof(IceBulletEffect)},
         { EnumTools.EffectName.GiantKiller , typeof(GiantKillerEffect)},
+        { EnumTools.EffectName.Infection , typeof(InfectionEffect)},
         
     };
     

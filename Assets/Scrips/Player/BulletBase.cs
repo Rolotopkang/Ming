@@ -37,6 +37,10 @@ public class BulletBase : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Instantiate(OnHitEffectPrefab, transform.position, quaternion.identity);
+            EventCenter.Publish(EnumTools.GameEvent.ObstacleHit,new Dictionary<string, object>
+            {
+                {"BulletBase",this},
+            });
             Destroy(gameObject);
         }
         

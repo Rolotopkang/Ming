@@ -6,7 +6,7 @@ namespace Scrips.Item
 {
     public class Money : ItemBase
     {
-        public int Amount = 15;
+        public int Amount = 20;
         public async void TryAddMoney()
         {
             PlayerStatsManager.GetInstance().ApplyStatModifier(EnumTools.PlayerStatType.Money,Amount);

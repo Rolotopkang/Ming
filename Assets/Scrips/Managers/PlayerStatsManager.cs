@@ -6,8 +6,8 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
 {
     public Dictionary<EnumTools.PlayerStatType, float> baseStats = new Dictionary<EnumTools.PlayerStatType, float>
     {
-        { EnumTools.PlayerStatType.Attack, 10f },
-        { EnumTools.PlayerStatType.AttackPercentage, 1f},
+        { EnumTools.PlayerStatType.Attack, 100f },
+        { EnumTools.PlayerStatType.AttackPercentage, 0f},
         { EnumTools.PlayerStatType.Speed, 5f },
         { EnumTools.PlayerStatType.Critical ,0.1f},
         { EnumTools.PlayerStatType.CriticalAmount, 2f},
@@ -29,7 +29,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
         { EnumTools.PlayerStatType.Buff_Ice_MaxLayer, 3},
         { EnumTools.PlayerStatType.Buff_Ice_SlowPercentage, 0.2f},
         { EnumTools.PlayerStatType.Buff_Ice_Duration, 5},
-        { EnumTools.PlayerStatType.ItemTable_SlotNum , 4},
+        { EnumTools.PlayerStatType.ItemTable_SlotNum , 5},
         { EnumTools.PlayerStatType.ShotPower , 20},
         { EnumTools.PlayerStatType.Buff_Ice_FrozenDuration, 2f},
         { EnumTools.PlayerStatType.Buff_Ice_DmgPercentage ,2.0f},
@@ -52,8 +52,8 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
     {
         baseStats = new Dictionary<EnumTools.PlayerStatType, float>
         {
-            { EnumTools.PlayerStatType.Attack, 10f },
-            { EnumTools.PlayerStatType.AttackPercentage, 1f},
+            { EnumTools.PlayerStatType.Attack, 100f },
+            { EnumTools.PlayerStatType.AttackPercentage, 0f},
             { EnumTools.PlayerStatType.Speed, 5f },
             { EnumTools.PlayerStatType.Critical ,0.1f},
             { EnumTools.PlayerStatType.CriticalAmount, 2f},
@@ -75,7 +75,7 @@ public class PlayerStatsManager : Singleton<PlayerStatsManager>
             { EnumTools.PlayerStatType.Buff_Ice_MaxLayer, 3},
             { EnumTools.PlayerStatType.Buff_Ice_SlowPercentage, 0.2f},
             { EnumTools.PlayerStatType.Buff_Ice_Duration, 5},
-            { EnumTools.PlayerStatType.ItemTable_SlotNum , 4},
+            { EnumTools.PlayerStatType.ItemTable_SlotNum , 5},
             { EnumTools.PlayerStatType.ShotPower , 20},
             { EnumTools.PlayerStatType.Buff_Ice_FrozenDuration, 2f},
             { EnumTools.PlayerStatType.Buff_Ice_DmgPercentage ,2.0f},

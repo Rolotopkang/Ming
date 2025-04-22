@@ -22,7 +22,8 @@ MonoBehaviour:
     but cannot be stacked. They will inflict <color=#FF5733>{Buff_Poison_DmgPercentage}</color>
     of the monster's maximum health as damage per second (if it is a boss, there
     is a maximum damage cap).
-  xiaogushi: 
+  xiaogushi: A mysterious green liquid that bubbles when shaken. Looks like soda,
+    but the kind that makes you too happy.
   statModifiers:
   - statType: 18
     value: 0.04
@@ -36,6 +37,33 @@ MonoBehaviour:
   - statType: 19
     value: 0
     UseCurve: 1
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - statType: 1
+    value: 0.06
+    UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
       m_Curve:

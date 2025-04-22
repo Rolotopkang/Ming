@@ -19,10 +19,19 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 1f59fff7ce7a785498d743052331157c, type: 3}
   description: Deals an additional <color=#FF5733>{GiantKillerPercentage}</color>
     damage to enemies with health above 90%
-  xiaogushi: 
+  xiaogushi: Even a Titan would fall to this glove.
   statModifiers:
   - statType: 27
     value: 0.5
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - statType: 1
+    value: 0.1
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

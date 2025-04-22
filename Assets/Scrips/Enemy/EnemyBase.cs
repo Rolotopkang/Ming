@@ -81,7 +81,7 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
 
         if (damageKind == EnumTools.DamageKind.Poison && EnemyData.isBoss)
         {
-            dmg = EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer) * 0.002f;
+            dmg = Mathf.Clamp(EnemyData.MaxHPCurve.Evaluate(RoguelikeManager.GetInstance().layer),0,50f);
         }
         
         OnHit.Invoke();
@@ -176,6 +176,10 @@ public class EnemyBase : MonoBehaviour, IHurtAble , IBuffAble
         isDeath = true;
         OnDeath?.Invoke();
 
+        EventCenter.Publish(EnumTools.GameEvent.EnemyKilled,new Dictionary<string, object>
+        {
+            {"Enemy",this}
+        });
         EnemyManager.GetInstance()?.UnRegisterEnemy(this);
     }
 

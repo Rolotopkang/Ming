@@ -11,6 +11,7 @@
     {
         public int layer = 0;
         public int BigLayer = 1;
+        public int BossLayer = 20;
         public GameObject playerroot;
 
         public AnimationCurve ItemCurve;
@@ -26,9 +27,13 @@
         public Transform zanshicunfang;
         public GameObject BirthRoom;
         public Transform BirthPoint;
+        public GameObject BattleInivisibalwall;
+        public GameObject DeadUI;
+        public AutoHandPlayer AutoHandPlayer;
         private RoomBase currentRoom;
         private Dictionary<EnumTools.RoomKind, AnimationCurve> roomCurves;
         private bool isjumping;
+        private bool Death = false;
         protected override void Awake()
         {
             base.Awake();
@@ -60,7 +65,7 @@
         private void OnLevelStart(Dictionary<String, object> args)
         {
             layer++;
-            TeleportDoorsController.GetInstance().HideDoors(zanshicunfang);
+            // TeleportDoorsController.GetInstance().HideDoors(zanshicunfang);
             ItemUpgradeTabel.GetInstance().updateNewPosition(zanshicunfang);
             ItemTable.GetInstance().updateNewPosition(zanshicunfang);
             ItemForgingTable.GetInstance().updateNewPosition(zanshicunfang);
@@ -69,6 +74,7 @@
             StartCoroutine(DelayedTeleport(currentRoom.currentBirthPoint.position));
             // AutoHandPlayer.Instance.SetPosition(currentRoom.currentBirthPoint.position);
             Debug.Log(currentRoom.currentBirthPoint.position+" --------------" + currentRoom.name.ToString());
+            BattleInivisibalwall.SetActive(true);
         }
 
         private IEnumerator DelayedTeleport(Vector3 pos) {
@@ -79,7 +85,11 @@
         
         private void OnLevelEnd(Dictionary<String,object> args)
         {
-            TeleportDoorsController.GetInstance().SetNextLevelDoor(GetTwoRandomRooms().ToList(),currentRoom.currentDoorPos.ToList());
+            BattleInivisibalwall.SetActive(false);
+            TeleportDoorsController.GetInstance().SetNextLevelDoor(
+                layer == BossLayer
+                    ? new List<EnumTools.RoomKind> { EnumTools.RoomKind.Boss, EnumTools.RoomKind.Boss }
+                    : GetTwoRandomRooms().ToList(), currentRoom.currentDoorPos.ToList());
         }
 
         public void Test()
@@ -87,16 +97,30 @@
             NextLevel(EnumTools.RoomKind.Item);
         }
 
-        public void PlayerDeath(Dictionary<string, object> arg)
+        public async void PlayerDeath(Dictionary<string, object> arg)
         {
+            if (Death)
+            {
+                return;
+            }
+            
+            Death = true;
+            EnemySpawnManager.GetInstance().RemoveAllEnemy();
+            
+            DeadUI.SetActive(true);
+            AutoHandPlayer.enabled = false;
+
+            await UniTask.WaitForSeconds(3f);
+            DeadUI.SetActive(false);
+            AutoHandPlayer.enabled = true;
             layer = 0;
             BigLayer = 1;
             BirthRoom.SetActive(true);
-            EnemySpawnManager.GetInstance().RemoveAllEnemy();
             ItemTable.GetInstance().ResetPlayer();
             PlayerStatsManager.GetInstance().ResetPlayer();
             Player.GetInstance().ResetPlayer();
             AutoHandPlayer.Instance.SetPosition(BirthPoint.position);
+            Death = false;
         }
 
         public async void NextLevel(EnumTools.RoomKind roomKind)

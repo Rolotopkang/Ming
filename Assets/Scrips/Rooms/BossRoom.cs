@@ -14,7 +14,7 @@ namespace Scrips
         {
             base.OnLevelStart(args);
             ItemTable.GetInstance().updateNewPosition(currentItemTablePos);
-            ItemUpgradeTabel.GetInstance().updateNewPosition(currentUpgradeTabel);
+            // ItemUpgradeTabel.GetInstance().updateNewPosition(currentUpgradeTabel);
             ItemForgingTable.GetInstance().updateNewPosition(currentForgeTabel);
             
         }
@@ -29,7 +29,7 @@ namespace Scrips
         
         public async void ShowEndGameUI()
         {
-            UniTask.WaitForSeconds(4f);
+            await UniTask.WaitForSeconds(3f);
             EndGameUI.SetActive(true);
         }
     }

@@ -47,6 +47,7 @@ namespace Tools
             Ice,
             TracingBullets,
             GiantKiller,
+            Infection,
         }
 
         public enum BuffName
@@ -90,6 +91,7 @@ namespace Tools
             LevelEnd,
             GameStart,
             PlayerDeath,
+            ObstacleHit,
         }
         
         public enum DamageKind

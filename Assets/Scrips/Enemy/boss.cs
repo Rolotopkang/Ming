@@ -30,6 +30,12 @@ public class boss : EnemyBase
         _agent = GetComponent<NavMeshAgent>();
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        
+    }
+
     protected override void Start()
     {
         base.Start();
