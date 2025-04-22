@@ -17,7 +17,7 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: da57b68c5b2e27044866e8eb588c5d81, type: 3}
-  description: 15 Gold Coins
+  description: 20 Gold Coins
   xiaogushi: 
   statModifiers: []
   hasSpecialEffect: 0

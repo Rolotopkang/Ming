@@ -12,34 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e92a230254af48a50137f20ed5330, type: 3}
   m_Name: MeleeEnemy
   m_EditorClassIdentifier: 
-  EnemyName: MeleeEnemy
+  EnemyName: Loneliness
   isBoss: 0
   MaxHPCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 15
+      time: 1
+      value: 98
       inSlope: 0
-      outSlope: 4.582873
+      outSlope: 16.444445
       tangentMode: 65
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 16.25891
-      value: 89.51251
-      inSlope: 4.582873
-      outSlope: 29.533495
+      time: 10
+      value: 246
+      inSlope: 16.444445
+      outSlope: 29.2
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 15
+      value: 392
+      inSlope: 29.2
+      outSlope: 42.2
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 20
-      value: 200
-      inSlope: 29.533495
-      outSlope: 2
+      value: 603
+      inSlope: 42.2
+      outSlope: 0
       tangentMode: 5
       weightedMode: 0
       inWeight: 0

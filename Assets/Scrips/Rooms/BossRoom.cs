@@ -14,7 +14,7 @@ namespace Scrips
         {
             base.OnLevelStart(args);
             ItemTable.GetInstance().updateNewPosition(currentItemTablePos);
-            ItemUpgradeTabel.GetInstance().updateNewPosition(currentUpgradeTabel);
+            // ItemUpgradeTabel.GetInstance().updateNewPosition(currentUpgradeTabel);
             ItemForgingTable.GetInstance().updateNewPosition(currentForgeTabel);
             
         }

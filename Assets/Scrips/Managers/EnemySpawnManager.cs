@@ -12,6 +12,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
     public List<BigWave> Waves1;
     public List<BigWave> Waves2;
     public List<BigWave> Waves3;
+    public List<BigWave> Waves4;
     public BigWave bossWave;
     public Transform SpawnRoot;
     public Vector2 spawnAreaSize = new Vector2(10f, 10f);
@@ -88,6 +89,10 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
     
     public async void SpawnEnemy(Vector2 _spawnAreaSize, Vector3 root)
     {
+        if (RoguelikeManager.GetInstance().layer ==5 ||RoguelikeManager.GetInstance().layer ==10 ||RoguelikeManager.GetInstance().layer ==15)
+        {
+            RoguelikeManager.GetInstance().BigLayer++;
+        }
         spawnAreaSize = _spawnAreaSize;
         spawnRoot = root;
         List<BigWave> currentBigWaveList = RoguelikeManager.GetInstance().BigLayer switch
@@ -95,6 +100,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             1 => Waves1,
             2 => Waves2,
             3 => Waves3,
+            4 => Waves4,
             _ => null,
         };
         if (currentBigWaveList== null || currentBigWaveList.Count == 0)

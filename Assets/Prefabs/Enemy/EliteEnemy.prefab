@@ -153,7 +153,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 727cfaf3482ac48ff97b662624abc435, type: 2}
+  - {fileID: 2100000, guid: 178bb3c6b60477a4d9a5d3a57c958c3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 2053632415465274182}
   m_Layer: 0
   m_Name: EliteEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,6 +486,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 33d2365d2debee147b32e5727840c000, type: 2}
   - {fileID: 2100000, guid: f00e5fd9a203d9e488d716f8a60f733a, type: 2}
   - {fileID: 2100000, guid: 3465d0d1c16040a44a63646523720ad3, type: 2}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &6097998090889474961
 Animator:
   serializedVersion: 7

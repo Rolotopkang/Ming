@@ -18,7 +18,8 @@ MonoBehaviour:
   MaxLevel: 4
   icon: {fileID: 21300000, guid: 690fea260bd31314c92ceee162129226, type: 3}
   description: Gives you two pills that can restore 50 HP
-  xiaogushi: 
+  xiaogushi: "A blue little pill that tastes like childhood \u2014 sweet with a hint
+    of regret. One bite, and you're back in the fight before you even blink."
   statModifiers: []
   hasSpecialEffect: 0
   specialEffectNames: 

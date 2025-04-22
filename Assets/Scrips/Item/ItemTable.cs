@@ -92,10 +92,10 @@ public class ItemTable : Singleton<ItemTable>
             return;
         }
 
-        if (Player.GetInstance().TryBuy(15f))
+        if (Player.GetInstance().TryBuy(10f))
         {
             _itemSlots[currentSlotNum++].gameObject.SetActive(true);
-            callback.Invoke(1);
+            callback.Invoke(1); 
             return;
         }
         callback.Invoke(2);

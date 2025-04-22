@@ -15,4 +15,5 @@ MonoBehaviour:
   waitDeath: 1
   spawnInterval: 5
   bigWaveList:
-  - {fileID: 11400000, guid: 1da56f2e4a4413745bc643a9a0289109, type: 2}
+  - {fileID: 11400000, guid: 0f6305d1d6fedec4fadd6070c9a2ae39, type: 2}
+  - {fileID: 11400000, guid: 3833570e825f5cb4faec0d17a8f4bde5, type: 2}

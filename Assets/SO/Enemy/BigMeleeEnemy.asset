@@ -12,51 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e92a230254af48a50137f20ed5330, type: 3}
   m_Name: BigMeleeEnemy
   m_EditorClassIdentifier: 
-  EnemyName: BigMeleeEnemy
+  EnemyName: Confusion
   isBoss: 0
   MaxHPCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 100
+      time: 1
+      value: 202
       inSlope: 0
-      outSlope: 6.2324176
+      outSlope: 33.11111
       tangentMode: 65
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7.9161634
-      value: 149.33684
-      inSlope: 6.2324176
-      outSlope: 14.352943
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 13.240595
-      value: 225.7581
-      inSlope: 14.352943
-      outSlope: 31.737215
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 16.575594
-      value: 331.60168
-      inSlope: 31.737215
-      outSlope: 49.953445
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 19.9467
+      time: 10
       value: 500
-      inSlope: 49.953445
+      inSlope: 33.11111
+      outSlope: 62.4
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 15
+      value: 812
+      inSlope: 62.4
+      outSlope: 81.6
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 1220
+      inSlope: 81.6
       outSlope: 2
       tangentMode: 5
       weightedMode: 0

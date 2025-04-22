@@ -6,11 +6,11 @@ public class TeleportDoor : MonoBehaviour
 {
     public List<GameObject> doorList;
     private EnumTools.RoomKind currentRoomKind;
+    public GameObject portal;
 
     
     public void Init(EnumTools.RoomKind roomKind, Transform transform)
     {
-        this.transform.position = transform.position;
         currentRoomKind = roomKind;
         RefreshDoor();
     }
@@ -22,10 +22,12 @@ public class TeleportDoor : MonoBehaviour
         {
             tmp.SetActive(false);
         }
+        portal.SetActive(false);
     }
 
     public void RefreshDoor()
     {
+        portal.SetActive(true);
         SetCurrentDoor(currentRoomKind switch
         {
             EnumTools.RoomKind.Item => 0,

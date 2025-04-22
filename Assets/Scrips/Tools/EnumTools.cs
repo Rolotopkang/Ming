@@ -47,6 +47,7 @@ namespace Tools
             Ice,
             TracingBullets,
             GiantKiller,
+            Infection,
         }
 
         public enum BuffName

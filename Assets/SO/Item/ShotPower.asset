@@ -18,10 +18,20 @@ MonoBehaviour:
   MaxLevel: 4
   icon: {fileID: 21300000, guid: e5efd84af5c60254d8188e3d8b179117, type: 3}
   description: Increase slingshot range by <color=#FF5733>{ShotPower}</color>meters
-  xiaogushi: 
+  xiaogushi: "A legendary tool that can \u201Creach the galaxy.\u201D Once fired,
+    enemies tremble from miles away."
   statModifiers:
   - statType: 24
-    value: 15
+    value: 8
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  - statType: 1
+    value: 0.1
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2

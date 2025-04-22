@@ -62,7 +62,6 @@ public class AudioManager : Singleton<AudioManager>
     {
         if (clip == null || audioSourcePrefab == null)
         {
-            Debug.LogError("缺少音效剪辑或 AudioSourcePrefab！");
             return null;
         }
 

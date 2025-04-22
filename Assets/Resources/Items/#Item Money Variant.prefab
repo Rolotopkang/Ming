@@ -160,4 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: b599272d2b3fb4c47b229ddf41d9e04c, type: 2}
   ItemCount: 1
-  Amount: 15
+  Amount: 20

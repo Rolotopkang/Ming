@@ -17,11 +17,13 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 21300000, guid: d75307b6f9897b648910e8320cee5df7, type: 3}
-  description: Your critical hit damage increases by <color=#FF5733>{CriticalAmount}</color>
-  xiaogushi: 
+  description: "Your critical hit damage increases by <color=#FF5733>{CriticalAmount}</color>\nYour
+    critical hit chance increases by \u2018<color=#FF5733>{Critical}</color>"
+  xiaogushi: "Feels like a slap bullet that never misses \u2014 always goes straight
+    for the face."
   statModifiers:
   - statType: 4
-    value: 1
+    value: 0.5
     UseCurve: 0
     IncrementCurve:
       serializedVersion: 2
@@ -43,6 +45,60 @@ MonoBehaviour:
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - statType: 3
+    value: 0.15
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - statType: 1
+    value: 0.01
+    UseCurve: 0
+    IncrementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

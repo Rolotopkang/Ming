@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e92a230254af48a50137f20ed5330, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  EnemyName: BigMeleeEnemy
+  EnemyName: GNIM
   isBoss: 1
   MaxHPCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 200
+      value: 15000
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -28,7 +28,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 200
+      value: 15000
       inSlope: 0
       outSlope: 0
       tangentMode: 1
