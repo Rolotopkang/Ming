@@ -10,6 +10,7 @@ namespace Scrips.Effects
         public override void ApplyEffect()
         {
             EventCenter.Subscribe(EnumTools.GameEvent.BulletShot,OnBulletShot);
+
             base.ApplyEffect();
         }
 

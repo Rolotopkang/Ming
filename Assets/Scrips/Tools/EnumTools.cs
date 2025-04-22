@@ -91,6 +91,7 @@ namespace Tools
             LevelEnd,
             GameStart,
             PlayerDeath,
+            ObstacleHit,
         }
         
         public enum DamageKind

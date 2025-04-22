@@ -29,7 +29,7 @@ namespace Scrips
         
         public async void ShowEndGameUI()
         {
-            UniTask.WaitForSeconds(4f);
+            await UniTask.WaitForSeconds(3f);
             EndGameUI.SetActive(true);
         }
     }

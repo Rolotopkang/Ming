@@ -17,9 +17,9 @@ MonoBehaviour:
   isEvent: 0
   MaxLevel: 4
   icon: {fileID: 37763770702065993, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
-  description: 'When the projectile hits an obstacle or enemy, it will cause an explosion,
-    causing <color=#FF5733>{ExplosionDmgPercentage}</color> points of damage to enemies
-    within the range of <color=#FF5733>{ExplosionRange}</color> '
+  description: 'When the projectile hits an enemy, it will cause an explosion, causing
+    <color=#FF5733>{ExplosionDmgPercentage}</color> points of damage to enemies within
+    the range of <color=#FF5733>{ExplosionRange}</color> '
   xiaogushi: "Loud enough, flashy enough \u2014 a nightmare for both enemies and
     graphics cards."
   statModifiers:
