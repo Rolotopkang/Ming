@@ -45,7 +45,7 @@ public class ItemTable : Singleton<ItemTable>
     {
         if (args.ContainsKey("RoomKind"))
         {
-            if ((EnumTools.RoomKind)args["RoomKind"] == EnumTools.RoomKind.Store)
+            if ((EnumTools.RoomKind)args["RoomKind"] == EnumTools.RoomKind.Store || (EnumTools.RoomKind)args["RoomKind"] == EnumTools.RoomKind.Boss)
             {
                 BuyButton.SetActive(true);
             }

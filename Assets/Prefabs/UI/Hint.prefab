@@ -204,7 +204,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3228413375651557152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ Rigidbody:
     m_Bits: 32
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 32727
+    m_Bits: 65495
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -258,8 +258,8 @@ SphereCollider:
     m_Bits: 32
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 32727
-  m_LayerOverridePriority: 0
+    m_Bits: 65495
+  m_LayerOverridePriority: 1
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
