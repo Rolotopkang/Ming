@@ -56,6 +56,6 @@ public class ItemUpgradeTabel : Singleton<ItemUpgradeTabel>
     public void updateNewPosition(Transform _transform)
     {
         transform.position = _transform.position;
-        transform.rotation = _transform.rotation;
+        transform.rotation = _transform.rotation;   
     }
 }
